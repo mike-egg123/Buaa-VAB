@@ -2,7 +2,6 @@
         /* 粘滞定位必须在父元素中 */
         position: sticky;
         top:0px;
-        /* 设置字体 */
     }
     /* 设置外部容器样式 */
     ul.topbar{
@@ -15,31 +14,47 @@
         margin:30px auto;
         box-shadow:10px 10px 10px rgb(233, 230, 230) ;
         border-radius:15px;
+        display: flex;
+
     }
-    li.topbar_child{
+    li{
         padding-right:60px;
         padding-top: 10px;
-        float:left;
+        /* float:left; */
+        display: flex;
+        flex: 1 1 auto;
+    }
+    li:not(:nth-child(2)){
+        justify-content:center;
+        align-items:center;
+    }
+    a{
+        display: flex;
+    }
+    /* 设置line */
+    li:nth-child(2){
+        padding-left:10px;
+        padding-right:10px;
+        margin-top:7px;
+        margin-right:40px;
+        margin-left:12px;
     }
     /* 设置user*/
     li:last-child{
-        float:right;
-        margin-right: 5px;
+        margin-left:80px;
+        margin-right:5px;
     }
     /* 设置logo*/
     .logo{
         width:110px;
         height:45px;
-        padding-left:67px;
+        padding-left:35px;
     }
     /* 设置分割线 */
-    .topbar_child .line{
+    .line{
         width:1px;
         height:30px;
         background-color:rgb(214, 195, 191);
-        margin-top:7px;
-        margin-right:47px;
-        float:left;
     }
     /* 设置小图标 */
     .iconfont{
@@ -47,24 +62,16 @@
         margin-right:10px;
     }
     /* 设置文字 */
-    /* 
-        直接给超链接设置宽高是不行的，不是块元素 
-        需要转换display：block（line-block）
-    */
     a,div{
         text-decoration:none;
         font-size: 16px;
         color:tomato;
-        float:right;
+        /* float:right; */
         font-weight: bolder;
     }
-    /* div{
-        font-weight: bolder;
-    } */
-    /* 设置点击效果 */
-    .topbar_child a > div:hover{
+    a:hover{
         color:rgb(243, 191, 182);
     }
-    .topbar_child a:hover{
+    a > div:hover{
         color:rgb(243, 191, 182);
     }
