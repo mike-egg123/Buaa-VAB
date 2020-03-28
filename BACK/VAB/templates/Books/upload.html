@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upload</title>
+</head>
+<body>
+<form method="post" action="/Bookupload/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="Book_name">书名</label>
+    <input type="text" id="Book_name" name="Book_name">
+    <br>
+    <label for="Book_auth">作者</label>
+    <input type="text" id="Book_auth" name="Book_auth">
+    <br>
+    <label for="Book_intro">简介</label>
+    <textarea type="text"
+              id="Book_intro"
+              name="Book_intro"
+              rows="12"></textarea>
+    <br>
+    <label for="Book_img">封面</label>
+    <input type="file" id="Book_img" name="Book_img">
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>

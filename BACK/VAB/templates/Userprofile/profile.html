@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+{% block content %}
+    <div>
+        <h3>用户名：{{ userprofile.org }}</h3>
+        {% if userprofile.headshot %}
+        头像：<img src="{{ userprofile.headshot.url }}" style="max-width: 20%; border-radius: 15%";><br>
+        {% else %}
+            <h4>暂无头像</h4>
+        {% endif %}
+        个人简介：<br>
+        <textarea type="text" rows="12">{{ userprofile.personal_infor }}</textarea><br>
+        电话：{{ userprofile.telephone }}<br>
+        邮箱：{{ user.email }}<br>
+    </div>
+{% endblock %}
+</body>
+</html>

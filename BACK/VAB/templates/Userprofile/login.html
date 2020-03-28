@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% block content %}
+    {% if message %}
+    {{ message }}
+    {% endif %}
+
+    <div>
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                <div>
+                    {{ field.errors }}
+                    {{ field.label_tag }}{{ field }}
+
+                    {% if field.help_text %}
+                        <p class="help">
+                            {{ field.help_text|safe }}
+                        </p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <div class="button">
+                <input type="submit" value="登录">
+            </div>
+        </form>
+        <h3>
+            <a href='{% url "Userprofile:register" %}'>注册</a>
+        </h3>
+    </div>
+
+
+{% endblock %}
+</body>
+</html>
