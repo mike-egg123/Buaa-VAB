@@ -1,0 +1,77 @@
+    body{
+        /* 粘滞定位必须在父元素中 */
+        position: sticky;
+        top:0px;
+    }
+    /* 设置外部容器样式 */
+    ul.topbar{
+        width:1250px;
+        height:60px;
+        /* 确保行高居中 */
+        line-height: 60px;
+        background-color: rgb(245, 239, 239);
+        /* 设置水平居中 */
+        margin:30px auto;
+        box-shadow:10px 10px 10px rgb(233, 230, 230) ;
+        border-radius:15px;
+        display: flex;
+
+    }
+    li{
+        padding-right:60px;
+        padding-top: 10px;
+        /* float:left; */
+        display: flex;
+        flex: 1 1 auto;
+    }
+    li:not(:nth-child(2)){
+        justify-content:center;
+        align-items:center;
+    }
+    a{
+        display: flex;
+    }
+    /* 设置line */
+    li:nth-child(2){
+        padding-left:10px;
+        padding-right:10px;
+        margin-top:7px;
+        margin-right:40px;
+        margin-left:12px;
+    }
+    /* 设置user*/
+    li:last-child{
+        margin-left:80px;
+        margin-right:5px;
+    }
+    /* 设置logo*/
+    .logo{
+        width:110px;
+        height:45px;
+        padding-left:35px;
+    }
+    /* 设置分割线 */
+    .line{
+        width:1px;
+        height:30px;
+        background-color:rgb(214, 195, 191);
+    }
+    /* 设置小图标 */
+    .iconfont{
+        font-size:25px;
+        margin-right:10px;
+    }
+    /* 设置文字 */
+    a,div{
+        text-decoration:none;
+        font-size: 16px;
+        color:tomato;
+        /* float:right; */
+        font-weight: bolder;
+    }
+    a:hover{
+        color:rgb(243, 191, 182);
+    }
+    a > div:hover{
+        color:rgb(243, 191, 182);
+    }
