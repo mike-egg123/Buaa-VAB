@@ -1,0 +1,15 @@
+.cleafix::before
+.cleafix::after{
+    content: '';
+    display: table;
+    clear:both;
+}
+body{
+    min-width: 1226px;
+}
+/* 设置一个类用来表示中间容器的宽度 */
+.w{
+    /* 固定容器宽度 */
+    width:1226px;
+    margin:0 auto;
+}
