@@ -5,14 +5,12 @@
     <title>Show_books</title>
 </head>
 <body>
-
-<h1>图书列表</h1>
-<ul>
-    {% for a_book in Book_list %}
-    <li>
-        <a href="book{{ a_book.id }}">{{ a_book.Book_name }}</a>
-    </li>
-    {% endfor %}
-</ul>
+    {% include 'topbar.html' %}
+    <h1>图书列表</h1>
+    <div>
+        {% for a_book in Book_list %}
+            <a href="{{ a_book.id }}">{{ a_book.Book_name }}</a>
+        {% endfor %}
+    </div>
 </body>
 </html>

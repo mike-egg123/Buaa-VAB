@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            perspective: 800px;
+        }
+        .outer{
+            width: 200px;
+            height: 200px;
+            /* background-color: #fab; */
+            margin: 100px auto;
+            /* 3d旋转效果 */
+            transform-style: preserve-3d;
+            animation: my3d linear infinite 20s;
+        }
+        .outer > div{
+            width: 200px;
+            height: 200px;
+            /* 设置透明 */
+            opacity:.7;
+            /* 让图片重合到一起 */
+            position: absolute;
+        }
+        img{
+            height: 200px;
+            vertical-align: top;
+        }
+        .box1{
+            transform:rotateY(90deg) translateZ(-100px);
+        }
+        .box2{
+            transform:rotateY(-90deg) translateZ(-100px);
+        }
+        .box3{
+            transform:rotateX(90deg) translateZ(-100px);
+        }
+        .box4{
+            transform:rotateX(-90deg) translateZ(-100px);
+        }
+        .box5{
+            transform:rotateY(180deg) translateZ(100px);
+        }
+        .box6{
+            transform:rotateY(0deg) translateZ(100px);
+        }
+        @keyframes my3d {
+            from{
+                transform: rotateX(0deg) rotateZ(0deg);
+            }
+            to{
+                transform: rotateX(360deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1">
+            <img src="../vab_img/1.png" alt="">
+        </div>
+        <div class="box2">
+            <img src="../vab_img/2.png" alt="">
+        </div>
+        <div class="box3">
+            <img src="../vab_img/3.png" alt="">
+        </div>
+        <div class="box4">
+            <img src="../vab_img/4.png" alt="">
+        </div>
+        <div class="box5">
+            <img src="../vab_img/5.png" alt="">
+        </div>
+        <div class="box6">
+            <img src="../vab_img/6.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,41 +1,63 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>登录</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <!-- 引入公用样式 -->
+    <link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+    <!-- 引入本页面的样式 -->
+    <link rel="stylesheet" href="{% static '/css_style/index.css' %}">
 </head>
 <body>
-{% block content %}
-    {% if message %}
-    {{ message }}
-    {% endif %}
-
-    <div>
-        <form method="post" action="" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% for field in form %}
-                <div>
-                    {{ field.errors }}
-                    {{ field.label_tag }}{{ field }}
-
-                    {% if field.help_text %}
-                        <p class="help">
-                            {{ field.help_text|safe }}
-                        </p>
-                    {% endif %}
-                </div>
-            {% endfor %}
-
-            <div class="button">
-                <input type="submit" value="登录">
+    {% include 'topbar.html' %}
+    <main>
+        <div class="geometric-container">
+            <div class="box1">
+                <img src="{% static '/vab_img/1.png' %}" alt="">
             </div>
-        </form>
-        <h3>
-            <a href='{% url "Userprofile:register" %}'>注册</a>
-        </h3>
-    </div>
+            <div class="box2">
+                <img src="{% static '/vab_img/2.png' %}" alt="">
+            </div>
+            <div class="box3">
+                <img src="{% static '/vab_img/3.png' %}" alt="">
+            </div>
+            <div class="box4">
+                <img src="{% static '/vab_img/4.png' %}" alt="">
+            </div>
+            <div class="box5">
+                <img src="{% static '/vab_img/5.png' %}" alt="">
+            </div>
+            <div class="box6">
+                <img src="{% static '/vab_img/6.png' %}" alt="">
+            </div>
+        </div>
+        <div class="longline"></div>
+        <div class="form-container">
+            <a href="{% url 'showBook' %}" class="iconfont jump">直接跳过&#xe60d;</a>
+            <form action="" class="form-inp" method="post" enctype="multipart/form-data">
+                <!--错误提示-->
+                {% if message %}
+                    <script>alert('{{ message }}');</script>
+                {% endif %}
 
+                {% csrf_token %}
+                <input type="text" class="username" id="username" name="username" placeholder="  Username" autocomplete="off">
+                <input type="password" class="password" id="password" name="password" placeholder="  Password" autocomplete="off">
+                <button class="login-btn" type="submit">登录</button>
+            </form>
 
-{% endblock %}
+            <div class="ornot-wrap">
+                <input type="checkbox" name="ornot" value="ornot" class="ornot">
+                自动登录
+                <div class="forget">忘记密码？
+                    <a href="{% url 'Userprofile:register' %}">注册</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include 'footer.html' %}
 </body>
 </html>

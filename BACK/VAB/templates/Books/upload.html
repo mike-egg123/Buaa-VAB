@@ -5,7 +5,7 @@
     <title>upload</title>
 </head>
 <body>
-<form method="post" action="/Bookupload/" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <label for="Book_name">书名</label>
     <input type="text" id="Book_name" name="Book_name">

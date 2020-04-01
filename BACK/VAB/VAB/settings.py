@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e1vgg(=r24n(_!g2@#wke%bj-ym@m7c6hmv8)a&uyqp^uw_4u&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,6 +122,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'templates/Userprofile/../static')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
 
 # 图片存储
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')     #设置静态文件路径为主目录下的media文件夹

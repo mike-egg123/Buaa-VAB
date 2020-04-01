@@ -4,10 +4,9 @@ from .models import UserProfile
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-from django.contrib import auth
+from django.contrib import auth,messages
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-
 
 # 个人信息
 @login_required
@@ -24,6 +23,9 @@ def profile_update(request, id):
     user_profile = get_object_or_404(UserProfile, user=user)
 
     if request.method == 'POST':
+        if request.user != user:
+            return HttpResponse("你没有权限修改该用户的个人信息")
+
         form = ProfileForm(request.POST,request.FILES)
 
         if form.is_valid():
@@ -35,11 +37,14 @@ def profile_update(request, id):
             user_profile.org = form.cleaned_data['org']
             user_profile.telephone = form.cleaned_data['telephone']
             user_profile.personal_infor = form.cleaned_data['personal_infor']
-            user_profile.headshot = request.FILES.get('headshot')
-            user_profile.save()
 
-            # reverse反转urls并传递参数
-            return HttpResponseRedirect(reverse('Userprofile:profile', args=[user.id]))
+            if 'headshot' in request.FILES:
+                user_profile.headshot = request.FILES.get('headshot')
+
+            user_profile.save()
+            return redirect("Userprofile:profile",id=user.id)
+        else:
+            return HttpResponse("个人信息更新错误，请重试")
 
     else:
         default_data = {'first_name': user.first_name,
@@ -47,10 +52,11 @@ def profile_update(request, id):
                         'org': user_profile.org,
                         'telephone': user_profile.telephone,
                         'personal_intro':user_profile.personal_infor,
-                        'headshot':user_profile.headshot}
-        form = ProfileForm(default_data)
+                        'headshot':user_profile.headshot,
+                        'email':user.email,}
+        form = ProfileForm()
 
-    return render(request, 'Userprofile/profile_update.html', {'form': form, 'user': user})
+    return render(request, 'Userprofile/profile_update.html', default_data)
 
 
 # 注册
@@ -90,7 +96,8 @@ def userlogin(request):
             if user is not None and user.is_active:
                 auth.login(request, user)
                 print(user.id)
-                return redirect('Userprofile:profile', id=user.id)
+                # return redirect('Userprofile:profile', id=user.id)
+                return redirect('showBook')
             else:
                 return render(request, 'Userprofile/login.html', {'form': form,
                                                                   'message': '密码错误，请再输一次'})
@@ -104,8 +111,8 @@ def userlogin(request):
 # 登出
 @login_required
 def userlogout(request):
-    auth.logout(request, pk)
-    return HttpResponseRedirect("/accounts/login/")
+    logout(request)
+    return redirect('showBook')
 
 
 # 修改密码
@@ -135,11 +142,5 @@ def pwd_change(request, pk):
         form = PwdChangeForm()
 
     return render(request, 'Userprofile/pwd_change.html', {'form': form, 'user': user})
-
-
-
-
-
-
 
 

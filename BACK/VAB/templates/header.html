@@ -1,0 +1,26 @@
+<nav>
+    <div>
+        <a href="#">Videos and Books</a>
+        <div>
+            <ul>
+                <li>
+                    <a href="{% url 'showBook' %}">图书</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                    <li>
+                        用户名：{{ userprofile.org }}
+                    </li>
+                    <a href="{% url 'Bookupload' %}">上传图书</a>
+                    <a href="#">上传电影</a>
+                    <a href="{% url 'Userprofile:profile' user.id %}">个人信息</a>
+                    <a href="{% url 'Userprofile:logout' %}">退出登录</a>
+                {% else %}
+                    <li>
+                        <a href="{% url 'Userprofile:login' %}">登录</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

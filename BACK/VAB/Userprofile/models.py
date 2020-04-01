@@ -8,7 +8,7 @@ class UserProfile(models.Model):
     org = models.CharField('Organization', max_length=255, blank=True)
     telephone = models.CharField('Telephone', max_length=50, blank=True)
     mod_date = models.DateTimeField('last modified', auto_now=True)
-    headshot = models.ImageField(upload_to='headshot', blank=True)
+    headshot = models.ImageField(upload_to='headshot', null=True)
     personal_infor = models.TextField(max_length=500, blank=True)
 
     class Meta:

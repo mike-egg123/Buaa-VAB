@@ -7,6 +7,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
@@ -24,14 +53,21 @@
     <setting file="file://$PROJECT_DIR$/Userprofile/views.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Userprofile/forms.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Userprofile/admin.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/webpage/login.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Books/urls.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Userprofile/models.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Books/admin.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Books/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/header.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/footer.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/topbar.html" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/templates/Userprofile/profile.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/VAB/settings.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Userprofile/profile_update.html" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VAB/urls.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/templates/Userprofile/login.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/templates/Books/upload.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Books/Bookdetail.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1ZgiyG8XxG2b71c6p5XI4sptG6P" />
   <component name="ProjectViewState">
@@ -43,13 +79,25 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\VAB\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\VAB\static\vab_img" />
+      <recent name="D:\VAB" />
+      <recent name="D:\VAB\templates\Userprofile" />
+      <recent name="D:\VAB\templates" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="VAB" type="Python.DjangoServer" factoryName="Django server">
@@ -90,7 +138,8 @@
       <workItem from="1585278815914" duration="223000" />
       <workItem from="1585279068248" duration="22970000" />
       <workItem from="1585317644996" duration="43000" />
-      <workItem from="1585317702608" duration="17970000" />
+      <workItem from="1585317702608" duration="27808000" />
+      <workItem from="1585525310832" duration="26410000" />
     </task>
     <servers />
   </component>
@@ -106,17 +155,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="657" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585278859335" />
-    <state x="574" y="57" key="SettingsEditor" timestamp="1585281281435">
+    <state width="210" height="498" key="HiddenNamespacesPopup" timestamp="1585624050880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585281281435" />
-    <state x="852" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1585317702986">
+    <state width="210" height="498" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1585624050880" />
+    <state x="356" y="62" key="SettingsEditor" timestamp="1585487032340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="852" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585317702986" />
-    <state x="814" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585389652691">
+    <state x="356" y="62" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585487032340" />
+    <state x="852" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1585525318286">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="814" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585389652691" />
+    <state x="852" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585525318286" />
+    <state x="814" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585618622031">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="814" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585618622031" />
   </component>
 </project>

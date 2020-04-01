@@ -7,6 +7,9 @@
 <body>
 {% block content %}
     <div>
+        {% include 'topbar.html' %}
+    </div>
+    <div>
         <h3>用户名：{{ userprofile.org }}</h3>
         {% if userprofile.headshot %}
         头像：<img src="{{ userprofile.headshot.url }}" style="max-width: 20%; border-radius: 15%";><br>

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+</head>
+<body>
+    <ul class="topbar">
+        <li class="logo">
+            <img src="{% static '/vab_img/logo.jpg.png' %}" alt="logo" class="logo">
+        </li>
+        <li>
+            <div class="line"></div>
+        </li>
+        <li class="home">
+            <a href="#">
+                <i class="iconfont">&#xe61f;</i>
+                <div>home</div>
+            </a>
+        </li>
+        <li class="book">
+            <a href="{% url 'showBook' %}">
+                <i class="iconfont">&#xe66c;</i>
+                <div>book</div>
+            </a>
+        </li>
+        <li class="topbar_child">
+            <a href="#">
+                <i class="iconfont video">&#xe605;</i>
+                <div>video</div>
+            </a>
+        </li>
+        <li class="group">
+            <a href="#">
+                <i class="iconfont">&#xe654;</i>
+                <div>group</div>
+            </a>
+        </li>
+        <li class="topic">
+            <a href="#">
+                <i class="iconfont topic">&#xe8b1;</i>
+                <div>topic</div>
+            </a>
+        </li>
+        <li class="user">
+            {% if user.is_authenticated %}
+            <a href="{% url 'Userprofile:profile' user.id %}">
+                <i class="iconfont">&#xe646;</i>
+                <div>{{ user.username }}</div>
+                &nbsp;&rightleftharpoons;&nbsp;
+                <a href="{% url 'Userprofile:logout' %}">logout</a>
+            </a>
+            {% else %}
+            <a href="{% url 'Userprofile:login' %}">
+                <i class="iconfont">&#xe646;</i>
+                <div>请登录</div>
+            </a>
+            {% endif %}
+        </li>
+    </ul>
+</body>
+</html>

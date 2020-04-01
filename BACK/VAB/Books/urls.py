@@ -1,8 +1,9 @@
 from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.showBook),
-    url(r'^(\d+)$', views.Bookdetail),
-    url('upload', views.Bookupload),
+    path('', views.showBook, name='showBook'),
+    path('<int:id>', views.Bookdetail, name='Bookdetail'),
+    path('upload', views.Bookupload, name='Bookupload'),
 ]

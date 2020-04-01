@@ -1,15 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookDetail</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/introduce_style.css' %}">
 </head>
 <body>
+    <!-- 设置外层容器 -->
+    <div class="outer">
+        <!-- 设置图片容器 -->
+        <div class="image">
+            <a href="javasprit:;">
+                <img src="/media/{{ a_book.Book_img }}" alt="">
+            </a>
+        </div>
+        <!-- 设置标题、作者容器 -->
+        <div class="title">
 
-<h1>{{ a_book.Book_name }}</h1>
-<hr>
-<h3>作者：{{ a_book.Book_auth }}</h3>
-<h4>简介：{{ a_book.Book_intro }}</h4>
-<img src="/media/{{ a_book.Book_img }}">
+            <a href="javasprit:;"><h2>{{ a_book.Book_name }}</h2></a>
+            <div>作者: {{ a_book.Book_auth }}</div>
+            <div>类型：未定</div>
+            <!-- 设置评价 -->
+            <ul class="star">
+                <li>推荐：
+                    <i class="iconfont ystar">&#xe610;</i>
+                    <i class="iconfont ystar">&#xe610;</i>
+                    <i class="iconfont ystar">&#xe610;</i>
+                    <i class="iconfont ystar">&#xe610;</i>
+                    <i class="iconfont gstar">&#xe610;</i>
+                </li>
+            </ul>
+        </div>
+        <!-- 设置介绍内容 -->
+        <div class="intro">
+            <p>
+                {{ a_book.Book_intro }}
+            </p>
+        </div>
+    </div>
 </body>
 </html>
