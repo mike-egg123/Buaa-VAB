@@ -8,85 +8,90 @@
     }
     /* 设置外部容器样式 */
     ul.topbar{
-        width:1200px;
+        width:1250px;
         height:60px;
         /* 确保行高居中 */
-        line-height: 60px;
         background-color: rgb(245, 239, 239);
         /* 设置水平居中 */
-        margin:10px auto;
-        box-shadow:10px 10px 10px rgb(233, 230, 230) ;
+        margin:30px auto;
+        box-shadow:10px 10px 15px rgba(228, 226, 226, 0.7) ;
         border-radius:15px;
         display: flex;
+        flex-wrap: nowrap;
     }
     li{
-        padding-right:60px;
-        padding-top: 10px;
-        /* float:left; */
-        display: flex;
-        flex: 1 1 auto;
+        height:60px;
+        line-height: 60px;
+        text-align: center;
+        flex-grow: 1;
+        flex-shrink: 1;
     }
     li:not(:nth-child(2)){
         justify-content:center;
         align-items:center;
     }
-    li.user{
-        text-align: center;
+    /*logo*/
+    .logo-wrap{
+        flex-grow: 1.5;
     }
-    li.user a.user1 > i{
-        font-size: 23px;
-        font-weight: normal;
+    /* 设置user */
+    .user-wrap{
+        display:flex;
+        flex-grow: 2;
     }
-    li.user i.l{
-        color:rgb(233, 185, 177);
+    .user-wrap a{
+        font-size: 19px;
+        font-weight: bold;
     }
-    a{
-        display: flex;
-    }
-    /* 设置line */
-    li:nth-child(2){
-        padding-left:10px;
-        padding-right:10px;
-        margin-top:7px;
-        margin-right:40px;
-        margin-left:12px;
-    }
-    /* 设置user*/
-    li:last-child{
-        margin-left:80px;
-        margin-right:5px;
+    /* 设置user竖线 */
+    .user-wrap .l{
+        margin-top: 5px;
+        color:rgba(187, 186, 186, 0.5);
+        font-size: 30px;
     }
     /* 设置logo*/
-    .logo{
-        width:110px;
-        height:45px;
-        padding-left:35px;
+    img.logo{
+        margin-top: 5px;
+        height:50px;
     }
-    /* 设置分割线 */
+    /* 设置line */
+    .line-wrap{
+        text-align: center;
+        flex-grow: .7;
+    }
     .line{
         width:1px;
         height:30px;
+        margin: 15px 0 15px;
         background-color:rgb(214, 195, 191);
+    }
+    /* 设置user */
+    a.user-wrap{
+        justify-content: center;
     }
     /* 设置小图标 */
     .iconfont{
-        font-size:25px;
-        margin-right:10px;
+        font-weight: bolder;
+        font-size:24px;
     }
     /* 设置文字 */
-    a,div{
+    a{
+        display: flex;
         text-decoration:none;
-        font-size: 16px;
         color:tomato;
-        /* float:right; */
-        font-weight: bolder;
     }
-    ul a i:hover{
+    a p{
+        margin-top: 3px;
+        flex-grow: .3;
+        font-size: 17px;
+    }
+    a:hover{
         color:rgb(243, 191, 182);
     }
-    ul a span:hover{
+    a > div:hover{
         color:rgb(243, 191, 182);
     }
+
     main{
         display: flex;
         /* background-color: thistle; */
@@ -216,11 +221,18 @@
         margin-top: 20px;
 
     }
+    .ornot-wrap{
+        color:rgb(134, 132, 132);
+    }
     .ornot-wrap .ornot{
+        display: block;
         width: 20px;
         height: 20px;
+        margin-top: 15px;
+        margin-right: 6px;
         margin-bottom: 0px;
         line-height: 20px;
+        float: left;
     }
     .ornot-wrap .forget{
         margin-right:100px ;
