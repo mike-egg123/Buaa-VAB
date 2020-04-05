@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css_remove/reset.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <style>
+        .outer{
+            width: 380px;
+            height: 1050px;
+            margin: 30px auto;
+            box-shadow:0 0 10px rgb(190, 190, 186);
+            border-radius: 15px;
+        }
+        .outer > div.label{
+            height: 50px;
+            /* background-color: coral; */
+            line-height:50px;
+            text-align:center;
+            border-radius: 15px;
+            font-size: 19px;
+            font-weight: bold;
+            color: rgb(102, 101, 101);
+            letter-spacing: 3px;
+        }
+        /* 设置横线 */
+        .outer > div.line{
+            height: 1.5px;
+            line-height:1px;
+            width:90%;
+            border-radius: 15px;
+            margin: 5px auto 3px;
+            background-color: rgba(190, 184, 184,.5);
+        }
+        .outer .ul-container{
+            width: 340px;
+            height: 135px;
+            /* background-color: thistle; */
+            display: flex;
+            flex-wrap:wrap;
+            align-content:space-around;
+            /* justify-content:center; */
+            margin-left:16px;
+        }
+        .outer .ul-container:last-child{
+            height: 70px;
+        }
+        .outer .ul-container:nth-of-type(2),
+        .outer .ul-container:nth-of-type(6),
+        .outer .ul-container:nth-of-type(7){
+            height: 95px;
+        }
+        .ul-container li{
+            margin-left:8px;
+            width:77px;
+            height: 30px;
+            text-align: center;
+            line-height: 40px;
+            
+            /* border: thistle 2px solid; */
+            
+        }
+        /* 设置标签 */
+        .ul-container .literature{
+            width: 60px;
+            height: 32px;
+            line-height: 32px;
+            margin-right: 15px;
+            margin-left: 5px;
+            margin-top: 5px;
+            border-radius: 10px;
+            color: rgb(253, 251, 251);
+            font-size: 16.5px;
+            font-weight: bold;
+            background-color: tomato;
+        }
+        /* 设置超链接 */
+        .ul-container a{
+            display: block;
+            width: 82px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 15px;
+            color:rgb(107, 105, 107);
+        }
+        /* 设置点击效果 */
+        .ul-container a:hover{
+            background-color: rgb(243, 191, 182);
+            color:whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="iconfont label">&#xe662; 全部标签</div>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">文学</div>
+            </li>
+            <li>
+                <a href="javasprit:;">小说</a>
+            </li>
+            <li>
+                <a href="javasprit:;">传记</a>
+            </li>
+            <li>
+                <a href="javasprit:;">纪实</a>
+            </li>
+            <li>
+                <a href="javasprit:;">影视</a>
+            </li>
+            <li>
+                <a href="javasprit:;">诗歌</a>
+            </li>
+            <li>
+                <a href="javasprit:;">童话</a>
+            </li>
+            <li>
+                <a href="javasprit:;">期刊杂志</a>
+            </li>
+            <li>
+                <a href="javasprit:;">戏剧</a>
+            </li>
+            <li>
+                <a href="javasprit:;">美术</a>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">历史</div>
+            </li>
+            <li>
+                <a href="javasprit:;">中国史</a>
+            </li>
+            <li>
+                <a href="javasprit:;">世界史</a>
+            </li>
+            <li>
+                <a href="javasprit:;">考古学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">畅销史书</a>
+            </li>
+            <li>
+                <a href="javasprit:;">民族学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">史学理论</a>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">计算机</div>
+            </li>
+            <li>
+                <a href="javasprit:;">操作系统</a>
+            </li>
+            <li>
+                <a href="javasprit:;">网络安全</a>
+            </li>
+            <li>
+                <a href="javasprit:;">电子商务</a>
+            </li>
+            <li>
+                <a href="javasprit:;">硬件开发</a>
+            </li>
+            <li>
+                <a href="javasprit:;">数据库</a>
+            </li>
+            <li>
+                <a href="javasprit:;">程序设计</a>
+            </li>
+            <li>
+                <a href="javasprit:;">人工智能</a>
+            </li>
+            <li>
+                <a href="javasprit:;">算法</a>
+            </li>
+            <li>
+                <a href="javasprit:;">编程语言</a>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">哲学</div>
+            </li>
+            <li>
+                <a href="javasprit:;">东方哲学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">西方哲学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">哲学史</a>
+            </li>
+            <li>
+                <a href="javasprit:;">马克思</a>
+            </li>
+            <li>
+                <a href="javasprit:;">逻辑学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">伦理学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">美学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">宗教</a>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">科技</div>
+            </li>
+            <li>
+                <a href="javasprit:;">机械</a>
+            </li>
+            <li>
+                <a href="javasprit:;">建筑</a>
+            </li>
+            <li>
+                <a href="javasprit:;">电子通信</a>
+            </li>
+            <li>
+                <a href="javasprit:;">化学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">物理</a>
+            </li>
+            <li>
+                <a href="javasprit:;">水利</a>
+            </li>
+            <li>
+                <a href="javasprit:;">能源与动力</a>
+            </li>
+            <li>
+                <a href="javasprit:;">生物医学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">矿业与冶炼</a>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">社会</div>
+            </li>
+            <li>
+                <a href="javasprit:;">经济</a>
+            </li>
+            <li>
+                <a href="javasprit:;">管理</a>
+            </li>
+            <li>
+                <a href="javasprit:;">心理</a>
+            </li>
+            <li>
+                <a href="javasprit:;">商务实务</a>
+            </li>
+            <li>
+                <a href="javasprit:;">财政税收</a>
+            </li>
+            <li>
+                <a href="javasprit:;">银行与货币</a>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">考研</div>
+            </li>
+            <li>
+                <a href="javasprit:;">考研数学</a>
+            </li>
+            <li>
+                <a href="javasprit:;">考研英语</a>
+            </li>
+            <li>
+                <a href="javasprit:;">考研政治</a>
+            </li>
+            <li>
+                <a href="javasprit:;">考研计算机</a>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">青年</div>
+            </li>
+            <li>
+                <a href="javasprit:;">玄幻</a>
+            </li>
+            <li>
+                <a href="javasprit:;">言情</a>
+            </li>
+            <li>
+                <a href="javasprit:;">侦探</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
