@@ -193,6 +193,19 @@
         color:rgb(128, 128, 126);
         box-shadow: 0 0 10px rgb(228, 228, 228);
     }
+     /* 设置最新最热 */
+    .book_intr-wrap .newbook{
+        background-color: #fff;
+        width: 600px;
+        height: 50px;
+        line-height: 50px;
+        margin:10px auto;
+        border-radius: 10px;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        color:#f8ac9f;
+    }
     /* 设置书的介绍 */
     .book_intr-wrap .outer1,.book_intr-wrap .outer2,
     .book_intr-wrap .outer3,.book_intr-wrap .outer4,
@@ -485,9 +498,9 @@
 /* 设置页码 */
 .pagenum-wrap{
     /* background-color: rgb(243, 191, 182); */
-    margin:5px auto;
+    margin:40px auto;
 }
-.pagenum-wrap ul{
+.pagenum-wrap .nav{
     width: 700px;
     height:40px;
     line-height: 40px;
@@ -496,11 +509,11 @@
     display:flex;
     justify-content:space-between
 }
-.pagenum-wrap ul > li{
+.pagenum-wrap .nav > .nav1{
     /* flex-grow: 1; */
     justify-content:space-between
 }
-.pagenum-wrap ul a{
+.pagenum-wrap .nav a{
     display:block;
     width: 40px;
     height: 40px;
@@ -511,19 +524,19 @@
     border-radius: 10px;
 }
 /* 设置图标 */
-.pagenum-wrap ul .left,
-.pagenum-wrap ul .omit,
-.pagenum-wrap ul .right{
+.pagenum-wrap .nav .left,
+.pagenum-wrap .nav .omit,
+.pagenum-wrap .nav .right{
     font-size: 17px;
     font-weight: bolder;
 }
 /* 设置省略号 */
-.pagenum-wrap ul .omit{
+.pagenum-wrap .nav .omit{
     border:unset;
     margin-top:15px;
 }
 /* 设置竖线 */
-.pagenum-wrap ul .line{
+.pagenum-wrap .nav .line{
     width: 1px;
     height: 35px;
     background-color: rgba(194, 193, 193,.7);
@@ -532,20 +545,20 @@
     margin-right: 20px;
 }
 /* 设置goto */
-.pagenum-wrap ul .goto{
+.pagenum-wrap .nav .goto{
     color: rgb(119, 118, 117);
     font-weight: bold;
     font-size: 18px;
 }
 /* 设置表单 */
-.pagenum-wrap ul div{
+.pagenum-wrap .nav .box{
     width: 50px;
     border:  rgb(194, 193, 193) 2px solid;
     line-height: 30px;
     border-radius: 10px;
     /* background-color: thistle; */
 }
-.pagenum-wrap ul .page{
+.pagenum-wrap .nav .page{
     width: 46px;
     border:unset;
     border-radius: 10px;
@@ -555,7 +568,7 @@
     /* background-color: turquoise; */
 }
 /* 设置点击效果 */
-.pagenum-wrap ul a:not(.omit):hover{
+.pagenum-wrap .nav a:not(.omit):hover{
     color:tomato;
     border: tomato 2px solid;
     transition: all .25s;
