@@ -195,16 +195,31 @@
     }
      /* 设置最新最热 */
     .book_intr-wrap .newbook{
-        background-color: #fff;
         width: 600px;
         height: 50px;
         line-height: 50px;
-        margin:10px auto;
+        margin:20px auto;
+        display: flex;
+        justify-content:space-around
+    }
+    .book_intr-wrap .newbook a{
+        display:block;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #fff;
         border-radius: 10px;
         font-size: 16px;
-        letter-spacing: 1.5px;
+        letter-spacing: 1.7px;
         font-weight: bold;
+        border: #f8ac9f 2px solid;
         color:#f8ac9f;
+    }
+    .book_intr-wrap .newbook a:hover{
+        color:rgb(250, 234, 234);
+        border: rgb(250, 234, 234) 2px solid;
+        background-color: tomato;
     }
     /* 设置书的介绍 */
     .book_intr-wrap .outer1,.book_intr-wrap .outer2,
@@ -238,11 +253,22 @@
     .book_intr-wrap .outer3 .image,
     .book_intr-wrap .outer4 .image,
     .book_intr-wrap .outer5 .image{
-        height:85%;
+        height:285px;
         margin:5px 15px 10px 5px;
         /* background-color: tomato; */
         float:right;
+        overflow:hidden;
         /* border-radius:15px; */
+    }
+    .book_intr-wrap .outer1 .image a,
+    .book_intr-wrap .outer2 .image a,
+    .book_intr-wrap .outer3 .image a,
+    .book_intr-wrap .outer4 .image a,
+    .book_intr-wrap .outer5 .image a{
+        display:block;
+        height:285px;
+        width: 200px;
+        overflow:hidden;
     }
     .book_intr-wrap .outer1 .image img,
     .book_intr-wrap .outer2 .image img,
