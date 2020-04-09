@@ -1,6 +1,7 @@
     /* header{ */
         /* 粘滞定位必须在父元素中 */
-        /* position:fixed;
+        /* background-color: white;
+        position:fixed;
         top:0px; */
     /* } */
     /* 设置外部容器样式 */
@@ -113,9 +114,14 @@
     .topbook-wrap .find-wrap{
         /* border: rgb(109, 111, 114) 2px solid; */
         margin-left:350px;
-        
+        /* background-color: turquoise; */
+    }
+    .topbook-wrap .find-wrap .find{
+        display:flex;
+        /* background-color: thistle; */
     }
     .topbook-wrap .find-inp{
+        display:block;
         padding-left: 15px;
         outline: none;
         width: 380px;
