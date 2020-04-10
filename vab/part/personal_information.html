@@ -1,0 +1,79 @@
+<!doctype html>
+<html ng-app="app" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>personal_information</title>
+	<link rel="stylesheet" href="../css_remove/reset.css">
+	<link rel="stylesheet" href="../css_style/base.css">
+	<link rel="stylesheet" href="../css_style/personal_information.css">
+	
+	<link rel="stylesheet" type="text/css" href="../css_style/birthday/wui.min.css">
+	
+	<link rel="stylesheet" href="../css_style/limit/normalize.min.css">
+    <link rel="stylesheet prefetch" href="../css_style/limit/animate.min.css">
+    <link rel="stylesheet" href="../css_style/limit/style.css">
+	
+	
+	<script type="text/javascript" src="../js/personal_information/date/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/personal_information/date/angular.min.js"></script>
+	<script type="text/javascript" src="../js/personal_information/date/wui-date.js" charset="utf-8"></script>
+	<script type="text/javascript">var app = angular.module('app',["wui.date"]);</script>
+	
+  	<script type="text/javascript">
+		function previewFile() {
+		 var preview = document.querySelector('.img-pro');
+		 var file  = document.querySelector('input[type=file]').files[0];
+		 var reader = new FileReader();
+		 reader.onloadend = function () {
+		  preview.src = reader.result;
+		 }
+		 if (file) {
+		  reader.readAsDataURL(file);
+		 } else {
+		  preview.src = "img-p";
+		 }
+		}
+	</script>
+</head>
+
+<body>
+	<div class="personal_page" id="personal_page">
+		<form>
+			<div class="person_head">
+				<div class="person_bg">
+					<img src="../vab_img/bg_example.jpg" alt="bg">
+				</div>
+				<div class="profile_picture" >
+					<img src="img-p" class="img-pro" alt="">
+				</div>
+				<div class="words">
+					<input type="text" class="head_username" placeholder="我是用户名" ><br/>
+					<input type="text" class="sentence" placeholder="这是我的个性签名。" >
+					<input type="file" onchange="previewFile()" class="file_profile" name="file_profile" id="file_profile" accept="image/gif, image/jpeg, image/png, image/jpg">
+					<button class="change">编辑资料</button>
+				</div>
+			</div>
+			<div id="tree">
+				<script src="../js/personal_information/tree/person_tree_script.js"></script>
+			</div>
+			<div class="person_information">
+				用&nbsp;户&nbsp;名：<input type="text" class="username" placeholder="用户名"><br/>
+
+				生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日：<wui-date format="yyyy-mm-dd" placeholder="请选择或输入日期" id="date1" btns="{'ok':'确定','now':'此刻'}" ng-model="date1"></wui-date><br/>
+				电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：<input type="tel" placeholder="请输入电话号码" class="tel"><br/>
+				邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="email" placeholder="请输入邮箱" class="email"><br/><br/>
+				简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介：<div id="root"></div>
+				<script type="text/javascript"  src="../js/personal_information/limit/react.min.js"></script>
+				<script type="text/javascript"  src="../js/personal_information/limit/react-dom.min.js"></script>
+				<script type="text/javascript"  src="../js/personal_information/limit/prop-types.js"></script>
+				<script type="text/javascript"   src="../js/personal_information/limit/index.js"></script>
+				<div class="submit">
+					<button>确认修改</button>
+					<button>取消</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+</body>
+</html>
