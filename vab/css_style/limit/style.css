@@ -1,0 +1,73 @@
+h1 {
+  font-size: 27px;
+  margin-bottom: 10px;
+  color: #272727;
+}
+.container {
+  background: #76daff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+/* loader Styles started*/
+.loader-wrapper {
+  display: inline-block;
+  margin: 10px;
+  width: 550px;
+}
+.input-wrapper {
+  width: 650px;
+  height: 380px;
+  border: rgb(253, 229, 229) 2px solid;
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  position: relative;
+	margin-left: -5px;
+	box-shadow: 0 0 5px rgba(255,209,209,0.5); 
+}
+.input-wrapper:hover {
+  width: 650px;
+  height: 380px;
+  border: rgb(253, 229, 229) 2px solid;
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+	margin-left: -5px;
+	left: -2px;
+	top:-2px;
+  position: relative;
+	box-shadow: 0 0 15px rgba(255,209,209,1); 
+}
+textarea,input{
+  font-size: 17px;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.count {
+  width: 630px;
+  font-size: 13px;
+  margin: 10px;
+  color: #727272;
+  position: relative;
+  right: 0;
+  text-align: right;
+  display: block;
+}
+.loader {
+  position: absolute;
+  bottom: 0;
+  border-top: 2px solid;
+  width: 100px;
+  height: 0px;
+  display: block;
+  transition: 0.27s all linear;
+}
+/* loader Styles ended */

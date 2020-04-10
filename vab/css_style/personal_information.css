@@ -1,0 +1,218 @@
+body{
+	background-color: rgba(255,255,255,1.00);
+}
+/*个人背景*/
+.personal_page{
+	margin: 40px;
+	height: auto;
+}
+.person_head{
+	border-radius: 7px;
+	box-shadow: 0 0 15px rgba(255,209,209,1); 
+	
+}
+
+.person_bg{
+	height: 300px;
+	overflow: hidden;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+.person_bg img{
+	width: 100%;
+	height: auto;
+	z-index: -1;
+}
+/*个人头像*/
+.profile_picture{
+	box-shadow: 0 0 15px rgba(255,229,229,0.5); 
+	height: 150px;
+	width: 150px;
+	border-radius: 7px;
+	border: rgb(253, 229, 229) 2px solid;
+	float: left;
+	position: relative;
+	left: 200px;
+	top: -50px;
+	overflow: hidden;
+	vertical-align: middle;
+	background-image: url(../vab_img/profile_example.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+/*头像图片*/
+.profile_picture img{
+	width: 150px;
+	height: 150px;
+}
+.file_profile{
+	position: relative;
+	left: -580px;
+	top:26px;
+}
+/*个性签名等头部文字的div*/
+.words{
+	height: 150px;
+	background-color: rgba(255,255,255,1.00);
+	border-bottom: rgb(253, 229, 229) 2px solid;
+	border-radius: 7px;
+	padding-left: 400px;
+	padding-top: 40px;
+	
+}
+.sentence{
+	margin-top: 10px;
+	color: gray;
+	font-size: 25px;
+	font-weight: bolder;
+}
+.sentence:hover{
+	left: -2px;
+	top:-2px;
+  position: relative;
+}
+.head_username{
+	margin-top: -20px;
+	color:black;
+	font-size: 25px;
+	font-weight: bolder;
+}
+.head_username:hover{
+	left: -2px;
+	top:-2px;
+  position: relative;
+}
+/*编辑资料按钮*/
+.change{
+	color: tomato;
+	border: rgb(253, 229, 229) 2px solid;
+	border-radius: 7px;
+	padding-right: 2px;
+	background-color: rgba(253, 229, 229,0.3);
+	float: right;
+	position: relative;
+	top:55px;
+	right:14px;
+}
+/*个人信息框*/
+.person_information {
+	padding-top: 70px;
+	color:dimgray;
+	font-size: 19px;
+	padding-left: 380px;
+	font-weight: bold;
+	height:auto;
+}
+#tree{
+	overflow: hidden;
+	width: 100%;
+	margin-top: 0px;
+	padding: 0px;
+}
+canvas{
+	margin-top: 0px;
+	float: left;
+	position: absolute;
+	z-index: -1;
+}
+/*电话、用户名*/
+.person_information .tel{
+	border-radius: 7px;
+	width: 350px;
+	border: rgb(253, 229, 229) 2px solid;
+	box-shadow: 0 0 5px rgba(255,209,209,0.5); 
+	padding-left: 5px;
+	margin-bottom: 12px;
+	margin-top:12px;
+	color:gray;
+	font-size: 16px;
+	height: 40px;
+}
+.person_information .username{
+	border-radius: 7px;
+	width: 350px;
+	border: rgb(253, 229, 229) 2px solid;
+	box-shadow: 0 0 5px rgba(255,209,209,0.5); 
+	padding-left: 5px;
+	margin-bottom: 12px;
+	margin-top:12px;
+	color:gray;
+	font-size: 16px;
+	height: 40px;
+	margin-left: -1px;
+}
+/*邮箱*/
+.person_information .email{
+	width: 350px;
+	border-radius: 7px;
+	border: rgb(253, 229, 229) 2px solid;
+	box-shadow: 0 0 5px rgba(255,209,209,0.5); 
+	padding-left: 5px;
+	margin-bottom: 5px;
+	margin-top: 1px;
+	color:gray;
+	font-size: 16px;
+	height: 40px;
+}
+.email:hover{
+	left: -2px;
+	top:-2px;
+  position: relative;
+	box-shadow: 0 0 15px rgba(255,209,209,1); 
+}
+.tel:hover{
+	left: -2px;
+	top:-2px;
+  position: relative;
+	box-shadow: 0 0 15px rgba(255,209,209,1); 
+}
+.username:hover{
+	left: -2px;
+	top:-2px;
+  position: relative;
+	box-shadow: 0 0 15px rgba(255,209,209,1); 
+}
+/*设置简介input外的div*/
+#root{
+	margin-left: 80px;
+	width:800px;
+	height: 380px;
+	margin-top: -35px;
+	margin-bottom: 20px;
+	margin-right: 2px;
+	color:gray;
+	font-size: 15px;
+}
+/*设置简介的input*/
+.intro{
+	height: 380px;
+	width: 650px;
+	line-height: 25px;
+	padding-left: 8px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: gray;
+	font-size: 17px;
+}
+/*两个按钮*/
+.personal_page .submit button{
+    width: 170px;
+	height: 40px;
+	margin-top: 17px;
+	background-color: rgb(243, 227, 224);
+	font-size: 17px;
+	letter-spacing:10px;
+	font-weight: bold;
+	color: tomato;
+	border-radius: 7px;
+	border: rgb(245, 236, 236) 2px solid;
+	margin-left:150px;
+	margin-bottom: -300px;
+}
+.personal_page .submit button:hover{
+	left: -2px;
+	top:-2px;
+  position: relative;
+	box-shadow: 0 0 5px rgba(255,209,209,0.5); 
+}
