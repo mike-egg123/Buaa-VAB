@@ -1,0 +1,65 @@
+ .outer{
+            width: 360px;
+            height: 800px;
+            margin: 30px auto;
+            background-color: rgb(252, 252, 247);
+            box-shadow:0 0 10px rgb(190, 190, 186);
+            border-radius: 15px;
+	  display: flex;
+        flex: 1 1 auto;
+        }
+.rdht a{
+            display: block;
+            text-decoration: none;
+            line-height:38px;
+            color:rgb(107, 105, 107);
+            /* background-color: yellowgreen; */
+        }
+.rdht{
+	font-size: 20px;
+	padding: 20px 10px;
+	 transition: .3s linear;
+}
+.outer:hover{
+	
+	transform: scale(1.005);
+}
+.rdht li{
+	margin: 10px 0px;
+	 transition: .3s linear;
+}
+.l01 a{
+	color: tomato;
+	font-size: 28px;
+	border-top: none;
+}
+.l0203 a{
+	color:  rgb(225,200, 200);
+	font-size: 25px;
+}
+.rdht li:hover{
+	margin: 10px 0px;
+	transform: scale(1.1);
+}
+.rdht span{
+	font-style: oblique;
+}
+.l01,.l0203 span{
+	font-weight: bolder;
+}
+.top-img{
+	height: 0px;
+	overflow: hidden;
+}
+.top-img img{
+	width: 130%;
+	margin-left: -30px;
+	margin-top: -30px;
+}
+.rdht ul{
+	padding-left: 20px;
+}
+.count{
+	font-size: 14px;
+	font-style: oblique;
+}
