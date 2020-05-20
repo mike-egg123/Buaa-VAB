@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css_remove/reset.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css_style/评论区.css">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 300px;
+            margin: 20px auto;
+            background-color: lightcoral;
+            text-align: center;
+            /* display: flex; */
+        }
+
+        img {
+            width: 100%;
+        }
+        .btn01,.btn02{
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align:left;
+            line-height: 10px;
+            background-color: rgb(255, 255, 255);
+            color: tomato;
+            box-shadow:0px 0px 15px rgb(245, 190, 180);
+            border: 1px solid #fff;
+            outline:none
+        }
+        .btn01{
+            margin-left: -20px;
+            margin-top:-160px;
+        }
+        .btn02{
+            margin-left: 270px;
+            margin-top:-30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //获取button对象
+            var first = document.getElementById("first");
+            var second = document.getElementById("second");
+            var img = document.getElementsByTagName("img")[0];
+            var imgArray = ["../vab_img/1.png", "../vab_img/2.png", "../vab_img/3.png", "../vab_img/4.png"];
+            var dex = 0;
+            first.onclick = function () {
+                dex--;
+                if (dex < 0) dex = imgArray.length - 1;
+                img.src = imgArray[dex];
+            };
+            second.onclick = function () {
+                dex++;
+                if (dex > imgArray.length - 1) dex = 0;
+                img.src = imgArray[dex];
+            };
+        };
+    </script>
+
+</head>
+
+<body>
+    <div class="outer">
+        <img src="../vab_img/1.png" alt="这是一组漫画图" />
+        <button type="button" class="btn01 glyphicon glyphicon-chevron-left" id="first"></button>
+        <button type="button" class="btn02 glyphicon glyphicon-chevron-right" id="second"></button>
+    </div>
+</body>
+
+</html>
