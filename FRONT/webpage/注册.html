@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css_remove/reset.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css_style/topbar_style.css">
+    <link rel="stylesheet" href="../css_style/注册page.css">
+    <script src="../vab_js/注册.js"></script>
+</head>
+<body>
+    <header>
+        <ul class="topbar">
+            <li class="logo-wrap">
+                <img src="../vab_img/logo.jpg.png" alt="logo" class="logo">
+            </li>
+            <li class="line-wrap">
+                <div class="line"></div>
+            </li>
+            <li class="home">
+                <a href="#" class="iconfont">&#xe61f;
+                    <p>home</p>
+                </a>
+            </li>
+            <li class="book">
+                <a href="../webpage/book_page.html" class="iconfont">&#xe66c;
+                    <p>book</p>
+                </a>
+            </li>
+            <li class="video">
+                <a href="../webpage/book_page.html" class="iconfont">&#xe605;
+                    <p>video</p>
+                </a>
+            </li>
+            <li class="group">
+                <a href="#" class="iconfont">
+                    &#xe654;
+                    <p>group</p>
+                </a>
+            </li>
+            <li class="topic">
+                <a href="#" class="iconfont">
+                    &#xe8b1;
+                    <p>topic</p>
+                </a>
+            </li>
+            <li class="topic">
+                <a href="#" class="iconfont">
+                    &#xe638;
+                    <p>logout</p>
+                </a>
+            </li>
+            <li class="user-wrap">
+                <a href="#" class="user1">
+                    登录
+                </a>
+                <i class="iconfont l">&#xe63a;</i>
+                <a href="#" class="user1">
+                    注册
+                </a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="geometric-container">
+            <img src="../vab_img/1.png" alt="这是一组漫画图" class="alterimg"/>
+            <button type="button" class="btn01 glyphicon glyphicon-chevron-left" id="first"></button>
+            <button type="button" class="btn02 glyphicon glyphicon-chevron-right" id="second"></button>
+        </div>
+        <div class="longline"></div>
+        <div class="form-container">
+            <a href="#" class="iconfont jump">直接跳过&#xe60d;</a>
+            <form action="" class="form-inp">
+    
+                <input type="text" class="username" placeholder="  Username" id="iname">
+                <input type="email" class="username" placeholder="  Email" id="iemail">
+                <input type="password" class="password" placeholder="  Password" id="ipassword1">
+                <input type="password" class="password" placeholder="  Password Again" id="ipassword2">
+                <button class="login-btn" id="ilogin-btn">注册</button>
+            </form>
+            <div class="ornot-wrap">
+                <input type="checkbox" name="ornot" value="ornot" class="ornot">
+                自动登录
+                <div class="forget">忘记密码？
+                    <a href="#">注册</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="hidden" id="myalert01">
+                    <div class="alert alert-danger">不能有空!</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="hidden" id="myalert02">
+                    <div class="alert alert-success">提交完成!</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer
+        style=" background-color: rgb(243, 191, 182); color: rgb(255, 255, 255); padding: 30px 50px;font-family:Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace';height: auto">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="margin: 12px 0px;margin-bottom: 17px;">
+                <table>
+                    <tr style="height: 35px;">
+                        <td>
+                            <img src="../vab_img/logo.jpg.png" alt="logo" style="width: auto; height:35px;">
+                        </td>
+                        <td style="height: 35px;line-height: 35px;color: #FF6347;font-weight: bold">
+                            &nbsp;&nbsp;Vedio and book
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="margin: 8px 0px;">Copyright &copy;2020 by “这是我们的组名”
+            </div>
+            <div style="margin: 8px 0px;">若本站收录内容无意侵犯了贵公司版权，请给网页底部微信或邮箱地址来信，我们会及时处理和回复，谢谢合作</div>
+            <div style="margin: 8px 0px;">Email：“这里是一个邮箱”还可以有其他东西</div>
+            <div style="width: 300px;height: 1px; background-color: #FFFFFF;margin-top: 20px;"></div>
+            <div style="margin: 8px 0px; margin-top: 13px;height: auto;">
+                <a href="#" class="wechat">
+                    <div class="wechat-img">
+                        <img src="//piccache.cnki.net/kdn/index/kns7/nimages/logo_wx.png" alt="微信">
+                    </div>
+                    <div style="border-radius: 10px; border-radius: 10px;color: rgba(255,99,71,1.00);">
+                        <img class="qrcode" src="../vab_img/qrcode.jpg" alt="微信二维码">
+                    </div>
+                </a>
+            </div>
+    
+        </div>
+    </footer>
+</body>
+</html>
