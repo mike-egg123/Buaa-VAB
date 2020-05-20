@@ -50,7 +50,7 @@
         font-size: 30px;
     }
     /* 设置logo*/
-    img.logo{
+    .logo{
         margin-top: 5px;
         height:50px;
     }
@@ -98,63 +98,49 @@
         margin:15px auto;
         justify-content:space-evenly;
     }
-    /* 设置几何的容器 */
-    .geometric-container{
-        width: 240px;
-        height: 240px;
-        /* background-color: #fab; */
-        margin-top: 120px;
-        margin-left:120px;
-        /* 3d旋转效果 */
-        transform-style: preserve-3d;
-        animation: my3d linear infinite 20s;
+
+
+    .geometric-container {
+        width: 400px;
+        margin: 40px;
+        text-align: center;
+        /* display: flex; */
     }
-    .geometric-container > div{
-        width: 240px;
-        height: 240px;
-        /* 设置透明 */
-        opacity:.7;
-        /* 让图片重合到一起 */
-        position: absolute;
+
+    .geometric-container .alterimg {
+        width: 100%;
+        flex: 1;
     }
-    img{
-        height: 240px;
-        vertical-align: top;
+    .geometric-container .btn01,.btn02{
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align:left;
+        line-height: 10px;
+        background-color: rgb(255, 255, 255);
+        color: tomato;
+        box-shadow:0px 0px 15px rgb(245, 190, 180);
+        border: 1px solid #fff;
+        outline:none;
     }
-    .box1{
-        transform:rotateY(90deg) translateZ(-120px);
+    .btn01{
+        margin-left: -30px;
+        margin-top:-190px;
     }
-    .box2{
-        transform:rotateY(-90deg) translateZ(-120px);
+    .btn02{
+        margin-left: 390px;
+        margin-top:-30px;
     }
-    .box3{
-        transform:rotateX(90deg) translateZ(-120px);
-    }
-    .box4{
-        transform:rotateX(-90deg) translateZ(-120px);
-    }
-    .box5{
-        transform:rotateY(180deg) translateZ(120px);
-    }
-    .box6{
-        transform:rotateY(0deg) translateZ(120px);
-    }
-    @keyframes my3d {
-        from{
-            transform: rotateX(0deg) rotateZ(0deg);
-        }
-        to{
-            transform: rotateX(360deg) rotateZ(360deg);
-        }
-    }
+
+
     /* 设置中间分界线 */
     main .longline{
         width: 1px;
         height: 270px;
         background-color:rgba(202, 186, 183,.4);
         margin-top:85px;
-        margin-left:150px;
-        margin-right:0px;
+        margin-left: 0px;
     }
     /* 设置表单 */
     main .form-container{
@@ -254,4 +240,17 @@
     .ornot-wrap .forget a:hover{
         color:rgb(243, 191, 182);
     }
-    
+    .wechat:hover .qrcode {
+        width: 120px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+    }
+
+    .qrcode {
+        width: 0px;
+    }
+
+    .wechat:hover .wechat-img {
+        padding-left: 40px;
+    }
