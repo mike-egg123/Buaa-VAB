@@ -1,0 +1,96 @@
+.commentcon{
+    width: 650px;
+    height: 230px;
+    display: flex;
+    margin:20px auto 0px;
+}
+.commentline{
+    border: .7px solid rgb(230, 230, 230);
+    width: 480px;
+    margin:0px auto;
+}
+.commentcon .headimgcon{
+    flex-grow: 1;
+    /* background-color: #abf; */
+}
+.headimgcon .headimg01,.headimgcon .headimg02{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 80px;
+    letter-spacing: 1px;
+    margin-right: 25px;
+}
+.headimgcon .headimg01{
+    background-color: rgb(197, 252, 192);
+    color:rgb(62, 145, 55);
+}
+.headimgcon .headimg02{
+    background-color: rgb(169, 211, 250);
+    color:rgb(34, 107, 175);
+}
+.commentcon .textimgcon{
+    flex-grow: 100;
+}
+.textimgcon .commentname{
+    color:rgb(218, 214, 214);
+    margin-left:10px;
+    font-size: 15px;
+}
+.textimgcon .commentname a{
+    display:block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: rgb(8, 70, 133);
+    width: 380px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 7px;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+.textimgcon .commentname a:hover{
+    color:rgb(245, 139, 139);
+    text-decoration: none;
+}
+.textimgcon .commentmain{
+    display: flex;
+}
+.textimgcon .commentimg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.textimgcon .commenttext{
+    color:rgb(138, 138, 138);
+    margin: 20px 10px 18px;
+    line-height:20px;
+    text-align: left;
+    text-indent:35px;
+    letter-spacing: 1px;
+    font-size: 15.5px;
+}
+.textimgcon .commentreply{
+    margin: 15px auto 0px;
+    height: 20px;
+    width: 90%;
+    color: rgb(121, 118, 118);
+    line-height: 20px;
+    letter-spacing: 1.2px;
+}
+.textimgcon .commentreply a{
+    text-decoration: none;
+    color: rgb(121, 118, 118);
+    border-radius: 5px;
+    width: 150px;
+}
+.textimgcon .commentreply a:hover{
+    background-color: rgb(170, 208, 250);
+    color: #fff;
+}
+

@@ -1,0 +1,49 @@
+.grouprightcon{
+    margin: 20px auto;
+    width: 330px;
+    height: 130px;
+}
+.grouprightcon .grouprightline{
+    border: .6px solid rgba(194, 190, 190,0.5);
+    border-radius: 5px;
+}
+.grouprightcon .groupright01{
+    display:flex;
+}
+.grouprightcon .grouprightimg{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.grouprighttextcon .grouprightnamecon{
+    display: block;
+    margin-top: 25px;
+    margin-left: 10px;
+    color: rgb(125, 126, 128);
+    width: 130px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    height: 25px;
+    line-height:25px;
+    text-decoration: none;
+    border-radius: 7px;
+}
+.grouprighttextcon .grouprightnamecon:hover{
+    background-color: rgb(252, 197, 47);
+    text-decoration: none;
+    color:#fff;
+}
+.grouprighttextcon .grouprightintro{
+    margin-top: 25px;
+    margin-left: 15px;
+    width: 260px;
+    color: rgb(177, 179, 180);
+    font-size: 15px;
+}
+.grouprighttextcon .grouprightintro .btn{
+    margin-left: 10px;
+    text-align: center;
+    outline: none;
+}

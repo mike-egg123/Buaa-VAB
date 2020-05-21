@@ -1,0 +1,116 @@
+.topbook-wrap{
+    width:1210px;
+    height:60px;
+    margin: 25px auto 0px;
+    /* background-color: #baf; */
+    display:flex;
+    background-color: #fff;
+    border-radius: 10px;
+    border-bottom: rgb(218, 215, 215,0.7) .8px solid;
+    /* box-shadow:0 20px 10px rgba(239, 240, 241,.5); */
+}
+.topbook-wrap li{
+    flex-grow: 0;
+}
+/* 设置图书图标 */
+.topbook-wrap .bookimg{
+    /* background-color: lightgreen; */
+    flex-grow: .55;
+    text-align:end;
+}
+.topbook-wrap img{
+    /* display: block; */
+    width: 55px;
+    margin-left: 6px;
+}
+/* 设置字体 */
+.topbook-wrap .zi{
+    background-color: bfa(173, 172, 171);
+    letter-spacing: 5px;
+    font-size: 23px;
+    font-weight: bold;
+    color: rgb(109, 111, 114);
+    /* border: lime 2px solid; */
+    flex-grow: .15;
+    text-align:center;
+    line-height: 60px;
+}
+/* 设置搜索 */
+.topbook-wrap .find-wrap{
+    
+    margin-left:0px;
+    
+}
+.topbook-wrap .find-wrap .find{
+    display:flex;
+    /* background-color: thistle; */
+}
+.topbook-wrap .find-inp{
+    display:block;
+    padding-left: 15px;
+    outline: none;
+    width: 380px;
+    height: 35px;
+    margin-top: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border:2px solid rgb(250, 221, 216);
+    font-size: 15px;
+    letter-spacing: 3px;
+    color:rgb(150, 150, 150);
+}
+.topbook-wrap .find-btn{
+    display:block;
+    float:right;
+    width: 40px;
+    height: 41.5px;
+    line-height:41px;
+    text-align: center;
+    /* margin-top: 10.5px; */
+    margin-top: 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    border-top:2px solid rgb(250, 221, 216);
+    border-bottom:2px solid rgb(250, 221, 216);
+    border-right:2px solid rgb(250, 221, 216);
+    border-left:0px;
+}
+/* 设置搜索图标 */
+.topbook-wrap .find-btn .find-icon{
+    color:rgb(245, 192, 182);
+    font-weight: bold;
+    /* line-height:40px; */
+    text-align: center;
+}
+.kindcon{
+    display: flex;
+    width: 420px;
+    height: 30px;
+    margin-top: 16px;
+    margin-left: 5px;
+    margin-right: 20px;
+    justify-content: space-evenly;
+}
+.kindcon a{
+    display:block;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+    color: rgb(163, 162, 162);
+    border-radius: 10px;
+}
+.kindcon .kind01,.kindcon .kind02,.kindcon .kind03,.kindcon .kind04{
+    width: 45px;
+    text-align: center;
+}
+.kindcon .kind05{
+    width: 85px;
+    text-align: center;
+}
+.kindcon a:hover{
+    background-color: rgb(163, 162, 162);
+    color:#fff;
+    text-decoration: none;
+}

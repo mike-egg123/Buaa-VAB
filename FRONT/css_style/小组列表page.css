@@ -1,0 +1,343 @@
+.topbook-wrap{
+    width:1210px;
+    height:60px;
+    margin: 25px auto 0px;
+    /* background-color: #baf; */
+    display:flex;
+    background-color: #fff;
+    border-radius: 10px;
+    border-bottom: rgb(218, 215, 215,0.7) .8px solid;
+    /* box-shadow:0 20px 10px rgba(239, 240, 241,.5); */
+}
+.topbook-wrap li{
+    flex-grow: 0;
+}
+/* 设置图书图标 */
+.topbook-wrap .bookimg{
+    /* background-color: lightgreen; */
+    flex-grow: .55;
+    text-align:end;
+}
+.topbook-wrap img{
+    /* display: block; */
+    width: 55px;
+    margin-left: 6px;
+}
+/* 设置字体 */
+.topbook-wrap .zi{
+    background-color: bfa(173, 172, 171);
+    letter-spacing: 5px;
+    font-size: 23px;
+    font-weight: bold;
+    color: rgb(109, 111, 114);
+    /* border: lime 2px solid; */
+    flex-grow: .15;
+    text-align:center;
+    line-height: 60px;
+}
+/* 设置搜索 */
+.topbook-wrap .find-wrap{
+    
+    margin-left:0px;
+    
+}
+.topbook-wrap .find-wrap .find{
+    display:flex;
+    /* background-color: thistle; */
+}
+.topbook-wrap .find-inp{
+    display:block;
+    padding-left: 15px;
+    outline: none;
+    width: 380px;
+    height: 41px;
+    margin-top: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border:2px solid rgb(250, 221, 216);
+    font-size: 15px;
+    letter-spacing: 3px;
+    color:rgb(150, 150, 150);
+}
+.topbook-wrap .find-btn{
+    display:block;
+    float:right;
+    width: 40px;
+    height: 41.5px;
+    line-height:41px;
+    text-align: center;
+    /* margin-top: 10.5px; */
+    margin-top: 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    border-top:2px solid rgb(250, 221, 216);
+    border-bottom:2px solid rgb(250, 221, 216);
+    border-right:2px solid rgb(250, 221, 216);
+    border-left:0px;
+}
+/* 设置搜索图标 */
+.topbook-wrap .find-btn .find-icon{
+    color:rgb(245, 192, 182);
+    font-weight: bold;
+    /* line-height:40px; */
+    text-align: center;
+}
+.kindcon{
+    display: flex;
+    width: 420px;
+    height: 30px;
+    margin-top: 16px;
+    margin-left: 5px;
+    margin-right: 20px;
+    justify-content: space-evenly;
+}
+.kindcon a{
+    display:block;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+    color: rgb(163, 162, 162);
+    border-radius: 10px;
+}
+.kindcon .kind01,.kindcon .kind02,.kindcon .kind03,.kindcon .kind04{
+    width: 45px;
+    text-align: center;
+}
+.kindcon .kind05{
+    width: 85px;
+    text-align: center;
+}
+.kindcon a:hover{
+    background-color: rgb(163, 162, 162);
+    color:#fff;
+    text-decoration: none;
+}
+main{
+    display: flex;
+    width: 1150px;
+    margin:30px auto;
+    justify-content: space-between;
+}
+.main01{
+    width: 700px;
+}
+.main02{
+    width: 370px;
+}
+.commentcon{
+    width: 650px;
+    height: 230px;
+    display: flex;
+    margin:20px auto 0px;
+}
+.commentline{
+    border: .7px solid rgb(230, 230, 230);
+    width: 600px;
+    margin:10px auto;
+}
+.commentcon .headimgcon{
+    flex-grow: 1;
+    /* background-color: #abf; */
+}
+.headimgcon .headimg01,.headimgcon .headimg02{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 80px;
+    letter-spacing: 1px;
+    margin-right: 25px;
+}
+.headimgcon .headimg01{
+    background-color: rgb(197, 252, 192);
+    color:rgb(62, 145, 55);
+}
+.headimgcon .headimg02{
+    background-color: rgb(169, 211, 250);
+    color:rgb(34, 107, 175);
+}
+.commentcon .textimgcon{
+    flex-grow: 100;
+}
+.textimgcon .commentname{
+    color:rgb(218, 214, 214);
+    margin-left:10px;
+    font-size: 15px;
+}
+.textimgcon .commentname a{
+    display:block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: rgb(8, 70, 133);
+    width: 380px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 7px;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+.textimgcon .commentname a:hover{
+    color:rgb(245, 139, 139);
+    text-decoration: none;
+}
+.textimgcon .commentmain{
+    display: flex;
+}
+.textimgcon .commentimg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.textimgcon .commenttext{
+    color:rgb(138, 138, 138);
+    margin: 20px 10px 18px;
+    line-height:25px;
+    text-align: left;
+    text-indent:35px;
+
+    letter-spacing: 1px;
+    font-size: 15.5px;
+}
+.textimgcon .commentreply{
+    margin: 5px auto 0px ;
+    height: 20px;
+    width: 80%;
+    color: rgb(121, 118, 118);
+    line-height: 20px;
+    letter-spacing: 1.2px;
+}
+.textimgcon .commentreply a{
+    text-decoration: none;
+    color: rgb(121, 118, 118);
+    border-radius: 5px;
+    width: 150px;
+}
+.textimgcon .commentreply a:hover{
+    background-color: rgb(170, 208, 250);
+    color: #fff;
+}
+.main01 .navigate01,.main01 .navigate02{
+    width: 85%;
+    margin:20px auto;
+    height: 30px;
+    letter-spacing: 4px;
+    font-size: 21.5px;
+    font-weight:bold;
+    color: rgb(152, 153, 153);
+    line-height: 30px;
+}
+.main01 .navigate02{
+    margin-top: 50px;
+}
+.main01 .navigate01 span,.main01 .navigate02 span{
+    color: rgb(248, 145, 126);
+    font-weight: bolder;
+}
+.main01 .morenavigate01con,.main01 .morenavigate02con{
+    display:block;
+    text-decoration: none;
+    color:rgb(118, 175, 248);
+    text-align: right;
+    width: 660px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+.main02 .recommend{
+    height: 30px;
+    width: 90%;
+    margin:70px auto 20px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    color: rgb(124, 124, 122);
+    font-weight: normal;
+}
+.main02 .recommend span{
+    color: rgb(35, 173, 62);
+    font-weight: bold;
+    font-size: 20px;
+}
+.grouprightcon{
+    margin: 20px auto;
+    width: 330px;
+    height: 130px;
+}
+.grouprightcon .grouprightline{
+    border: .6px solid rgba(194, 190, 190,0.5);
+    border-radius: 5px;
+}
+.grouprightcon .groupright01{
+    display:flex;
+}
+.grouprightcon .grouprightimg{
+    width: 90px;
+    height: 90px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.grouprighttextcon .grouprightnamecon{
+    display: block;
+    margin-top: 25px;
+    margin-left: 10px;
+    color: rgb(125, 126, 128);
+    width: 130px;
+    text-align: center;
+    font-size: 16.5px;
+    letter-spacing: 1.2px;
+    height: 25px;
+    line-height:25px;
+    text-decoration: none;
+    border-radius: 7px;
+}
+.grouprighttextcon .grouprightnamecon:hover{
+    background-color: rgb(252, 197, 47);
+    text-decoration: none;
+    color:#fff;
+}
+.grouprighttextcon .grouprightintro{
+    margin-top: 25px;
+    margin-left: 14px;
+    width: 260px;
+    color: rgb(177, 179, 180);
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+.grouprighttextcon .grouprightintro .btn{
+    margin-left: 10px;
+    text-align: center;
+    outline: none;
+}
+.main02 .morerecommendgroupcon{
+    display: block;
+    width: 97%;
+    text-align: right;
+    height: 25px;
+    line-height: 25px;
+    text-decoration: none;
+    color: rgb(118, 175, 248);
+}
+.main01 .morenavigate01con:hover,.main02 .morerecommendgroup01:hover,
+.main01 .morenavigate02con:hover{
+    color:rgb(28, 86, 161);
+}
+.wechat:hover .qrcode {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+}
+
+.qrcode {
+    width: 0px;
+}
+
+.wechat:hover .wechat-img {
+    padding-left: 40px;
+}
