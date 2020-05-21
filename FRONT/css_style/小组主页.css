@@ -1,0 +1,113 @@
+.a01_img img{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius:15px;
+}
+.a01_img {
+    width: 100px;
+    height: auto;
+}
+.a01{
+    border-bottom: solid 1px gainsboro;
+    padding: 10px;
+}
+#a01{
+    margin: 20px 10px;
+}
+.tx{
+    width: 100px;
+    height: 100px;
+    border-radius:50px;
+    flex-flow: row nowrap;
+    justify-content: center;
+    display: flex;
+    box-shadow:0px 0px 10px rgb(231, 223, 223);
+    overflow: hidden;
+}
+.c li {
+    padding: 0px;
+    font-weight: normal;
+    margin: 10px;
+    }
+.c li:last-child {
+    margin: 10px;
+}
+.c{
+    flex-flow: row nowrap;
+    justify-content: center;
+    display: flex;
+    height: 150px;
+}
+.c li{
+    height: 100px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.c img{
+    width: 120px;
+    height: auto;
+}
+.c li:hover{
+    box-shadow:0px 0px 10px rgb(182, 168, 168);
+    transform:translateX(-3px) translateY(-3px) ;
+    transition: all .5s;
+}
+.txm{
+    width: 70px;
+    height: 70px;
+    border-radius:50px;
+    flex-flow: row nowrap;
+    justify-content: center;
+    display: flex;
+    box-shadow:0px 0px 10px rgb(231, 223, 223);
+    overflow: hidden;
+}
+.m li {
+    padding: 0px;
+    font-weight: normal;
+    margin: 10px;
+    }
+.m li:last-child {
+    margin: 10px;
+}
+.m{
+    flex-flow: row nowrap;
+    justify-content: center;
+    display: flex;
+    height: 150px;
+}
+.m li{
+    height: 70px;
+    width: 70px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+}
+.m img{
+    width: 90px;
+    height: auto;
+}
+.m li:hover{
+    box-shadow:0px 0px 10px rgb(182, 168, 168);
+    transform:translateX(-3px) translateY(-3px) ;
+    transition: all .5s;
+}
+.n span{
+    justify-content: center;
+    margin: 0px 38px;
+}
+.n{
+    margin-top: -20px;
+    margin-bottom: 9px;
+}
+.cy{
+    color: rgb(177, 179, 180);
+    margin-top: -40px;
+    padding-left: 220px;
+}
+.peo{
+    margin-bottom: -50px;
+}
