@@ -1,0 +1,105 @@
+main .helloworld{
+    height: 50px;
+    font-size: 50px;
+    letter-spacing: 5px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: rgb(94, 92, 92);
+    font-weight: bold;
+}
+main .helloworld1{
+    height: 50px;
+    font-size: 45px;
+    letter-spacing: 5px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+    color: rgb(151, 150, 150);
+}
+main .helloworld1 span{
+    color: rgb(51, 173, 27);
+}
+.mainpage_logincon{
+    display: block;
+    height: 280px;
+    width: 1100px;
+    margin:20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.mainpage_logincon img{
+    width: 1100px;
+}
+.mainpage_login,.mainpage_moviecon .mainpage_movie,.mainpage_bookcon .mainpage_book,
+.mainpage_groupcon .mainpage_group,.mainpage_topiccon .mainpage_topic{
+    width: 350px;
+    height: 50px;
+    margin: -210px auto;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.mainpage_moviecon .mainpage_movie,.mainpage_bookcon .mainpage_book,
+.mainpage_groupcon .mainpage_group,.mainpage_topiccon .mainpage_topic{
+    width: 200px;
+}
+.mainpage_logincon img{
+    transition: all .5s;
+}
+.mainpage_logincon:hover{
+    box-shadow:0px 0px 10px rgba(82, 80, 80, 0.7) ;
+}
+
+.mainpage_logincon:hover img{
+    transform: scale(1.05);
+}
+
+main .mainpage_bookmoviecon,main .mainpage_grouptopiccon{
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    width: 1200px;
+    height: 300px;
+    justify-content: space-evenly;
+}
+.mainpage_bookmoviecon .mainpage_bookcon,.mainpage_bookmoviecon .mainpage_moviecon,
+.mainpage_grouptopiccon .mainpage_groupcon,.mainpage_grouptopiccon .mainpage_topiccon{
+    display: block;
+    width: 480px;
+}
+
+.mainpage_bookcon .mainpage_bookimg img,.mainpage_moviecon .mainpage_movieimg img,
+.mainpage_groupcon .mainpage_groupimg img,.mainpage_topiccon .mainpage_topicimg img{
+    width: 480px;
+    border-radius: 15px;
+}
+.mainpage_bookcon .mainpage_book,.mainpage_moviecon .mainpage_movie,
+.mainpage_groupcon .mainpage_group,.mainpage_topiccon .mainpage_topic{
+    text-decoration: none;
+    text-align: center;
+    clear: both;
+    margin-top: -150px;
+    margin-left: 160px;
+}
+.mainpage_bookcon .mainpage_bookimg,.mainpage_moviecon .mainpage_movieimg,
+.mainpage_groupcon .mainpage_groupimg,.mainpage_topiccon .mainpage_topicimg{
+    overflow: hidden;
+    border-radius: 15px;
+}
+.mainpage_bookcon .mainpage_bookimg img,.mainpage_moviecon .mainpage_movieimg img,
+.mainpage_groupcon .mainpage_groupimg img,.mainpage_topiccon .mainpage_topicimg img{
+    transition: all .5s;
+}
+.mainpage_bookcon .mainpage_bookimg:hover img,.mainpage_moviecon .mainpage_movieimg:hover img,
+.mainpage_groupcon .mainpage_groupimg:hover img,.mainpage_topiccon .mainpage_topicimg:hover img{
+    transform: scale(1.05);
+}
+.mainpage_bookcon .mainpage_bookimg:hover,.mainpage_moviecon .mainpage_movieimg:hover,
+.mainpage_groupcon .mainpage_groupimg:hover,.mainpage_topiccon .mainpage_topicimg:hover{
+    box-shadow:0px 0px 10px rgba(82, 80, 80, 0.7) ;
+}
+

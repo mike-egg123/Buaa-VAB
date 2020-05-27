@@ -1,0 +1,32 @@
+.mainpage_logincon{
+    display: block;
+    height: 280px;
+    width: 950px;
+    margin:20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.mainpage_logincon img{
+    width: 950px;
+}
+.mainpage_login{
+    background-color: #abf;
+    width: 200px;
+    height: 50px;
+    margin: -170px auto;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.mainpage_logincon img{
+    transition: all .5s;
+}
+.mainpage_logincon:hover{
+    box-shadow:0px 0px 10px rgba(150, 146, 146, 0.7) ;
+}
+
+.mainpage_logincon:hover img{
+    transform: scale(1.05);
+}
