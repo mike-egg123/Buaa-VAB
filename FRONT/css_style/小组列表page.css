@@ -135,7 +135,7 @@ main{
 .commentline{
     border: .7px solid rgb(230, 230, 230);
     width: 600px;
-    margin:10px auto;
+    margin:40px auto;
 }
 .commentcon .headimgcon{
     flex-grow: 1;
@@ -208,13 +208,13 @@ main{
     margin: 5px auto 0px ;
     height: 20px;
     width: 80%;
-    color: rgb(121, 118, 118);
+    color: rgb(100, 100, 100);
     line-height: 20px;
     letter-spacing: 1.2px;
 }
 .textimgcon .commentreply a{
     text-decoration: none;
-    color: rgb(121, 118, 118);
+    color: rgb(163, 163, 163);
     border-radius: 5px;
     width: 150px;
 }
