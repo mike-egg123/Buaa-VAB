@@ -10,20 +10,28 @@ main{
     width: 75%;
 }
 .talkboxwrapbig{
-    display: flex;
     justify-content: space-between;
 }
 .talkboxwrap{
-    width: 220px;
-    height: 180px;
-    /* background-color: rgb(204, 199, 199); */
-    /* margin:20px auto; */
+    width: 630px;
+    height: 320px;
+    margin:40px auto;
     border-radius: 10px;
     border:1px solid rgb(219, 216, 216);
 }
 .talkboxwrap:hover{
-    transition:all 1s ;
-    border: 1px solid rgb(252, 215, 95);
+    transition:all .3s ;
+    border: 1px solid rgb(250, 210, 203);
+}
+.talkboxwrap .topic-intro{
+    /* background-color: #abf; */
+    width: 85%;
+    margin-top:20px;
+    margin-left: 48px;
+    line-height: 22px;
+    letter-spacing: .7px;
+    text-indent:2em;
+    color: rgb(127, 129, 129);
 }
 .talkboxwrap .talkthemewrap{
     width: 70%;
@@ -33,10 +41,10 @@ main{
     text-align:center
 }
 .talkboxwrap .talktheme{
-    font-size: 20px;
+    font-size: 22px;
     text-decoration:none;
     
-    color:rgb(139, 138, 138);
+    color:rgb(80, 77, 77);
     letter-spacing:1.5px;
     line-height:25px;
 }
@@ -57,9 +65,10 @@ main{
 }
 .talkboxwrap .talkattend{
     display: block;
-    width: 100px;
-    height: 25px;
-    /* background-color: rgb(231, 110, 135); */
+    width: 120px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 18px;
     margin:20px auto 10px;
     border-radius: 5px;
     text-align:center;
