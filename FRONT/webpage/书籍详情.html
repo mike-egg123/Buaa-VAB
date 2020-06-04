@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css_remove/reset.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css_style/base.css">
+    <link rel="stylesheet" href="../css_style/书籍详情.css">
+    <link rel="stylesheet" href="../css_style/评分.css">
+    <style type="text/css">
+        .wechat:hover .qrcode {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+        }
+    
+        .qrcode {
+            width: 0px;
+        }
+    
+        .wechat:hover .wechat-img {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="topbar">
+            <li class="logo-wrap">
+                <img src="../vab_img/logo.jpg.png" alt="logo" class="logo">
+            </li>
+            <li class="line-wrap">
+                <div class="line"></div>
+            </li>
+            <li class="home">
+                <a href="#" class="iconfont">&#xe61f;
+                    <p>home</p>
+                </a>
+            </li>
+            <li class="book">
+                <a href="./book_page.html" class="iconfont">&#xe66c;
+                    <p>book</p>
+                </a>
+            </li>
+            <li class="video">
+                <a href="./movie_page.html" class="iconfont">&#xe605;
+                    <p>video</p>
+                </a>
+            </li>
+            <li class="group">
+                <a href="#" class="iconfont">
+                    &#xe654;
+                    <p>group</p>
+                </a>
+            </li>
+            <li class="topic">
+                <a href="#" class="iconfont">
+                    &#xe8b1;
+                    <p>topic</p>
+                </a>
+            </li>
+            <li class="topic">
+                <a href="#" class="iconfont">
+                    &#xe638;
+                    <p>logout</p>
+                </a>
+            </li>
+            <li class="user-wrap">
+                <a href="#" class="iconfont user">
+                    &#xe646;
+                    <p>user</p>
+                </a>
+            </li>
+        </ul>
+        <ul class="topbook-wrap">
+            <li class="bookimg">
+                <img src="../vab_img/书.png" alt="">
+            </li>
+            <li class="zi">我爱读书</li>
+            <div class="find-wrap">
+                <form action="" class="find">
+                    <input type="text" class="find-inp" placeholder="搜索"><button class="find-btn">
+                        <i class="iconfont find-icon">&#xe61c;</i>
+                    </button>
+                </form>
+            </div>
+        </ul>
+    </header>
+    <main>
+        <div class="main-wrap">
+            <div class="book_intr-wrap">
+                <div class="allbook">全库(120)</div>
+                <div class="newbook">
+                    <a class="iconfont a1">最新 &#xe60d;&#xe60d;</a>
+                    <a class="iconfont a1">最热 &#xe60d;&#xe60d;</a>
+                </div>
+                <!-- 设置外层容器 -->
+                <div class="outer1">
+                    <div class="bookname">
+                        <h2>嫌疑人X的献身</h2>
+                    </div>
+                    <div class="text">
+                           <!-- 设置标题、作者容器 -->
+                        <div class="title">
+                            <div>作者：[日] 东野圭吾</div>
+                            <div>出版社：南海出版公司</div>
+                            <div>类型：剧情 | 悬疑 | 推理</div>
+                            <!-- 设置评价 -->
+                            <ul class="star">
+                                <li>推荐：
+                                    <i class="iconfont ystar">&#xe610;</i>
+                                    <i class="iconfont ystar">&#xe610;</i>
+                                    <i class="iconfont ystar">&#xe610;</i>
+                                    <i class="iconfont gstar">&#xe610;</i>
+                                    <i class="iconfont gstar">&#xe610;</i>
+                                </li>
+                            </ul>
+                            <div class="b">
+                                <button>想读</button>&nbsp;(<span>10</span>)
+                                <button>在读</button>&nbsp;(<span>10</span>)
+                                <button>读过</button>&nbsp;(<span>10</span>)
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- 设置图片容器 -->
+                    <div class="image">
+                        <a href="javasprit:;">
+                            <img src="../vab_img/嫌疑人.jpg" alt="">
+                        </a>
+                    </div>
+                    <div style="float: left; margin-left:50px; font-size: 20px; color: tomato; font-weight:bolder;">给这本书打个分吧！</div>
+                    <div class="score">
+                        <div class="container">
+                            <div class="feedback">
+                            <div class="rating">
+                                <input type="radio" name="rating" id="rating-5">
+                                <label for="rating-5"></label>
+                                <input type="radio" name="rating" id="rating-4">
+                                <label for="rating-4"></label>
+                                <input type="radio" name="rating" id="rating-3">
+                                <label for="rating-3"></label>
+                                <input type="radio" name="rating" id="rating-2">
+                                <label for="rating-2"></label>
+                                <input type="radio" name="rating" id="rating-1">
+                                <label for="rating-1"></label>
+                                <div class="emoji-wrapper">
+                                <div class="emoji">
+                                    <svg class="rating-0" xmlns="" viewBox="0 0 512 512">
+                                    <circle cx="256" cy="256" r="256" fill="#ffd93b"/>
+                                    <path d="M512 256c0 141.44-114.64 256-256 256-80.48 0-152.32-37.12-199.28-95.28 43.92 35.52 99.84 56.72 160.72 56.72 141.36 0 256-114.56 256-256 0-60.88-21.2-116.8-56.72-160.72C474.8 103.68 512 175.52 512 256z" fill="#f4c534"/>
+                                    <ellipse transform="scale(-1) rotate(31.21 715.433 -595.455)" cx="166.318" cy="199.829" rx="56.146" ry="56.13" fill="#fff"/>
+                                    <ellipse transform="rotate(-148.804 180.87 175.82)" cx="180.871" cy="175.822" rx="28.048" ry="28.08" fill="#3e4347"/>
+                                    <ellipse transform="rotate(-113.778 194.434 165.995)" cx="194.433" cy="165.993" rx="8.016" ry="5.296" fill="#5a5f63"/>
+                                    <ellipse transform="scale(-1) rotate(31.21 715.397 -1237.664)" cx="345.695" cy="199.819" rx="56.146" ry="56.13" fill="#fff"/>
+                                    <ellipse transform="rotate(-148.804 360.25 175.837)" cx="360.252" cy="175.84" rx="28.048" ry="28.08" fill="#3e4347"/>
+                                    <ellipse transform="scale(-1) rotate(66.227 254.508 -573.138)" cx="373.794" cy="165.987" rx="8.016" ry="5.296" fill="#5a5f63"/>
+                                    <path d="M370.56 344.4c0 7.696-6.224 13.92-13.92 13.92H155.36c-7.616 0-13.92-6.224-13.92-13.92s6.304-13.92 13.92-13.92h201.296c7.696.016 13.904 6.224 13.904 13.92z" fill="#3e4347"/>
+                                    </svg>
+                                    <svg class="rating-1"  viewBox="0 0 512 512">
+                                    <circle cx="256" cy="256" r="256" fill="#ffd93b"/>
+                                    <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534"/>
+                                    <path d="M328.4 428a92.8 92.8 0 0 0-145-.1 6.8 6.8 0 0 1-12-5.8 86.6 86.6 0 0 1 84.5-69 86.6 86.6 0 0 1 84.7 69.8c1.3 6.9-7.7 10.6-12.2 5.1z" fill="#3e4347"/>
+                                    <path d="M269.2 222.3c5.3 62.8 52 113.9 104.8 113.9 52.3 0 90.8-51.1 85.6-113.9-2-25-10.8-47.9-23.7-66.7-4.1-6.1-12.2-8-18.5-4.2a111.8 111.8 0 0 1-60.1 16.2c-22.8 0-42.1-5.6-57.8-14.8-6.8-4-15.4-1.5-18.9 5.4-9 18.2-13.2 40.3-11.4 64.1z" fill="#f4c534"/>
+                                    <path d="M357 189.5c25.8 0 47-7.1 63.7-18.7 10 14.6 17 32.1 18.7 51.6 4 49.6-26.1 89.7-67.5 89.7-41.6 0-78.4-40.1-82.5-89.7A95 95 0 0 1 298 174c16 9.7 35.6 15.5 59 15.5z" fill="#fff"/>
+                                    <path d="M396.2 246.1a38.5 38.5 0 0 1-38.7 38.6 38.5 38.5 0 0 1-38.6-38.6 38.6 38.6 0 1 1 77.3 0z" fill="#3e4347"/>
+                                    <path d="M380.4 241.1c-3.2 3.2-9.9 1.7-14.9-3.2-4.8-4.8-6.2-11.5-3-14.7 3.3-3.4 10-2 14.9 2.9 4.9 5 6.4 11.7 3 15z" fill="#fff"/>
+                                    <path d="M242.8 222.3c-5.3 62.8-52 113.9-104.8 113.9-52.3 0-90.8-51.1-85.6-113.9 2-25 10.8-47.9 23.7-66.7 4.1-6.1 12.2-8 18.5-4.2 16.2 10.1 36.2 16.2 60.1 16.2 22.8 0 42.1-5.6 57.8-14.8 6.8-4 15.4-1.5 18.9 5.4 9 18.2 13.2 40.3 11.4 64.1z" fill="#f4c534"/>
+                                    <path d="M155 189.5c-25.8 0-47-7.1-63.7-18.7-10 14.6-17 32.1-18.7 51.6-4 49.6 26.1 89.7 67.5 89.7 41.6 0 78.4-40.1 82.5-89.7A95 95 0 0 0 214 174c-16 9.7-35.6 15.5-59 15.5z" fill="#fff"/>
+                                    <path d="M115.8 246.1a38.5 38.5 0 0 0 38.7 38.6 38.5 38.5 0 0 0 38.6-38.6 38.6 38.6 0 1 0-77.3 0z" fill="#3e4347"/>
+                                    <path d="M131.6 241.1c3.2 3.2 9.9 1.7 14.9-3.2 4.8-4.8 6.2-11.5 3-14.7-3.3-3.4-10-2-14.9 2.9-4.9 5-6.4 11.7-3 15z" fill="#fff"/>
+                                    </svg>
+                                    <svg class="rating-2"  viewBox="0 0 512 512">
+                                    <circle cx="256" cy="256" r="256" fill="#ffd93b"/>
+                                    <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534"/>
+                                    <path d="M336.6 403.2c-6.5 8-16 10-25.5 5.2a117.6 117.6 0 0 0-110.2 0c-9.4 4.9-19 3.3-25.6-4.6-6.5-7.7-4.7-21.1 8.4-28 45.1-24 99.5-24 144.6 0 13 7 14.8 19.7 8.3 27.4z" fill="#3e4347"/>
+                                    <path d="M276.6 244.3a79.3 79.3 0 1 1 158.8 0 79.5 79.5 0 1 1-158.8 0z" fill="#fff"/>
+                                    <circle cx="340" cy="260.4" r="36.2" fill="#3e4347"/>
+                                    <g fill="#fff">
+                                        <ellipse transform="rotate(-135 326.4 246.6)" cx="326.4" cy="246.6" rx="6.5" ry="10"/>
+                                        <path d="M231.9 244.3a79.3 79.3 0 1 0-158.8 0 79.5 79.5 0 1 0 158.8 0z"/>
+                                    </g>
+                                    <circle cx="168.5" cy="260.4" r="36.2" fill="#3e4347"/>
+                                    <ellipse transform="rotate(-135 182.1 246.7)" cx="182.1" cy="246.7" rx="10" ry="6.5" fill="#fff"/>
+                                    </svg>
+                                    <svg class="rating-3"viewBox="0 0 512 512">
+                                    <circle cx="256" cy="256" r="256" fill="#ffd93b"/>
+                                    <path d="M407.7 352.8a163.9 163.9 0 0 1-303.5 0c-2.3-5.5 1.5-12 7.5-13.2a780.8 780.8 0 0 1 288.4 0c6 1.2 9.9 7.7 7.6 13.2z" fill="#3e4347"/>
+                                    <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534"/>
+                                    <g fill="#fff">
+                                        <path d="M115.3 339c18.2 29.6 75.1 32.8 143.1 32.8 67.1 0 124.2-3.2 143.2-31.6l-1.5-.6a780.6 780.6 0 0 0-284.8-.6z"/>
+                                        <ellipse cx="356.4" cy="205.3" rx="81.1" ry="81"/>
+                                    </g>
+                                    <ellipse cx="356.4" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347"/>
+                                    <g fill="#fff">
+                                        <ellipse transform="scale(-1) rotate(45 454 -906)" cx="375.3" cy="188.1" rx="12" ry="8.1"/>
+                                        <ellipse cx="155.6" cy="205.3" rx="81.1" ry="81"/>
+                                    </g>
+                                    <ellipse cx="155.6" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347"/>
+                                    <ellipse transform="scale(-1) rotate(45 454 -421.3)" cx="174.5" cy="188" rx="12" ry="8.1" fill="#fff"/>
+                                    </svg>
+                                    <svg class="rating-4"  viewBox="0 0 512 512">
+                                    <circle cx="256" cy="256" r="256" fill="#ffd93b"/>
+                                    <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534"/>
+                                    <path d="M232.3 201.3c0 49.2-74.3 94.2-74.3 94.2s-74.4-45-74.4-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z" fill="#e24b4b"/>
+                                    <path d="M96.1 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2C80.2 229.8 95.6 175.2 96 173.3z" fill="#d03f3f"/>
+                                    <path d="M215.2 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z" fill="#fff"/>
+                                    <path d="M428.4 201.3c0 49.2-74.4 94.2-74.4 94.2s-74.3-45-74.3-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z" fill="#e24b4b"/>
+                                    <path d="M292.2 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2-77.8-65.7-62.4-120.3-61.9-122.2z" fill="#d03f3f"/>
+                                    <path d="M411.3 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z" fill="#fff"/>
+                                    <path d="M381.7 374.1c-30.2 35.9-75.3 64.4-125.7 64.4s-95.4-28.5-125.8-64.2a17.6 17.6 0 0 1 16.5-28.7 627.7 627.7 0 0 0 218.7-.1c16.2-2.7 27 16.1 16.3 28.6z" fill="#3e4347"/>
+                                    <path d="M256 438.5c25.7 0 50-7.5 71.7-19.5-9-33.7-40.7-43.3-62.6-31.7-29.7 15.8-62.8-4.7-75.6 34.3 20.3 10.4 42.8 17 66.5 17z" fill="#e24b4b"/>
+                                    </svg>
+                                    <svg class="rating-5"  viewBox="0 0 512 512">
+                                    <g fill="#ffd93b">
+                                        <circle cx="256" cy="256" r="256"/>
+                                        <path d="M512 256A256 256 0 0 1 56.8 416.7a256 256 0 0 0 360-360c58 47 95.2 118.8 95.2 199.3z"/>
+                                    </g>
+                                    <path d="M512 99.4v165.1c0 11-8.9 19.9-19.7 19.9h-187c-13 0-23.5-10.5-23.5-23.5v-21.3c0-12.9-8.9-24.8-21.6-26.7-16.2-2.5-30 10-30 25.5V261c0 13-10.5 23.5-23.5 23.5h-187A19.7 19.7 0 0 1 0 264.7V99.4c0-10.9 8.8-19.7 19.7-19.7h472.6c10.8 0 19.7 8.7 19.7 19.7z" fill="#e9eff4"/>
+                                    <path d="M204.6 138v88.2a23 23 0 0 1-23 23H58.2a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z" fill="#45cbea"/>
+                                    <path d="M476.9 138v88.2a23 23 0 0 1-23 23H330.3a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z" fill="#e84d88"/>
+                                    <g fill="#38c0dc">
+                                        <path d="M95.2 114.9l-60 60v15.2l75.2-75.2zM123.3 114.9L35.1 203v23.2c0 1.8.3 3.7.7 5.4l116.8-116.7h-29.3z"/>
+                                    </g>
+                                    <g fill="#d23f77">
+                                        <path d="M373.3 114.9l-66 66V196l81.3-81.2zM401.5 114.9l-94.1 94v17.3c0 3.5.8 6.8 2.2 9.8l121.1-121.1h-29.2z"/>
+                                    </g>
+                                    <path d="M329.5 395.2c0 44.7-33 81-73.4 81-40.7 0-73.5-36.3-73.5-81s32.8-81 73.5-81c40.5 0 73.4 36.3 73.4 81z" fill="#3e4347"/>
+                                    <path d="M256 476.2a70 70 0 0 0 53.3-25.5 34.6 34.6 0 0 0-58-25 34.4 34.4 0 0 0-47.8 26 69.9 69.9 0 0 0 52.6 24.5z" fill="#e24b4b"/>
+                                    <path d="M290.3 434.8c-1 3.4-5.8 5.2-11 3.9s-8.4-5.1-7.4-8.7c.8-3.3 5.7-5 10.7-3.8 5.1 1.4 8.5 5.3 7.7 8.6z" fill="#fff" opacity=".2"/>
+                                    </svg>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div style="text-align:center;clear:both;margin-top:80px">
+                        <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+                        <script src="/follow.js" type="text/javascript"></script>
+                        </div>
+                    </div>
+                    <!-- 设置介绍内容 -->
+                    <div class="intro">
+                        <div style="height: 420px;"></div>
+                        <div class="out_intro">
+                            <span style="font-size: 20px; color: tomato; font-weight:bolder;">·内容简介：</span>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;《嫌疑人X的献身》是日本推理小说作家东野圭吾创作的长篇推理小说，也是“伽利略系列”的第三本小说。
+                                该作讲述一个数学天才为了帮助一对母女隐藏杀害前夫的罪行，和警方展开了一连串的斗智，制造整个骗局。
+                            </p>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+                        <div class="writer">
+                            <span style="font-size: 20px; color: tomato; font-weight:bolder;">·作者简介：</span>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;东野圭吾，日本著名作家。1958年生于大阪。1985年，以第31届江户川乱步奖获奖作品《放学后》出道，开始扬名立万
+                                20年作品逾60部，几乎囊括了日本所有大奖，1998年，《秘密》获第52届日本推理作家协会奖，入围第120届直木奖；
+                                1999年，《白夜行》入围第122届直木奖；2001年，《暗恋》入围第125届直木奖；2003年，《信》入围第129届直木奖。
+                                2006年，《嫌疑人X的献身》终于捧得日本文学最高荣誉直木奖。前期作品多写得精巧细致，随着写作功底浸润日深，
+                                尤其是《白夜行》之后，笔锋日渐老辣：文字鲜加雕琢，叙述简练凶狠，情节跌宕诡异，故事架构几至匪夷所思的地步。
+                                至巅峰之作《嫌疑人X的献身》，叙事与推理，均已炉火纯青：最好的诡计、无懈可击的推理、恰当的伏笔，以及最普通但最不易猜透的悬念，
+                                受到大奖评委的莫大青睐，同时获得直木奖和本格推理小说大奖，更受到评论界、媒体和广大读者的如潮好评，
+                                创造了日本推理小说史上绝无仅有的奇迹——同时摘得“这本小说了不起”、“本格推理小说Top 10”、
+                                “周刊文艺推理小说Top 10”三大推理小说排行榜年度总冠军。
+                            </p>
+                        </div>
+                    </div> 
+                    
+                </div>
+            <div class="book_label-wrap">
+                <div class="outer">
+                    <div class="action">行动</div>
+                    <ul class="ul-container">
+                        <li>
+                            <a href="javasprit:;">
+                                <img src="../vab_img/文章.png" class="article">
+                                <div>写文章</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">
+                                <img src="../vab_img/书.png" class="book">
+                                <div>推书籍</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;" class="movie-wrap">
+                                <img src="../vab_img/电视机.png" class="movie">
+                                <div>推影视</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">
+                                <img src="../vab_img/小组.png" class="group">
+                                <div>查看小组</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">
+                                <img src="../vab_img/话题.png" class="topic">
+                                <div>热门话题</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="outer1">
+                    <div class="iconfont label">&#xe662; 全部标签</div>
+                    <div class="line"></div>
+                    <ul class="ul-container">
+                        <li class="literature-wrap">
+                            <div class="literature">文学</div>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">小说</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">传记</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">纪实</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">影视</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">诗歌</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">童话</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">期刊杂志</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">戏剧</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">美术</a>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="ul-container">
+                        <li class="literature-wrap">
+                            <div class="literature">历史</div>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">中国史</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">世界史</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">考古学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">畅销史书</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">民族学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">史学理论</a>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="ul-container">
+                        <li class="literature-wrap">
+                            <div class="literature">计算机</div>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">操作系统</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">网络安全</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">电子商务</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">硬件开发</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">数据库</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">程序设计</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">人工智能</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">算法</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">编程语言</a>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="ul-container">
+                        <li class="literature-wrap">
+                            <div class="literature">哲学</div>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">东方哲学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">西方哲学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">哲学史</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">马克思</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">逻辑学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">伦理学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">美学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">宗教</a>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="ul-container">
+                        <li class="literature-wrap">
+                            <div class="literature">科技</div>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">机械</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">建筑</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">电子通信</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">化学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">物理</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">水利</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">能源与动力</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">生物医学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">矿业与冶炼</a>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="ul-container">
+                        <li class="literature-wrap">
+                            <div class="literature">社会</div>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">经济</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">管理</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">心理</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">商务实务</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">财政税收</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">银行与货币</a>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="ul-container">
+                        <li class="literature-wrap">
+                            <div class="literature">考研</div>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">考研数学</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">考研英语</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">考研政治</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">考研计算机</a>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="ul-container">
+                        <li class="literature-wrap">
+                            <div class="literature">青年</div>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">玄幻</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">言情</a>
+                        </li>
+                        <li>
+                            <a href="javasprit:;">侦探</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer
+        style=" background-color: rgb(243, 191, 182); color: rgb(255, 255, 255); padding: 30px 50px;font-family:Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace';height: auto">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="margin: 12px 0px;margin-bottom: 17px;">
+                <table>
+                    <tr style="height: 35px;">
+                        <td>
+                            <img src="../vab_img/logo.jpg.png" alt="logo" style="width: auto; height:35px;">
+                        </td>
+                        <td style="height: 35px;line-height: 35px;color: #FF6347;font-weight: bold">
+                            &nbsp;&nbsp;Vedio and book
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="margin: 8px 0px;">Copyright &copy;2020 by “这是我们的组名”
+            </div>
+            <div style="margin: 8px 0px;">若本站收录内容无意侵犯了贵公司版权，请给网页底部微信或邮箱地址来信，我们会及时处理和回复，谢谢合作</div>
+            <div style="margin: 8px 0px;">Email：“这里是一个邮箱”还可以有其他东西</div>
+            <div style="width: 300px;height: 1px; background-color: #FFFFFF;margin-top: 20px;"></div>
+            <div style="margin: 8px 0px; margin-top: 13px;height: auto;">
+                <a href="#" class="wechat">
+                    <div class="wechat-img">
+                        <img src="//piccache.cnki.net/kdn/index/kns7/nimages/logo_wx.png" alt="微信">
+                    </div>
+                    <div style="border-radius: 10px; border-radius: 10px;color: rgba(255,99,71,1.00);">
+                        <img class="qrcode" src="../vab_img/qrcode.jpg" alt="微信二维码">
+                    </div>
+                </a>
+            </div>
+    
+        </div>
+    </footer>
+</body>
+</html>
