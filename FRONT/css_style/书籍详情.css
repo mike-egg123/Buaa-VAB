@@ -1,0 +1,565 @@
+    /* header{ */
+        /* 粘滞定位必须在父元素中 */
+        /* background-color: white;
+        position:fixed;
+        top:0px; */
+    /* } */
+    /* 设置外部容器样式 */
+    ul.topbar{
+        width:1250px;
+        height:60px;
+        /* 确保行高居中 */
+        background-color: rgb(245, 239, 239);
+        /* 设置水平居中 */
+        margin:15px auto 0px;
+        box-shadow:10px 10px 15px rgba(228, 226, 226, 0.7) ;
+        border-radius:15px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .topbar li{
+        height:60px;
+        line-height: 60px;
+        text-align: center;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    /* 设置user和logo*/
+    .logo-wrap{
+        flex-grow: 1.5;
+    }
+    .user-wrap{
+        flex-grow: 2;
+    }
+    /* 设置logo*/
+    img.logo{
+        margin-top: 5px;
+        height:50px;
+    }
+    /* 设置line */
+    .line-wrap{
+        text-align: center;
+        flex-grow: .7;
+    }
+    .line{
+        width:1px;
+        height:30px;
+        margin: 15px 0 15px;
+        background-color:rgb(214, 195, 191);
+    }
+    /* 设置user */
+    a.user{
+        justify-content: center;
+    }
+    /* 设置小图标 */
+    .iconfont{
+        font-weight: bolder;
+        font-size:24px;
+    }
+    /* 设置文字 */
+    a{
+        display: flex;
+        text-decoration:none;
+        color:tomato;
+    }
+    a p{
+        margin-top: 3px;
+        flex-grow: .3;
+        font-size: 17px;
+    }
+    a:hover{
+        color:rgb(243, 191, 182);
+    }
+    a > div:hover{
+        color:rgb(243, 191, 182);
+    }
+    .topbook-wrap{
+        width:1210px;
+        height:60px;
+        margin: 25px auto 0px;
+        /* background-color: #baf; */
+        display:flex;
+        background-color: #fff;
+        border-radius: 10px;
+        border-bottom: rgb(218, 215, 215,0.7) .8px solid;
+        /* box-shadow:0 20px 10px rgba(239, 240, 241,.5); */
+    }
+    .topbook-wrap li{
+        flex-grow: 0;
+    }
+    /* 设置图书图标 */
+    .topbook-wrap .bookimg{
+        /* background-color: lightgreen; */
+        flex-grow: .55;
+        text-align:end;
+    }
+    .topbook-wrap img{
+        /* display: block; */
+        width: 55px;
+        margin-left: 6px;
+    }
+    /* 设置字体 */
+    .topbook-wrap .zi{
+        background-color: bfa(173, 172, 171);
+        letter-spacing: 5px;
+        font-size: 23px;
+        font-weight: bold;
+        color: rgb(109, 111, 114);
+        /* border: lime 2px solid; */
+        flex-grow: .15;
+        text-align:center;
+        line-height: 60px;
+    }
+    /* 设置搜索 */
+    .topbook-wrap .find-wrap{
+        /* border: rgb(109, 111, 114) 2px solid; */
+        margin-left:350px;
+        /* background-color: turquoise; */
+    }
+    .topbook-wrap .find-wrap .find{
+        display:flex;
+        /* background-color: thistle; */
+    }
+    .topbook-wrap .find-inp{
+        display:block;
+        padding-left: 15px;
+        outline: none;
+        width: 380px;
+        height: 35px;
+        margin-top: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border:2px solid rgb(250, 221, 216);
+        font-size: 15px;
+        letter-spacing: 3px;
+        color:rgb(150, 150, 150);
+    }
+    .topbook-wrap .find-btn{
+        display:block;
+        float:right;
+        width: 40px;
+        height: 41.5px;
+        line-height:41px;
+        text-align: center;
+        /* margin-top: 10.5px; */
+        margin-top: 10px;
+        outline: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: #fff;
+        border-top:2px solid rgb(250, 221, 216);
+        border-bottom:2px solid rgb(250, 221, 216);
+        border-right:2px solid rgb(250, 221, 216);
+        border-left:0px;
+    }
+    /* 设置搜索图标 */
+    .topbook-wrap .find-btn .find-icon{
+        color:rgb(245, 192, 182);
+        font-weight: bold;
+        /* line-height:40px; */
+        text-align: center;
+    }
+
+
+
+
+    /* 设置main */
+    .main-wrap{
+        width: 1100px;
+        height: 1800px;
+        margin: 10px auto;
+        /* background-color: salmon; */
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    /* 设置容器 */
+    .main-wrap > .book_intr-wrap{
+        height: 1650px;
+        width: 100%;
+        /* background-color: rgb(139, 135, 134); */
+    }
+    .main-wrap > .book_label-wrap{
+        height: 1650px;
+        width:40%;
+        /* background-color: rgb(211, 207, 206); */
+    }
+    /* 设置全库 */
+    .book_intr-wrap .allbook{
+        background-color: #fff;
+        width: 600px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        margin:10px 0;
+        border-radius: 10px;
+        font-size: 19px;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        color:rgb(128, 128, 126);
+        box-shadow: 0 0 10px rgb(228, 228, 228);
+        float: left;
+    }
+     /* 设置最新最热 */
+    .book_intr-wrap .newbook{
+        width: 600px;
+        height: 50px;
+        line-height: 50px;
+        margin:20px 0;
+        display: flex;
+        justify-content:space-around;
+        float: left;
+    }
+    .book_intr-wrap .newbook a{
+        display:block;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        font-size: 16px;
+        letter-spacing: 1.7px;
+        font-weight: bold;
+        border: #f8ac9f 2px solid;
+        color:#f8ac9f;
+    }
+    .book_intr-wrap .newbook a:hover{
+        color:rgb(250, 234, 234);
+        border: rgb(250, 234, 234) 2px solid;
+        background-color: tomato;
+    }
+    /* 设置书的介绍 */
+    .book_intr-wrap .outer1{
+        background-color: #fff;
+        width: 700px;
+        height: 1050px;
+        margin-left:-40px;
+        border-radius:15px;
+        transition: all .5s;
+        float: left;
+    }
+    .book_intr-wrap .outer1 .title > a{
+        text-decoration:none;
+    }
+    .book_intr-wrap .outer1 .image a{
+        display:block;
+        width: 250px;
+        overflow:hidden;
+    }
+    .book_intr-wrap .outer1 .image{
+        /* width: 190px; */
+        width: 250px;
+        vertical-align: bottom;
+        float: left;;
+        margin: 20px 0px 20px 30px ;
+        border-radius:15px;
+        /* background-color: thistle; */
+        /* transition: .2s; */
+    }.book_intr-wrap .outer1 .image img {
+        width: 250px;
+        vertical-align: bottom;
+        float: left;
+        border-radius: 15px;
+        /* background-color: thistle; */
+        /* transition: .2s; */
+    }
+    .book_intr-wrap .outer1 .title{
+        letter-spacing:1px;
+        color:gray;
+        float: left;
+        margin-top: -10px;
+        line-height: 5px;
+        /* background-color: thistle; */
+    }
+    .book_intr-wrap .outer1  h2{
+        letter-spacing:4px;
+    }
+    .book_intr-wrap .outer1 .intro{
+        height: 83px;
+        font-size: 18px;
+        color:gray;
+        line-height:20px;
+        /* background-color: thistle; */
+        margin: 5px 20px 10px 20px;
+    }
+    .book_intr-wrap .outer1 .intro p{
+        margin-top: 20px;
+        width: 100%;
+        letter-spacing:1.5px;
+        line-height: 25px;
+        overflow: hidden;
+        -webkit-box-orient:vertical;
+    }
+    .book_intr-wrap .outer1 h2{
+        color:tomato;
+        font-size: 35px;
+        font-weight: bold;
+        margin: 10px 30px 20px 30px;
+    }
+    .book_intr-wrap .outer1 .title div,
+    .book_intr-wrap .outer1 .title ul{
+        margin: 30px 30px ;
+    }
+    .book_intr-wrap .star li{
+        line-height: 15px;
+    }
+    .book_intr-wrap .outer1 .ystar{
+        color:rgb(245, 221, 6);
+        font-size:18px;
+    }
+    .book_intr-wrap .outer1 .gstar{
+        /* color:rgb(245, 221, 6); */
+        font-size:18px;
+    }
+    .text{
+        float:right;
+        width: 400px;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    /* 设置侧栏 */
+.book_label-wrap{
+    float: right;
+}
+.book_label-wrap .outer{
+    width: 375px;
+    height: 300px;
+    margin: -140px 10px 10px auto;
+    background-color:#fff;
+    box-shadow:0 0 10px rgb(190, 190, 186);
+    border-radius: 15px;
+}
+/* 设置标题 */
+.book_label-wrap .outer .action{
+    width: 100%;
+    height: 60px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(90, 90, 89);
+    letter-spacing:10px;
+    font-weight: bold;
+    border-radius: 15px;
+}
+/* 设置ul */
+.book_label-wrap .outer .ul-container{
+    width: 100%;
+    height: 240px;
+    /* background-color: thistle; */
+    display: flex;
+    flex-wrap:wrap;
+    align-content:space-around;
+    justify-content: space-around;
+}
+.book_label-wrap .ul-container li{
+    width: 120px;
+}
+.book_label-wrap .ul-container a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height:25px;
+    color:rgb(107, 105, 107);
+    /* background-color: yellowgreen; */
+}
+/* 设置影视 */
+.book_label-wrap .ul-container .movie-wrap{
+    margin-top: 2.5px;
+}
+/* 设置图 */
+.book_label-wrap .ul-container img{
+    width: 50px;
+    /* background-color: yellow; */
+}
+/* 设置点击效果 */
+.book_label-wrap .ul-container a > div:hover{
+    color:tomato;
+    font-weight: bold;
+}
+/* 加上过渡效果 */
+.book_label-wrap img{
+    transition: .3s linear;
+}
+.book_label-wrap .ul-container a:hover img{
+    transform: scale(1.1);
+}
+/* 设置标签 */
+.book_label-wrap .outer1{
+    background-color: #fff;
+    width: 375px;
+    height: 1050px;
+    margin: 20px 10px 10px auto;
+    box-shadow:0 0 10px rgb(190, 190, 186);
+    border-radius: 15px;
+}
+.book_label-wrap .outer1 > div.label{
+    height: 50px;
+    /* background-color: coral; */
+    line-height:50px;
+    text-align:center;
+    border-radius: 15px;
+    font-size: 19px;
+    font-weight: bold;
+    color: rgb(102, 101, 101);
+    letter-spacing: 3px;
+}
+/* 设置横线 */
+.book_label-wrap .outer1 > div.line{
+    height: 1.5px;
+    line-height:1px;
+    width:90%;
+    border-radius: 15px;
+    margin: 5px auto 3px;
+    background-color: rgba(190, 184, 184,.5);
+}
+.book_label-wrap .outer1 .ul-container{
+    width: 340px;
+    height: 135px;
+    /* background-color: thistle; */
+    display: flex;
+    flex-wrap:wrap;
+    align-content:space-around;
+    /* justify-content:center; */
+    margin-left:16px;
+}
+.book_label-wrap .outer1 .ul-container:last-child{
+    height: 70px;
+}
+.book_label-wrap .outer1 .ul-container:nth-of-type(2),
+.book_label-wrap .outer1 .ul-container:nth-of-type(6),
+.book_label-wrap .outer1 .ul-container:nth-of-type(7){
+    height: 95px;
+}
+.book_label-wrap .outer1 .ul-container li{
+    margin-left:8px;
+    width:77px;
+    height: 30px;
+    text-align: center;
+    line-height: 40px;
+    
+    /* border: thistle 2px solid; */
+    
+}
+/* 设置标签 */
+.book_label-wrap .outer1 .ul-container .literature{
+    width: 60px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 15px;
+    margin-left: 5px;
+    margin-top: -2px;
+    border-radius: 10px;
+    color: rgb(253, 251, 251);
+    font-size: 16.5px;
+    font-weight: bold;
+    background-color: tomato;
+}
+/* 设置超链接 */
+.book_label-wrap .outer1 .ul-container a{
+    display: block;
+    width: 82px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color:rgb(107, 105, 107);
+}
+/* 设置点击效果 */
+.book_label-wrap .outer1 .ul-container a:hover{
+    background-color: rgb(243, 191, 182);
+    color:whitesmoke;
+}
+
+/* 设置页码 */
+.pagenum-wrap{
+    /* background-color: rgb(243, 191, 182); */
+    margin:40px auto;
+}
+.pagenum-wrap .nav{
+    width: 700px;
+    height:40px;
+    line-height: 40px;
+    margin:50px auto;
+    /* background-color: rgb(216, 209, 200); */
+    display:flex;
+    justify-content:space-between
+}
+.pagenum-wrap .nav > .nav1{
+    /* flex-grow: 1; */
+    justify-content:space-between
+}
+.pagenum-wrap .nav a{
+    display:block;
+    width: 40px;
+    height: 40px;
+    border: rgb(194, 193, 193) 2px solid;
+    color: rgb(119, 118, 117);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+}
+/* 设置图标 */
+.pagenum-wrap .nav .left,
+.pagenum-wrap .nav .omit,
+.pagenum-wrap .nav .right{
+    font-size: 17px;
+    font-weight: bolder;
+}
+/* 设置省略号 */
+.pagenum-wrap .nav .omit{
+    border:unset;
+    margin-top:15px;
+}
+/* 设置竖线 */
+.pagenum-wrap .nav .line{
+    width: 1px;
+    height: 35px;
+    background-color: rgba(194, 193, 193,.7);
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/* 设置goto */
+.pagenum-wrap .nav .goto{
+    color: rgb(119, 118, 117);
+    font-weight: bold;
+    font-size: 18px;
+}
+/* 设置表单 */
+.pagenum-wrap .nav .box{
+    width: 50px;
+    border:  rgb(194, 193, 193) 2px solid;
+    line-height: 30px;
+    border-radius: 10px;
+    /* background-color: thistle; */
+}
+.pagenum-wrap .nav .page{
+    width: 46px;
+    border:unset;
+    border-radius: 10px;
+    line-height: 30px;
+    text-align: center;
+    outline: none;
+    /* background-color: turquoise; */
+}
+/* 设置点击效果 */
+.pagenum-wrap .nav a:not(.omit):hover{
+    color:tomato;
+    border: tomato 2px solid;
+    transition: all .25s;
+}
+.book_intr-wrap .outer1:hover{
+    transform:translateX(0px) translateY(0px) ;
+}
+.title button{
+    background-color: rgb(243, 227, 224);
+    font-size: 17px;
+    font-weight: lighter;
+    color: tomato;
+    border-radius: 7px;
+    border: rgb(245, 236, 236) 2px solid;
+}
+.b{
+    font-size: 14px;
+    margin-top: -10px;
+}
