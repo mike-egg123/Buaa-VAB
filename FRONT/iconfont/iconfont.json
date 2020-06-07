@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "643020",
+      "name": "举报",
+      "font_class": "jubao",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "5285151",
+      "name": "举报",
+      "font_class": "jubao1",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    },
+    {
+      "icon_id": "6250627",
+      "name": "举报",
+      "font_class": "jubao2",
+      "unicode": "e711",
+      "unicode_decimal": 59153
+    },
+    {
+      "icon_id": "8361788",
+      "name": "举报",
+      "font_class": "jubao3",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "13042651",
+      "name": "举报",
+      "font_class": "jubao4",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
       "icon_id": "551210",
       "name": "花朵",
       "font_class": "flower_circle",
