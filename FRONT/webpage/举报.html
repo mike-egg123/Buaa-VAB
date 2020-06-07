@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css_remove/reset.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css_style/topbar_style.css">
+    <link rel="stylesheet" href="../css_style/举报page.css">
+    <style type="text/css">
+        .wechat:hover .qrcode {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+        }
+    
+        .qrcode {
+            width: 0px;
+        }
+    
+        .wechat:hover .wechat-img {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="topbar">
+            <li class="logo-wrap">
+                <img src="../vab_img/logo.jpg.png" alt="logo" class="logo">
+            </li>
+            <li class="line-wrap">
+                <div class="line"></div>
+            </li>
+            <li class="home">
+                <a href="#" class="iconfont">&#xe61f;
+                    <p>home</p>
+                </a>
+            </li>
+            <li class="book">
+                <a href="../webpage/book_page.html" class="iconfont">&#xe66c;
+                    <p>book</p>
+                </a>
+            </li>
+            <li class="video">
+                <a href="../webpage/movie_page.html" class="iconfont">&#xe605;
+                    <p>video</p>
+                </a>
+            </li>
+            <li class="group">
+                <a href="#" class="iconfont">
+                    &#xe654;
+                    <p>group</p>
+                </a>
+            </li>
+            <li class="topic">
+                <a href="#" class="iconfont">
+                    &#xe8b1;
+                    <p>topic</p>
+                </a>
+            </li>
+            <li class="topic">
+                <a href="#" class="iconfont">
+                    &#xe638;
+                    <p>logout</p>
+                </a>
+            </li>
+            <li class="user-wrap">
+                <a href="#" class="iconfont user">
+                    &#xe646;
+                    <p>user</p>
+                </a>
+            </li>
+        </ul>
+        <div class="topbook-wrap">
+            <div class="bookimg iconfont">&#xe711; </div>
+            <div class="bookicnline"></div>
+            <div class="zi">VAB举报</div>
+        
+            <div class="find-wrap">
+                <a href="" class="jubaonotea">
+                    <div class="jubaonote">我的举报记录</div>
+                </a>
+                <!-- <div class="jubaoline"></div> -->
+                <!-- <a href="" class="backa">
+                    <div class="back iconfont">&#xe60c; 返回</div>
+                </a> -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="jubaocontaincon">
+            <div class="jubaocontain1">
+                <span>举报主题</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                表情包
+            </div>
+            <div class="jubaocontain2">
+                <span>举报的内容</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#"> http://jingyan.baidu.com/article/ceb9fb1073bd7e8cad2ba0c0.html</a> 
+            </div>
+            <div class="jubaocontainline"></div>
+        </div>
+        <div class="jubaokindcon">
+            <div class="jubaokindbar">选择举报类型</div>
+            <div class="jubaokind">
+                <label>
+                    <input type="checkbox" value="">
+                    色情低俗
+                </label>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <label>
+                    <input type="checkbox" value="">
+                恐怖暴力
+                </label>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <label>
+                    <input type="checkbox" value="">
+                    赌博博彩
+                </label>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <label>
+                    <input type="checkbox" value="">
+                    违禁物品
+                </label>
+                <label>
+                    <input type="checkbox" value="">
+                    政治类
+                </label>
+                <label>
+                    <input type="checkbox" value="">
+                    购物交易诈骗
+                </label>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <label>
+                    <input type="checkbox" value="">
+                    其他
+                </label>
+            </div>
+            <div class="jubaocontainline1"></div>
+        </div>
+        <div class="jubaodiscrcon">
+            <div class="jubaodiscr">问题描述</div>
+            <div class="jubaodiscrinp">
+                <input type="text" class="form-control" placeholder="Text input">
+            </div>
+            <div class="jubaodiscrinp1">
+                输入你的邮箱 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="jubaodiscrinp1">
+                输入你的电话 <input type="text" class="form-control" placeholder="Phone Number">
+            </div>
+            <button type="button" class="btn btn-primary">提交</button>
+        </div>
+    </main>
+    <footer
+        style=" background-color: rgb(243, 191, 182); color: rgb(255, 255, 255); padding: 30px 50px;font-family:Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace';height: auto">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="margin: 12px 0px;margin-bottom: 17px;">
+                <table>
+                    <tr style="height: 35px;">
+                        <td>
+                            <img src="../vab_img/logo.jpg.png" alt="logo" style="width: auto; height:35px;">
+                        </td>
+                        <td style="height: 35px;line-height: 35px;color: #FF6347;font-weight: bold">
+                            &nbsp;&nbsp;Vedio and book
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="margin: 8px 0px;">Copyright &copy;2020 by “这是我们的组名”
+            </div>
+            <div style="margin: 8px 0px;">若本站收录内容无意侵犯了贵公司版权，请给网页底部微信或邮箱地址来信，我们会及时处理和回复，谢谢合作</div>
+            <div style="margin: 8px 0px;">Email：“这里是一个邮箱”还可以有其他东西</div>
+            <div style="width: 300px;height: 1px; background-color: #FFFFFF;margin-top: 20px;"></div>
+            <div style="margin: 8px 0px; margin-top: 13px;height: auto;">
+                <a href="#" class="wechat">
+                    <div class="wechat-img">
+                        <img src="//piccache.cnki.net/kdn/index/kns7/nimages/logo_wx.png" alt="微信">
+                    </div>
+                    <div style="border-radius: 10px; border-radius: 10px;color: rgba(255,99,71,1.00);">
+                        <img class="qrcode" src="../vab_img/qrcode.jpg" alt="微信二维码">
+                    </div>
+                </a>
+            </div>
+    
+        </div>
+    </footer>
+</body>
+</html>
