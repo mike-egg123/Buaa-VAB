@@ -1,0 +1,198 @@
+.topbook-wrap{
+        width:1210px;
+        height:60px;
+        margin: 25px auto 0px;
+        /* background-color: #baf; */
+        display:flex;
+        background-color: #fff;
+        border-radius: 10px;
+        border-bottom: rgb(218, 215, 215,0.7) .8px solid;
+        box-shadow:0 20px 10px rgba(239, 240, 241,.5);
+    }
+    /* 设置图书图标 */
+    .topbook-wrap .bookimg{
+        flex-grow: .55;
+        text-align:end;
+        font-size: 32px;
+        line-height: 60px;
+        color: rgb(253, 146, 6);
+    }
+    .topbook-wrap .bookicnline{
+        width: 1px;
+        height: 33px;
+        background-color: rgb(223, 223, 223);
+        margin:10px 10px auto 25px;
+    }
+    /* 设置字体 */
+    .topbook-wrap .zi{
+        background-color: bfa(173, 172, 171);
+        letter-spacing: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(109, 111, 114);
+        /* border: lime 2px solid; */
+        flex-grow: .15;
+        text-align:center;
+        line-height: 60px;
+        margin-right: 360px;
+    }
+    /* 设置搜索 */
+    .topbook-wrap .find-wrap{
+        width:210px;
+        /* background-color: turquoise; */
+        display: flex;
+    }
+    .topbook-wrap .find-wrap .jubaonotea{
+        display:block;
+        /* background-color: thistle; */
+        text-decoration: none;
+        color: rgb(122, 120, 120);
+        letter-spacing: 1px;
+        font-size: 17px;
+        line-height: 60px;
+    }
+    .topbook-wrap .find-wrap .backa{
+        display:block; 
+        text-decoration: none;
+    }
+     .topbook-wrap .find-wrap .back{
+        color: rgb(122, 120, 120);
+        letter-spacing: 1px;
+        font-size: 17px;
+        line-height: 60px;
+        margin-top:3px
+     }
+    .topbook-wrap .find-wrap .jubaoline{
+        width: .5px;
+        height: 20px;
+        background-color: rgb(212, 209, 209);
+        margin-left:12px;
+        margin-right:12px;
+        margin-top:21px;
+    }
+    .topbook-wrap .find-wrap a:hover{
+        color: rgb(245, 158, 142);
+    }
+    .topbook-wrap .find-wrap .back:hover{
+        color: rgb(245, 158, 142);
+    }
+    main{
+        height: 1050px;
+    }
+    main .jubaocontaincon{
+        /* background-color: #abf; */
+        width: 1200px;
+        height: 160px;
+        margin: 40px auto;
+    }
+    main .jubaocontaincon .jubaocontain1,main .jubaocontaincon .jubaocontain2{
+        width: 80%;
+        height: 60px;
+        /* background-color: #fab; */
+        margin:20px auto;
+        line-height: 60px;
+        color: rgb(110, 110, 108);
+        letter-spacing: 1px;
+    }
+    main .jubaocontaincon .jubaocontain1 span,
+    main .jubaocontaincon .jubaocontain2 span{
+        font-weight: bold;
+    }
+    main .jubaocontaincon .jubaocontain2 a{
+        text-decoration: none;
+        color: rgb(76, 166, 221);
+        letter-spacing: .5px;
+    }
+    main .jubaocontaincon .jubaocontainline{
+        width: 1000px;
+        height: .4px;
+        background-color: rgb(218, 216, 216);
+        margin: 10px auto;
+        margin-top: 20px;
+    }
+    main .jubaokindcon{
+        width: 1200px;
+        height: 240px;
+        margin: 40px auto 0px;
+        /* background-color: #afb; */
+    }
+    main .jubaokindcon .jubaokindbar{
+        /* background-color: #fab; */
+        height: 40px;
+        width: 80%;
+        line-height: 40px;
+        margin:10px auto;
+        border-radius: 5px;
+        border-bottom: .3px solid rgb(224, 224, 224);
+        font-weight: bold;
+        color: rgb(110, 110, 108);
+        letter-spacing: 1px;
+    }
+    main .jubaokindcon .jubaokind{
+        /* background-color: #fab; */
+        height: 40px;
+        width: 36%;
+        line-height: 40px;
+        margin-top:10px;
+        margin-left:90px
+    }
+    main .jubaokindcon .jubaocontainline1{
+        width: 1000px;
+        height: .4px;
+        background-color: rgb(218, 216, 216);
+        margin: 10px auto;
+        margin-top: 100px;
+    }
+    main .jubaokindcon .jubaokind label{
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-left: 30px;
+        color: rgb(121, 121, 121);
+    }
+    main .jubaodiscrcon{
+        width: 1200px;
+        height: 400px;
+        /* background-color: #fab; */
+        margin: 10px auto;
+    }
+    main .jubaodiscrcon .jubaodiscr{
+        height: 40px;
+        width: 80%;
+        line-height: 40px;
+        margin:10px auto;
+        /* border-radius: 5px;
+        border-bottom: .3px solid rgb(185, 183, 183); */
+        font-weight: bold;
+        color: rgb(110, 110, 108);
+        letter-spacing: 1px;
+    }
+    main .jubaodiscrcon .jubaodiscrinp{
+        height: 200px;
+        width: 80%;
+        line-height: 40px;
+        margin:0px auto 20px;
+        /* background-color: #abf; */
+    }
+    main .jubaodiscrcon .jubaodiscrinp input{
+        height: 100%;
+        line-height: 0px;
+        outline: none;
+    }
+    main .jubaodiscrcon .jubaodiscrinp1{
+        height: 40px;
+        width: 40%;
+        line-height: 40px;
+        margin-left:120px;
+        margin-bottom: 60px;
+        /* background-color: #abf; */
+    }
+    main .jubaodiscrcon .jubaodiscrinp1 input{
+        height: 100%;
+        line-height: 0px;
+        outline: none;
+    }
+    main .jubaodiscrcon button{
+        margin-top: 10px;
+        margin-left: 120px;
+        width: 120px;
+    }
