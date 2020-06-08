@@ -1,0 +1,242 @@
+.detailouter{
+    margin:10px auto;
+    width: 1100px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 1400px;
+}
+.topicdetailouter{
+    width: 650px;
+    /* background-color: #fba; */
+}
+.talkouter{
+    width: 350px;
+    background-color: #baf;
+}
+.topicdetailouter .specialcon{
+    display: flex;
+    margin-left: 80px;
+    margin-top:10px;
+    margin-bottom: 15px;
+}
+.specialcon .special1,.specialcon .special2{
+    border-radius: 5px;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    line-height: 21px;
+    color: #fff;
+    background-color: rgb(245, 172, 160);
+    letter-spacing: 2px;
+}
+.specialcon .special1{
+    margin-right:15px;
+}
+.specialcon .special1:hover,.specialcon .special2:hover{
+    background-color: #fff;
+    color:rgb(245, 172, 160);
+    border:1px solid rgb(245, 172, 160);
+}
+.mycontainer{
+    margin: 0px auto;
+    height: 320px;
+    width: 550px;
+}
+.mycontainer .myrow{
+    height: 100%;
+    border-radius: 10px;
+    box-shadow:0px 0px 15px rgba(197, 195, 195, 0.7) ;
+}
+/* 图片 */
+.topiccon .topicimg{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.myrow p{
+    /* background-color: #fba; */
+    height: 100%;
+    text-align: center;
+}
+.myrow .topictheme{
+    display:block;
+    color: rgb(245, 243, 243);
+    font-size: 25px;
+    margin-top: -35px;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.myrow .topiccount{
+    color: rgb(163, 162, 162);
+    margin-top: 20px;
+    margin-bottom:15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.myrow .topicintro{
+    margin: 10px 25px 15px;
+    line-height:20px;
+    text-align: left;
+    text-indent:35px;
+    letter-spacing: 1px;
+}
+/* line */
+.myrow .topicline{
+    border: .7px solid rgb(233, 229, 229);
+    width: 350px;
+    margin:10px auto 20px;
+}
+/* button */
+.myrow .topicbtu{
+    /* text-align: center; */
+    display:flex;
+    justify-content: space-evenly;
+}
+.topicbtu button{
+    width: 65px;
+}
+.topicbtu .line01,.topicbtu .line02{
+    border: .6px solid rgb(228, 228, 230);
+}
+
+.commentcon{
+    /* background-color: #bfa; */
+    width: 520px;
+    /* height: 200px; */
+    display: flex;
+    margin:20px auto;
+    /* background-color: #abf; */
+}
+.commentline{
+    border: .7px solid rgb(230, 230, 230);
+    width: 480px;
+    margin:20px auto 5px;
+}
+.commentcon .headimgcon{
+    flex-grow: 1;
+    /* background-color: #abf; */
+}
+.headimgcon img{
+    display: block;
+    width: 100px;
+    /* detailouterheight: 100px; */
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.commentcon .textimgcon{
+    flex-grow: 100;
+}
+.textimgcon .commentname{
+    color:rgb(218, 214, 214);
+    margin-left:10px;
+    font-size: 15px;
+}
+.textimgcon .commentname a{
+    display:block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: rgb(143, 144, 145);
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+.textimgcon .commentname a:hover{
+    color:#fff;
+    background-color: tomato;
+    text-decoration: none;
+}
+.textimgcon .commenttext{
+    margin: 10px 10px 18px;
+    line-height:20px;
+    text-align: left;
+    text-indent:35px;
+    letter-spacing: 1px;
+    font-size: 15.5px;
+}
+.commentreply a{
+    display: flex;
+    text-decoration: none;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.iconfontcon{
+    display:flex;
+    border: 1px solid rgb(245, 182, 8);
+    color:rgb(245, 182, 8) ;
+    border-radius: 5px;
+    width: 40px;
+    height: 25px;
+    line-height: 25px;
+    justify-content: space-evenly;
+}
+.commentreply a .iconfontcon:hover{
+    color:#fff;
+    background-color: rgb(245, 182, 8);
+    text-decoration: none;
+}
+.commentreply a .iconfont{
+    font-weight: unset;
+    font-size: 18px;
+    line-height: 26px;
+}
+.commentreply a .iconfontnum:hover{
+    text-decoration: none;
+}
+.iconfontreplyin,.iconfontforin{
+    width: 70px;
+    height: 25px;
+    line-height: 22px;
+    text-align: center;
+    color:rgb(253, 157, 141);
+    border-radius: 7px;
+    border: rgb(253, 157, 141) 1px solid;
+}
+.newcommentcon{
+    width: 500px;
+    margin:50px auto 5px; 
+    height: 25px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    color: rgb(156, 155, 155);
+    text-align: center;
+}
+.newcommentcon .newcomment1,.newcommentcon .newcomment2{
+    border-radius: 10px;
+    width: 45px;
+}
+.newcommentcon .newcomment1{
+    margin-right: 5px;
+}
+.newcommentcon .newcomment2{
+    margin-left: 5px;
+}
+.iconfontreplyin:hover, .iconfontforin:hover{
+   color:#fff;
+   background-color: rgb(253, 157, 141);
+   text-decoration: none;
+}
+.newcommentcon .newcomment1:hover,.newcommentcon .newcomment2:hover{
+    background-color: rgb(156, 155, 155);
+    color: #fff;
+    text-decoration: none;
+}
+.wechat:hover .qrcode {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+}
+.qrcode {
+    width: 0px;
+}
+.wechat:hover .wechat-img {
+    padding-left: 40px;
+}
