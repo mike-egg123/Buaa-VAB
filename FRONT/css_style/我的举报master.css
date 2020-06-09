@@ -1,0 +1,140 @@
+.jubaoline{
+    width: 1000px;
+    height: 1px;
+    background-color: rgb(207, 207, 207);
+    margin:50px auto; 
+}
+.jubaocon{
+    width: 900px;
+    /* height: 300px; */
+    /* background-color: #abf; */
+    margin: 50px auto 0px;
+    border-radius: 20px;
+    padding: 5px 5px;
+    box-shadow: 0px 0px 10px rgb(233, 225, 224);
+}
+.jubaocon:hover{
+    box-shadow: 0px 0px 10px rgb(255, 185, 172);
+}
+.jubaocon .jubaoplace{
+    /* background-color: rgb(241, 23, 67); */
+    border-radius: 20px;
+    width: 85%;
+    margin: 25px auto;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+}
+.jubaocon .jubaoplace a{
+    display: inline;
+    letter-spacing: .3px;
+    font-weight: normal;
+    margin-left:70px;
+    text-decoration: none;
+    color: rgb(248, 172, 172);
+}
+.jubaocon .jubaocontaincon{
+    display: flex;
+    width: 85%;
+    /* height: 150px; */
+    /* background-color: #afb; */
+    margin: 0px auto;
+    /* justify-content: space-evenly; */
+}
+.jubaocon .jubaocontain{
+    width: 280px;
+    /* background-color: rgb(145, 150, 168); */
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+    line-height: 70px;
+}
+.jubaocon .jubaocontain1{
+    margin-left: 70px;
+    /* background-color: rgb(112, 151, 120); */
+    text-indent:33px;
+    line-height: 23px;
+    letter-spacing: .5px;
+    border: rgb(231, 230, 231) solid 1px;
+    padding: 15px 15px;
+    border-radius: 20px;
+    color: rgb(136, 135, 135);
+}
+.jubaocon .jubaotime{
+    width: 85%;
+    /* background-color: rgb(188, 202, 202); */
+    margin:20px auto;
+    color: rgb(108, 110, 110);
+    letter-spacing: .5px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+}
+.jubaocon .jubaotime span{
+    display: inline;
+    margin-left: 70px;
+    letter-spacing: .4px;
+    font-weight: normal;
+    margin-left:70px;
+    text-decoration: none;
+    color: rgb(136, 135, 135);
+}
+.jubaocon .jubaoreasoncon{
+     display: flex;
+    width: 85%;
+    /* height: 150px; */
+    /* background-color: #afb; */
+    margin: 20px auto;
+}
+.jubaocon .jubaoreasoncon .jubaoreason{
+    /* background-color: #bbb; */
+    width: 70px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+    line-height: 40px;
+}
+.jubaocon .jubaoreasoncon .jubaoreason1{
+    margin-left: 70px;
+    /* background-color: rgb(112, 151, 120); */
+    /* text-indent:33px; */
+    width: 600px;
+    line-height: 19.5px;
+    letter-spacing: .5px;
+    border: rgb(231, 230, 231) solid 1px;
+    padding: 15px 15px;
+    border-radius: 20px;
+    color: rgb(136, 135, 135);
+}
+.jubaocon .jubaotime1{
+    width: 85%;
+    /* background-color: #fab; */
+    margin: 0px auto 15px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+}
+.jubaocon .jubaotime1 span{
+    display: inline;
+    margin-left: 70px;
+    letter-spacing: .4px;
+    font-weight: normal;
+    margin-left:70px;
+    text-decoration: none;
+    color: rgb(136, 135, 135);
+}
+.jubaocon .jubaostatu span{
+    color: tomato;
+}
+.jubaocon .btn1,.jubaocon .btn2{
+    display: inline-block;
+    width: 100px;
+    text-decoration: none;
+    margin-left: 220px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.jubaocon button{
+    width: 100px;
+    height: 40px;
+}
