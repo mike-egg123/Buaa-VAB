@@ -3,20 +3,19 @@
 	background-image: url(../vab_img/book_upload.png);
 	background-size: 580px auto;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: 450px 120px;
+	/* background-attachment: fixed; */
+	background-position: 850px 120px;
 	background-origin: border-box;
 	color:gray;
-	padding: 40px 80px;
-	width: 60%;
 	height: auto;
+	padding-bottom: 100px;
 	border-right: rgba(202, 186, 183,.4) 1px solid;
 	overflow: visible;
 }
 /*设置书名框*/
 .form-inp .bookname{
     width: 345px;
-	height: 30px;
+	height: 35px;
 	margin-top: 0px;
 	margin-bottom:11px;
 	border-radius: 7px;
@@ -25,12 +24,15 @@
 	color:gray;
 	font-size: 15px;
 }
+.form-inp .bookname:focus{
+	border: tomato 2px solid;
+}
 /*设置作者框*/
 .form-inp .author{
     width: 345px;
-	height: 30px;
+	height: 35px;
 	margin-top: 0px;
-	margin-bottom: 20px;
+	margin-bottom: 4px;
 	border-radius: 7px;
 	border: rgb(253, 229, 229) 2px solid;
 	color:gray;
@@ -54,11 +56,10 @@
 /*设置上传图片的选择文件框*/
 
 .file_pic {
- margin-left:114px;
  font-size: 17px;
  margin-top: -58px;
- height: 32px;
- width: 302px;
+ height: 36px;
+ width: 312px;
  line-height: 34px;
  overflow: hidden;
  border: rgb(253, 229, 229) 2px solid;
@@ -66,12 +67,13 @@
  border-radius: 7px;
  padding-left: 15px;
  margin-bottom: 4px;
+ margin-left: -100px;
  background-color: rgba(255,255,255,1.00);
 }
 /*设置书籍简介文本框*/
 .introduction{
 	font-size: 17px;
-	width: 340px;
+	width: 342px;
 	height: 350px;
 	margin-left: 82px;
 	margin-bottom: -10px;
@@ -98,4 +100,19 @@
 	border: rgb(253, 229, 229) 2px solid;
 	border-radius: 7px;
 }
+.bform{
+	width: 50%;
+	margin: 0 auto;
+}
 /*选择图片的按钮*/
+.choose{
+	position: relative;
+	top: 9px;
+	left: 7px;
+	width: 93px;
+}
+.select_book{
+	margin-top: -10px;
+	margin-bottom: 20px;
+	margin-left: -1px;
+}
