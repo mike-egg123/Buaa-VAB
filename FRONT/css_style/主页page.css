@@ -1,32 +1,49 @@
+body{
+    background-image: url("../vab_img/10.png");
+    background-repeat:no-repeat;
+    background-position:20px 130px;
+}
+main{
+    background-image: url("../vab_img/12.png");
+    background-repeat:no-repeat;
+    background-position:400px 300px;
+}
 main .helloworld{
     height: 50px;
     font-size: 50px;
     letter-spacing: 5px;
-    margin-top: 100px;
-    margin-bottom: 40px;
+    margin-top: 120px;
+    margin-bottom: 80px;
     text-align: center;
     color: rgb(94, 92, 92);
     font-weight: bold;
+    /* margin-left: 180px; */
 }
 main .helloworld1{
     height: 50px;
     font-size: 45px;
     letter-spacing: 5px;
     margin-top: 100px;
-    margin-bottom: 80px;
+    margin-bottom: 80px; 
     text-align: center;
     color: rgb(151, 150, 150);
 }
 main .helloworld1 span{
-    color: rgb(51, 173, 27);
+    font-size: 50px;
+    font-weight: bolder;
+    color: tomato;
+}
+main .helloworld1 img{
+    width: 120px;
 }
 .mainpage_logincon{
     display: block;
     height: 280px;
-    width: 1100px;
-    margin:20px auto;
+    width: 1000px;
+    margin:60px auto 40px;
     overflow: hidden;
     border-radius: 15px;
+    /* margin-left: 80px; */
 }
 .mainpage_logincon img{
     width: 1100px;
@@ -59,22 +76,37 @@ main .helloworld1 span{
 }
 
 main .mainpage_bookmoviecon,main .mainpage_grouptopiccon{
+    /* background-color: #abf; */
     display: flex;
-    justify-content: center;
+    justify-content:space-evenly;
     margin: 50px auto;
-    width: 1200px;
+    width: 1180px;
     height: 300px;
     justify-content: space-evenly;
 }
-.mainpage_bookmoviecon .mainpage_bookcon,.mainpage_bookmoviecon .mainpage_moviecon,
-.mainpage_grouptopiccon .mainpage_groupcon,.mainpage_grouptopiccon .mainpage_topiccon{
+/* main .mainpage_grouptopiccon{
+    justify-content: center;
+    margin-top: 550px;
+    margin-left:90px;
+    width: 1080px;
+    height: 300px;
+    justify-content: space-evenly;
+} */
+.mainpage_bookmoviecon .mainpage_bookcon,
+.mainpage_grouptopiccon .mainpage_topiccon{
     display: block;
-    width: 480px;
+    width: 450px;
+    float: left;
+}
+.mainpage_bookmoviecon .mainpage_moviecon,.mainpage_grouptopiccon .mainpage_groupcon{
+    display: block;
+    width: 450px;
+    float: right;
 }
 
 .mainpage_bookcon .mainpage_bookimg img,.mainpage_moviecon .mainpage_movieimg img,
 .mainpage_groupcon .mainpage_groupimg img,.mainpage_topiccon .mainpage_topicimg img{
-    width: 480px;
+    width: 450px;
     border-radius: 15px;
 }
 .mainpage_bookcon .mainpage_book,.mainpage_moviecon .mainpage_movie,
@@ -82,7 +114,7 @@ main .mainpage_bookmoviecon,main .mainpage_grouptopiccon{
     text-decoration: none;
     text-align: center;
     clear: both;
-    margin-top: -150px;
+    margin-top: -170px;
     margin-left: 160px;
 }
 .mainpage_bookcon .mainpage_bookimg,.mainpage_moviecon .mainpage_movieimg,
@@ -103,3 +135,7 @@ main .mainpage_bookmoviecon,main .mainpage_grouptopiccon{
     box-shadow:0px 0px 10px rgba(82, 80, 80, 0.7) ;
 }
 
+/* .mainpage_groupcon .mainpage_groupimg:hover{
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+} */
