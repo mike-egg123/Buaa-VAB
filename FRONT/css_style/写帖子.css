@@ -1,0 +1,82 @@
+.wechat:hover .qrcode {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+}
+
+.qrcode {
+    width: 0px;
+}
+
+.wechat:hover .wechat-img {
+    padding-left: 40px;
+}
+/*祖先div*/
+.book_upload{
+    margin-top: 70px;
+	background-image: url(../vab_img/1.png);
+	background-size: 580px auto;
+	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
+	background-position: 850px 100px;
+	background-origin: border-box;
+	color:gray;
+	height: auto;
+	padding-bottom: 100px;
+	border-right: rgba(202, 186, 183,.4) 1px solid;
+	overflow: visible;
+}
+/*设置书名框*/
+.form-inp .bookname{
+    width: 345px;
+	height: 35px;
+	margin-top: 0px;
+	margin-bottom:11px;
+	border-radius: 7px;
+	border: rgb(253, 229, 229) 2px solid;
+	padding-left: 5px;
+	color:gray;
+	font-size: 15px;
+}
+/*设置两个按钮*/
+.form-inp button{
+    width: 170px;
+	height: 40px;
+	margin-top: 17px;
+	background-color: rgb(243, 227, 224);
+	font-size: 17px;
+	letter-spacing:10px;
+	font-weight: bold;
+	color: tomato;
+	border-radius: 7px;
+	border: rgb(245, 236, 236) 2px solid;
+	margin-left:57px;
+}
+.introduction{
+	font-size: 17px;
+	width: 342px;
+	height: 350px;
+	margin-left: 82px;
+	margin-bottom: -10px;
+	margin-top:-25px;
+	border-radius: 7px;
+	border: rgb(253, 229, 229) 2px solid;
+	padding: 7px 5px;
+	color:gray;
+}
+.bform{
+	width: 50%;
+	margin: 0 auto;
+}
+.select_book{
+	margin-top: -10px;
+	margin-bottom: 20px;
+	margin-left: -1px;
+}
+.box{
+    margin-top: 10px;
+}
+.bform li{
+    height: auto;
+}
