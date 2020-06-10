@@ -3,11 +3,6 @@ body{
     background-repeat:no-repeat;
     background-position:20px 130px;
 }
-main{
-    background-image: url("../vab_img/12.png");
-    background-repeat:no-repeat;
-    background-position:400px 300px;
-}
 main .helloworld{
     height: 50px;
     font-size: 50px;
@@ -31,7 +26,7 @@ main .helloworld1{
 main .helloworld1 span{
     font-size: 50px;
     font-weight: bolder;
-    color: tomato;
+    color: rgb(77, 167, 73);
 }
 main .helloworld1 img{
     width: 120px;
@@ -78,44 +73,51 @@ main .helloworld1 img{
 main .mainpage_bookmoviecon,main .mainpage_grouptopiccon{
     /* background-color: #abf; */
     display: flex;
-    justify-content:space-evenly;
     margin: 50px auto;
-    width: 1180px;
+    width: 1000px;
     height: 300px;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
-/* main .mainpage_grouptopiccon{
-    justify-content: center;
-    margin-top: 550px;
-    margin-left:90px;
-    width: 1080px;
-    height: 300px;
-    justify-content: space-evenly;
-} */
+main .mainpage_book{
+    width: 80%;
+    text-align: center;
+    margin:100px auto 0px;
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: rgb(136, 133, 133);
+    font-weight: bold;
+}
+main .mainpage_bookacon{
+    text-decoration: none;
+}
+main .mainpage_bookacon .mainpage_booka{
+    width: 80%;
+    margin:20px auto 0px;
+    text-align: end;
+    color: rgb(248, 167, 152);
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+main .mainpage_booka:hover{
+    color: tomato;
+}
 .mainpage_bookmoviecon .mainpage_bookcon,
 .mainpage_grouptopiccon .mainpage_topiccon{
     display: block;
-    width: 450px;
+    width: 300px;
     float: left;
 }
 .mainpage_bookmoviecon .mainpage_moviecon,.mainpage_grouptopiccon .mainpage_groupcon{
     display: block;
-    width: 450px;
+    width: 300px;
     float: right;
 }
 
 .mainpage_bookcon .mainpage_bookimg img,.mainpage_moviecon .mainpage_movieimg img,
 .mainpage_groupcon .mainpage_groupimg img,.mainpage_topiccon .mainpage_topicimg img{
-    width: 450px;
+    width: 300px;
     border-radius: 15px;
-}
-.mainpage_bookcon .mainpage_book,.mainpage_moviecon .mainpage_movie,
-.mainpage_groupcon .mainpage_group,.mainpage_topiccon .mainpage_topic{
-    text-decoration: none;
-    text-align: center;
-    clear: both;
-    margin-top: -170px;
-    margin-left: 160px;
 }
 .mainpage_bookcon .mainpage_bookimg,.mainpage_moviecon .mainpage_movieimg,
 .mainpage_groupcon .mainpage_groupimg,.mainpage_topiccon .mainpage_topicimg{
@@ -135,7 +137,185 @@ main .mainpage_bookmoviecon,main .mainpage_grouptopiccon{
     box-shadow:0px 0px 10px rgba(82, 80, 80, 0.7) ;
 }
 
-/* .mainpage_groupcon .mainpage_groupimg:hover{
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-} */
+main .talkboxwrap0{
+    width: 1200px;
+    display: flex;
+    margin:40px auto;
+    justify-content: space-evenly;
+}
+.talkboxwrap{
+    width: 330px;
+    /* height: 320px; */
+    /* background-color: #abf; */
+    border-radius: 20px;
+    box-shadow: rgb(189, 188, 188) 0px 0px 10px;
+    padding: 10px 0px 20px;
+}
+.talkboxwrap:hover{
+    transition:all .3s ;
+    box-shadow: rgb(247, 177, 164) 0px 0px 10px;
+}
+.talkboxwrap .topic-intro{
+    /* background-color: #abf; */
+    width: 85%;
+    margin:20px auto;
+    /* margin-left: 48px; */
+    line-height: 22px;
+    letter-spacing: .7px;
+    text-indent:2em;
+    color: rgb(127, 129, 129);
+}
+.talkboxwrap .talkthemewrap{
+    width: 70%;
+    height: 30px;
+    margin:30px auto 5px;
+    padding-bottom: 10px;
+    text-align:center
+}
+.talkboxwrap .talktheme{
+    font-size: 22px;
+    text-decoration:none;
+    
+    color:tomato;
+    letter-spacing:1.5px;
+    font-weight: bold;
+    line-height:25px;
+}
+.talkboxwrap .talktime1{
+    margin:0px auto 3px;
+    text-align:center;
+    color:rgb(139, 138, 138);
+    font-size: 13.5px;
+    letter-spacing:1.5px;
+}
+.talkboxwrap .talktime2{
+    /* background-color: #baf; */
+    text-align:center;
+    color:rgb(139, 138, 138);
+    font-size: 12px;
+    letter-spacing:.5px;
+    margin-bottom: 10px;
+}
+.talkboxwrap .talkattend{
+    display: block;
+    width: 140px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    margin:20px auto 10px;
+    border-radius: 10px;
+    text-align:center;
+    padding-top: 7.5px;
+    letter-spacing:1px;
+    text-decoration:none;
+    color: rgb(255, 154, 137);
+    border: 2px solid rgb(255, 154, 137);
+}
+.talkboxwrap .talkattend:hover{
+    background-color: rgb(255, 154, 137);
+    border: 2px solid rgb(255, 255, 255);
+    color:rgb(255, 255, 255);
+}
+
+
+.commentcon{
+    /* background-color: #abf; */
+    width: 720px;
+    padding:30px 10px 20px;
+    display: flex;
+    margin:20px auto;
+}
+.commentline{
+    border: .7px solid rgb(230, 230, 230);
+    width: 800px;
+    margin:40px auto 5px;
+}
+.commentcon .headimgcon{
+    flex-grow: 1;
+    /* background-color: #abf; */
+}
+.headimgcon img{
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.commentcon .textimgcon{
+    flex-grow: 100;
+}
+.textimgcon .commentname{
+    color:rgb(218, 214, 214);
+    margin-left:10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.textimgcon .commentname a{
+    display:block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: rgb(250, 166, 151);
+    /* width: 100px; */
+    height: 25px;
+    line-height: 25px;
+    text-align: start;
+    border-radius: 7px;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+.textimgcon .commentname a:hover{
+    color: tomato;
+    text-decoration: none;
+}
+.textimgcon .commenttext{
+    margin: 10px 10px 18px;
+    line-height:25px;
+    text-align: left;
+    text-indent:35px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: rgb(100, 100, 99);
+}
+.commentreply a{
+    display: flex;
+    text-decoration: none;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.iconfontcon{
+    display:flex;
+    border: 1px solid rgb(245, 182, 8);
+    color:rgb(245, 182, 8) ;
+    border-radius: 5px;
+    width: 70px;
+    height: 35px;
+    line-height: 35px;
+    justify-content: space-evenly;
+    font-weight: bold;
+    font-size: 20px;
+}
+.commentreply a .iconfontcon:hover{
+    color:#fff;
+    background-color: rgb(245, 182, 8);
+    text-decoration: none;
+}
+.commentreply a .iconfontnum:hover{
+    text-decoration: none;
+}
+.iconfontreplyin,.iconfontforin{
+    width: 110px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color:rgb(253, 157, 141);
+    border-radius: 7px;
+    border: rgb(253, 157, 141) 1px solid;
+    font-size: 20px;
+    font-weight: bold;
+}
+.iconfontreplyin:hover, .iconfontforin:hover{
+   color:#fff;
+   background-color: rgb(253, 157, 141);
+}
