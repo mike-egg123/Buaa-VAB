@@ -9,6 +9,7 @@ main .iconfont{
     font-weight: lighter;
     padding-left: 40px;
     margin-bottom: 20px;
+    color: tomato;
 }
 .notice{
     height: 100px;
@@ -38,6 +39,7 @@ main a{
 .clean_all{
     height: 50px;
     width: 120px;
+    color: tomato;
     border-radius: 7px;
     border:rgb(214, 195, 191) 1px solid ;
 }
