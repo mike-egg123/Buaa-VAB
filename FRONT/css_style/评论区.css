@@ -1,9 +1,9 @@
 .commentcon{
     /* background-color: #bfa; */
     width: 520px;
-    height: 200px;
-    display: flex;
+    /* display: flex; */
     margin:20px auto;
+    padding:10px 10px;
 }
 .commentline{
     border: .7px solid rgb(230, 230, 230);
@@ -14,82 +14,93 @@
     flex-grow: 1;
     /* background-color: #abf; */
 }
-.headimgcon img{
-    display: block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-top: 5px;
-}
-.commentcon .textimgcon{
-    flex-grow: 100;
-}
-.textimgcon .commentname{
+.commentcon .commentname{
     color:rgb(218, 214, 214);
     margin-left:10px;
     font-size: 15px;
 }
-.textimgcon .commentname a{
+.commentcon .commentname a{
     display:block;
     margin-top: 10px;
-    margin-bottom: 5px;
-    color: rgb(143, 144, 145);
-    width: 80px;
+    margin-bottom: 15px;
+    color: rgb(158, 158, 158);
+    /* width: 80px; */
     height: 25px;
     line-height: 25px;
-    text-align: center;
+    text-align: start;
     border-radius: 7px;
-    font-size: 18px;
+    font-size: 24px;
+    font-weight: bolder;
     letter-spacing: 1.5px;
     text-decoration: none;
+
 }
-.textimgcon .commentname a:hover{
-    color:#fff;
-    background-color: tomato;
+.commentcon .commentname a:hover{
+    color: tomato;
     text-decoration: none;
 }
-.textimgcon .commenttext{
+.commentcon .commenttext{
     margin: 10px 10px 18px;
     line-height:20px;
     text-align: left;
     text-indent:35px;
     letter-spacing: 1px;
     font-size: 15.5px;
+    color: rgb(104, 104, 104);
 }
 .commentreply a{
-    display: flex;
     text-decoration: none;
-    justify-content: space-evenly;
+    /* background-color: #fab; */
+}
+.commentreply .btn{
+    width: 60px;
+    /* height: 50px; */
+    /* border-radius: 50%; */
+    margin-left: 50px;
+    text-decoration: none;
+}
+.othercommentcon0{
+    margin-top: 30px;
+    padding: 5px 15px;
+    background-color: rgba(230, 228, 227, 0.479);
+    border-radius: 10px;
+}
+.commentcon .othercommentcon{
+    width: 100%;
     margin-top: 20px;
-}
-.iconfontcon{
-    display:flex;
-    border: 1px solid rgb(245, 182, 8);
-    color:rgb(245, 182, 8) ;
-    border-radius: 5px;
-    width: 40px;
-    height: 25px;
-    line-height: 25px;
-    justify-content: space-evenly;
-}
-.commentreply a .iconfontcon:hover{
-    color:#fff;
-    background-color: rgb(245, 182, 8);
     text-decoration: none;
+    letter-spacing: .5px;
 }
-.commentreply a .iconfontnum:hover{
+.commentcon .othercommentcon a{
     text-decoration: none;
+    color: rgb(253, 155, 138);
+    font-weight: bold;
 }
-.iconfontreplyin,.iconfontforin{
-    width: 70px;
-    height: 25px;
-    line-height: 22px;
-    text-align: center;
-    color:rgb(253, 157, 141);
-    border-radius: 7px;
-    border: rgb(253, 157, 141) 1px solid;
+.commentcon .othercommentcon .iconfont{
+    color: tomato
 }
-.iconfontreplyin:hover, .iconfontforin:hover{
-   color:#fff;
-   background-color: rgb(253, 157, 141);
+.commentcon .othercommentcon .time{
+    font-size: 15px;
+    color:rgb(218, 214, 214);
+}
+.commentcon .othercommentcon .othercomment{
+    /* background-color: #fab; */
+    margin-top: 10px;
+    line-height: 19px;
+    letter-spacing: .5px;
+    color: rgb(105, 105, 105);
+    margin-bottom: 20px;
+}
+.othercommentcon .btn{
+    margin-left: 50px;
+    font-size: 13px;
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+}
+.commentcon .othercommentcon .othercommentline{
+    width: 96%;
+    height: .7px;
+    margin: 20px auto 0px;
+    background-color: rgb(250, 222, 217);
 }
