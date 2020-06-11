@@ -1,0 +1,80 @@
+main{
+    display:block;
+    transition: all .5s;
+    padding-left: 100px;
+    padding-top: 20px;
+}
+main .iconfont{
+    font-size: 26px;
+    font-weight: lighter;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    color: tomato;
+}
+.notice{
+    /* height: 150px; */
+    width: 600px;
+    border:rgb(214, 195, 191) 1px solid ;
+    border-radius: 7px;
+    margin: 0px 0px 20px 40px;
+    padding: 30px;
+    padding-bottom: 0px;
+    text-decoration: none;
+}
+.notice:hover{
+    box-shadow:0px 0px 10px rgb(182, 168, 168);
+    transform:translateX(-5px) translateY(-5px) ;
+    transition: all .5s;
+}
+main a:hover,:visited,:active,:link{
+    text-decoration: none;
+    color: tomato;
+}
+main a{
+    text-decoration: none;
+}
+.content{
+    color: gray;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 5px 0px;
+}
+.name{
+    color: green;
+}
+.group{
+    color:#3399FF;
+}
+.state{
+    color: blueviolet;
+}
+.b02{
+    background-color: white;
+    border: #dc3545 2px solid;
+    height: 40px;
+    width: 80px;
+    color: #dc3545;
+    border-radius: 5px;
+    margin: 10px 20px;
+}
+.b02:hover{
+    background-color: #dc3545;
+    color: whitesmoke;
+}
+.b01{
+    background-color: white;
+    border: green 2px solid;
+    height: 40px;
+    width: 80px;
+    color: green;
+    border-radius: 5px;
+    margin: 10px 20px;
+}
+.b01:hover{
+    background-color: green;
+    color: whitesmoke;
+}
+.b2{
+    text-align: center;
+    margin: 10px;
+}
