@@ -1,0 +1,130 @@
+.topbook-wrap{
+        width:1210px;
+        height:60px;
+        margin: 25px auto 0px;
+        /* background-color: #baf; */
+        display:flex;
+        background-color: #fff;
+        border-radius: 10px;
+        border-bottom: rgb(218, 215, 215,0.7) .8px solid;
+        box-shadow:0 20px 10px rgba(239, 240, 241,.5);
+    }
+    /* 设置图书图标 */
+    .topbook-wrap .bookimg{
+        flex-grow: .55;
+        text-align:end;
+        font-size: 42px;
+        line-height: 65px;
+        color: rgba(28, 150, 17, 0.877);
+    }
+    .topbook-wrap .bookicnline{
+        width: 1px;
+        height: 33px;
+        background-color: rgb(223, 223, 223);
+        margin:10px 10px auto 25px;
+    }
+    /* 设置字体 */
+    .topbook-wrap .zi{
+        background-color: bfa(173, 172, 171);
+        letter-spacing: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(109, 111, 114);
+        /* border: lime 2px solid; */
+        flex-grow: .15;
+        text-align:center;
+        line-height: 60px;
+        margin-right: 360px;
+    }
+
+.topbook-wrap .find-wrap .find{
+    display:flex;
+    /* background-color: thistle; */
+}
+.topbook-wrap .find-inp{
+    display:block;
+    padding-left: 15px;
+    outline: none;
+    width: 380px;
+    height: 35.5px;
+    margin-top: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border:2px solid rgb(250, 221, 216);
+    font-size: 15px;
+    letter-spacing: 3px;
+    color:rgb(150, 150, 150);
+}
+.topbook-wrap .find-btn{
+    display:block;
+    float:right;
+    width: 40px;
+    height: 41.5px;
+    line-height:41px;
+    text-align: center;
+    /* margin-top: 10.5px; */
+    margin-top: 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    border-top:2px solid rgb(250, 221, 216);
+    border-bottom:2px solid rgb(250, 221, 216);
+    border-right:2px solid rgb(250, 221, 216);
+    border-left:0px;
+}
+/* 设置搜索图标 */
+.topbook-wrap .find-btn .find-icon{
+    color:rgb(245, 192, 182);
+    font-weight: bold;
+    /* line-height:40px; */
+    text-align: center;
+}
+
+main .groupcon{
+    width: 600px;
+    padding: 5px 30px 15px;
+    /* background-color: #abf; */
+    margin:30px auto 0px;
+    border-radius: 20px;
+    box-shadow: rgb(228, 222, 221) 0px 0px 10px;
+}
+main .groupcon .groupname,main .groupcon .grouptime,
+main .groupcon .groupuser{
+    font-size: 18.5px;
+    font-weight: bold;
+    color: rgb(131, 131, 134);
+    letter-spacing: 2px;
+    margin-top: 20px ;
+}
+main .groupcon .groupuser a{
+    text-decoration: none;
+    color: rgb(247, 164, 149);
+    font-weight: normal;
+    border-radius: 5px;
+}
+main .groupcon .groupname a{
+    text-decoration: none;
+    color: rgb(247, 164, 149);
+    font-weight: normal;
+    border-radius: 5px;
+}
+main .groupcon .groupuser a:hover{
+    color: #fff;
+    background-color: rgba(255, 132, 110, 0.76);
+}
+main .groupcon .grouptime .time{
+    font-weight: normal;
+    font-size: 17px;
+    letter-spacing: .5px;
+}
+main .groupcon .groupstatu{
+    margin-top: 20px ;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: rgb(247, 179, 34);
+}
+main .groupcon .groupstatu .btn{
+    width: 100px;
+}
+
