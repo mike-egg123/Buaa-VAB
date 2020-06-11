@@ -1,0 +1,77 @@
+main{
+    display:block;
+    transition: all .5s;
+    padding:40px;
+    width: 50%;
+    margin: 0 auto;
+    color: gray;
+}
+
+main a:hover,:visited,:active,:link{
+    text-decoration: none;
+}
+main a{
+    text-decoration: none;
+}
+.t_title{
+    font-size: 33px;
+    color: tomato;
+    font-weight: bolder;
+    margin-bottom:30px ;
+}
+.t01 span{
+    background-color: tomato;
+    color:whitesmoke;
+    border-radius: 5px;
+    padding: 1px 5px;
+}
+.t01, .t02, .t03,.t04{
+    margin-bottom: 20px;
+}
+.t02 span{
+    color: tomato;
+}
+.t03 li{
+    display:inline-block;
+    background-color: rgb(250, 221, 216);
+    border-radius: 5px;
+    padding: 1px 5px;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 5px;
+}
+.t04{
+    line-height:24px ;
+    letter-spacing: 1px;
+    text-indent: 35px;
+    margin-top: 30px;
+}
+.t05{
+    text-align: center;
+}
+.b01{
+    background-color: white;
+    border: #dc3545 2px solid;
+    height: 40px;
+    width: 80px;
+    color: #dc3545;
+    border-radius: 5px;
+    margin: 10px 20px;
+}
+.b01:hover{
+    background-color: #dc3545;
+    color: whitesmoke;
+}
+.b02{
+    background-color: white;
+    border: rgb(252, 197, 47) 2px solid;
+    height: 40px;
+    width: 80px;
+    color: rgb(252, 197, 47);
+    border-radius: 5px;
+    margin: 10px 20px;
+}
+.b02:hover{
+    background-color: rgb(252, 197, 47);
+    color: whitesmoke;
+}
