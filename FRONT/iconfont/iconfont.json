@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1203683",
+      "name": "申请",
+      "font_class": "jiekuanshenqing",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "6332156",
+      "name": "申请",
+      "font_class": "shenqing",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "6978144",
+      "name": "申请",
+      "font_class": "shenqing1",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "8530852",
+      "name": "回复或者转发",
+      "font_class": "xingzhuang",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "8412366",
+      "name": "创建",
+      "font_class": "chuangjian",
+      "unicode": "e6fe",
+      "unicode_decimal": 59134
+    },
+    {
       "icon_id": "643020",
       "name": "举报",
       "font_class": "jubao",
