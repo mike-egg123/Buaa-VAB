@@ -1,10 +1,9 @@
-    body{
+    /* header{ */
         /* 粘滞定位必须在父元素中 */
-        position: sticky;
-        top:0px;
-    }
+        /* position: absolute; */
+    /* } */
     /* 设置外部容器样式 */
-    ul.topbar{
+    .topbar{
         width:1250px;
         height:60px;
         /* 确保行高居中 */
@@ -16,7 +15,7 @@
         display: flex;
         flex-wrap: nowrap;
     }
-    li{
+     li{
         height:60px;
         line-height: 60px;
         text-align: center;
@@ -51,7 +50,7 @@
         justify-content: center;
     }
     /* 设置小图标 */
-    .iconfont{
+    .topbar .iconfont{
         font-weight: bolder;
         font-size:24px;
     }
