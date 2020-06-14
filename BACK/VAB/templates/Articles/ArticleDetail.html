@@ -191,24 +191,11 @@
                             </div><hr>
                             <div class="commenttext">{{ comment.body|safe }}</div>
                         </div>
-                        {% if user.id == comment.user.id or user.is_superuser %}
-                            <div style="margin-left: 150px">
-                                <a href="{% url 'comment:delete_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-secondary btn-sm">删除</button></a>
-                                <a href="{% url 'comment:like_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-danger btn-sm">点赞&nbsp;&heartsuit;&nbsp;{{ comment.likes }}</button></a>
-                                <a href="{% url 'comment:unlike_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-info btn-sm">反对&nbsp;&nbsp;&nbsp;{{ comment.hates }}</button></a>
-                                {% if user.is_authenticated %}
-                                    <button type="button"
-                                            class="btn btn-light btn-sm text-muted"
-                                            onclick="load_modal({{ article.id }},{{ comment.id }})">
-                                        回复
-                                    </button>
-                                {% endif %}
-                            </div>
-                        {% endif %}
-                        {% if not user.is_superuser %}
-                            {% if user.id != comment.user.id %}
+
+                        {% if user.is_authenticated %}
+                            {% if user.id == comment.user.id or user.is_superuser %}
                                 <div style="margin-left: 150px">
-                                    <a href="{% url 'report:report_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-dark btn-sm">举报</button></a>
+                                    <a href="{% url 'comment:delete_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-secondary btn-sm">删除</button></a>
                                     <a href="{% url 'comment:like_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-danger btn-sm">点赞&nbsp;&heartsuit;&nbsp;{{ comment.likes }}</button></a>
                                     <a href="{% url 'comment:unlike_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-info btn-sm">反对&nbsp;&nbsp;&nbsp;{{ comment.hates }}</button></a>
                                     {% if user.is_authenticated %}
@@ -219,6 +206,22 @@
                                         </button>
                                     {% endif %}
                                 </div>
+                            {% endif %}
+                            {% if not user.is_superuser %}
+                                {% if user.id != comment.user.id %}
+                                    <div style="margin-left: 150px">
+                                        <a href="{% url 'report:report_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-dark btn-sm">举报</button></a>
+                                        <a href="{% url 'comment:like_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-danger btn-sm">点赞&nbsp;&heartsuit;&nbsp;{{ comment.likes }}</button></a>
+                                        <a href="{% url 'comment:unlike_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-info btn-sm">反对&nbsp;&nbsp;&nbsp;{{ comment.hates }}</button></a>
+                                        {% if user.is_authenticated %}
+                                            <button type="button"
+                                                    class="btn btn-light btn-sm text-muted"
+                                                    onclick="load_modal({{ article.id }},{{ comment.id }})">
+                                                回复
+                                            </button>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
                             {% endif %}
                         {% endif %}
                     {% endif %}

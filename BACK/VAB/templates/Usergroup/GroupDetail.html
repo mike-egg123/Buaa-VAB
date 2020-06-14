@@ -31,6 +31,7 @@
                                 {{ group.groupsize }}个成员
                             </div>
                             <div style="width: 300px;margin-top: 20px;margin-left: 40px">
+                            {% if user.is_authenticated %}
                                 {% if user_state == 0 %}
                                     <a href="{% url 'Usergroup:JoinGroup' group.id %}" style="display: inline-block">
                                         <button type="button" class="btn btn-outline-danger">加入小组</button>
@@ -60,6 +61,11 @@
                                         <button type="button" class="btn btn-outline-dark">解散小组</button>
                                     </a>
                                 {% endif %}
+                            {% else %}
+                                <a href="{% url 'Userprofile:login' %}" style="display: inline-block">
+                                    <button type="button" class="btn btn-outline-info">登录</button>
+                                </a>
+                            {% endif %}
                             </div>
                         </div>
                     </div>

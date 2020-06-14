@@ -26,7 +26,7 @@
                 <div class="jubaoplace">发言人 &nbsp;&nbsp;<a href="{% url 'Userprofile:profile'  areport.bookcomment.user.id %}">{{ areport.bookcomment.user }}</a></div>
                 <div class="jubaocontaincon">
                     <div class="jubaocontain">举报内容</div>
-                    <div class="jubaocontain1" style="margin-left: -270px">{{ areport.bookcomment.body|safe|slice:30}}</div>
+                    <div class="jubaocontain1" style="margin-left: -270px">{{ areport.bookcomment.body|safe}}</div>
                 </div>
                 <div class="jubaotime">
                     发表时间<span>2020年6月8日 11:23</span>

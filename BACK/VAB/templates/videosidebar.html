@@ -3,6 +3,7 @@
     <div class="outer">
         <div class="action">行动</div>
         <ul class="ul-container">
+            {% if user.is_authenticated %}
             <li>
                 <a href="{% url 'ArticleCreate' %}">
                     <img src="{% static '/vab_img/文章.png' %}" class="article" style="width: 40px;height: 40px;">
@@ -21,6 +22,7 @@
                     <div>推影视</div>
                 </a>
             </li>
+            {% endif %}
             <li>
                 <a href="{% url 'Usergroup:MyGroups' %}">
                     <img src="{% static '/vab_img/小组.png' %}" class="group" style="width: 40px;height: 40px;">

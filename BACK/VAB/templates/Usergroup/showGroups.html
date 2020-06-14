@@ -163,9 +163,11 @@
                                 </a>
                                 <div class="grouprightintro">
                                     {{ recommend.groupsize }}个成员
+                                    {% if user.is_authenticated %}
                                     <button type="button" class="btn btn-outline-danger">
                                         <a href="{% url 'group:JoinGroup' recommend.id %}">+加入小组</a>
                                     </button>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
