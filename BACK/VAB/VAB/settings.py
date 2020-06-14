@@ -25,7 +25,7 @@ SECRET_KEY = 'e1vgg(=r24n(_!g2@#wke%bj-ym@m7c6hmv8)a&uyqp^uw_4u&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['182.92.239.145']
 
 # Application definition
 
@@ -142,6 +142,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 
 # 模板地址
 TEMPLATE_DIRS = (
