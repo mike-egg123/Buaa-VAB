@@ -1,0 +1,71 @@
+{% load static %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>写帖子</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+{#	<link rel="stylesheet" href="{% static '/css_style/base.css' %}">#}
+	<link rel="stylesheet" href="{% static '/css_style/columns.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<script src="{% static '/js/jquery.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static '/css_style/tags.css' %}">
+    <link rel="stylesheet" href="{% static 'css_style/createArticle.css' %}">
+	<script src="{% static '/js/tagsinput.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script>
+        window.onload = function () {
+            var inp=document.getElementById("body");
+            var btn=document.getElementById("lastbtn");
+            btn.onclick = function () {
+                if (inp.value.length<25) {
+                    alert("字数最少25个字！");
+                }
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <main>
+        <div class="book_upload" >
+            <div class="bform">
+                <form action="" class="form-inp" method="post">
+                    {% csrf_token %}
+                    标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：<input type="text" class="bookname" placeholder="  标 题" id="title" name="title"><br/>
+
+                    <div class="box">
+                        标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签：
+                        <div class="tagsinput-primary form-group">
+                            <input id="tags" name="tags"  class="tagsinput" data-role="tagsinput" value="右侧 x 删除标签" placeholder="最多两个标签">
+                        </div>
+                    </div>
+
+                    <div class="select_book">
+                        主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：
+                        <div class="c-dropdown js-dropdown">
+                            <select id="column" name="column" class="form-control" style="width: auto;height: 30px;">
+                                <option value="none">请选择栏目...</option>
+                                {% for column in columns %}
+                                    <option value="{{ column.id }}">{{ column }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+    <!--				内容-->
+                    内&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;容：<br/>
+                    <textarea class="introduction" rows="10" cols="30" id="body" name="body">键入内容
+                    </textarea><br/>
+                    <button class="bsub" style="margin-left: 150px" id="lastbtn" type="submit">提交</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+{% include 'footer.html' %}

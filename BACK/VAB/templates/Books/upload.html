@@ -1,27 +1,97 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>upload</title>
+    <title>上传书籍</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/book_upload.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+	<link rel="stylesheet" href="{% static 'css_style/columns.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<script type="text/javascript">
+		function previewFile()
+        {
+            var preview = document.querySelector('.Book_img');
+            var file  = document.querySelector('input[type=file]').files[0];
+            var reader = new FileReader();
+            reader.onloadend = function () {preview.src = reader.result;}
+            if (file) {reader.readAsDataURL(file);}
+            else {preview.src = "Book_img";}
+		}
+	</script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css_style/tags.css' %}">
+	<script src="{% static 'js/tagsinput.js' %}" type="text/javascript" charset="utf-8"></script>
 </head>
+<style>
+    .file {
+        position: relative;
+        display: inline-block;
+        background: #ffdedf;
+        border: 1px solid #ff998c;
+        border-radius: 4px;
+        padding: 4px 12px;
+        overflow: hidden;
+        color: #ff7d79;
+        text-decoration: none;
+        text-indent: 0;
+        line-height: 20px;
+    }
+    .file input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+    }
+    .file:hover {
+        background: #ff7d79;
+        border-color: #ff998c;
+        color: #ffd1c3;
+        text-decoration: none;
+    }
+</style>
+{% include 'topbar.html' %}
 <body>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <label for="Book_name">书名</label>
-    <input type="text" id="Book_name" name="Book_name">
-    <br>
-    <label for="Book_auth">作者</label>
-    <input type="text" id="Book_auth" name="Book_auth">
-    <br>
-    <label for="Book_intro">简介</label>
-    <textarea type="text"
-              id="Book_intro"
-              name="Book_intro"
-              rows="12"></textarea>
-    <br>
-    <label for="Book_img">封面</label>
-    <input type="file" id="Book_img" name="Book_img">
-    <button type="submit">提交</button>
-</form>
+	<div class="book_upload" >
+		<div class="bform">
+            <form action="" class="form-inp" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+				书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" class="bookname" placeholder="  书 名" id="Book_name" name="Book_name"><br/>
+                作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<input type="text" class="author" placeholder="  作 者" id="Book_auth" name="Book_auth"><br/><br><br>
+
+                <a class="file" style="width: 130px;height: 40px;margin-left: -15px">
+                    上传书籍图片
+                    <input type="file" onchange="previewFile()" class="file_pic" id="Book_img" name="Book_img" accept="image/gif, image/jpeg, image/png, image/jpg" style="margin-left: 0px;margin-top: -10px"><br/><br/>
+                </a>
+                <br>
+				<div class="img-preview" style="margin-left: 120px;margin-top: -40px">
+					<img class="Book_img" id="Book_img" src="Book_img" height="auto" width="310px"  alt=""/>
+				</div>
+				<div class="box">
+					标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签：
+					<div class="tagsinput-primary form-group">
+{#						<input name="tagsinput" id="tagsinputval" class="tagsinput" data-role="tagsinput" value="右侧 x 删除标签" placeholder="输入后回车">#}
+                        <input id="Book_tags" name="Book_tags" class="tagsinput" data-role="tagsinput" value="右侧 x 删除标签" placeholder="最多两个标签">
+					</div>
+				</div>
+				<div class="select_book">
+                    栏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目：
+                    <select id="Book_column" name="Book_column" style="height: 40px;border: 2px solid #ffdedf">
+                        <option value="none">请选择栏目...</option>
+                        {% for column in columns %}
+                          <option value="{{ column.id }}">{{ column }}</option>
+                        {% endfor %}
+                    </select>
+				</div>
+				书籍简介：<br/>
+				<textarea class="introduction" rows="10" cols="30" id="Book_intro" name="Book_intro">键入简介</textarea><br/>
+                <button class="bsub" type="submit" style="margin-left: 160px">提交</button>
+            </form>
+        </div>
+	</div>
 </body>
 </html>
+{% include 'footer.html' %}

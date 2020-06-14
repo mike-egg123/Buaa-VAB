@@ -23,13 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e1vgg(=r24n(_!g2@#wke%bj-ym@m7c6hmv8)a&uyqp^uw_4u&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['*']
-
+DEBUG = True
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+ALLOWED_HOSTS = []
 
 # Application definition
 
 INSTALLED_APPS = [
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,8 +39,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'Books',
+    'Videos',
     'Userprofile',
+    'Usergroup',
+    'article',
+    'notice',
+    'report',
+    'askManage',
+    'topic',
+
+    'comment',# 评论
+    'taggit',# 标签
+    'ckeditor',# 富文本编辑
+    'mptt',# 多级树状回复
+    'notifications'# 通知
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,6 +68,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'VAB.urls'
+
+
+
 
 TEMPLATES = [
     {
@@ -122,13 +141,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'templates/Userprofile/../static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
-
+# 模板地址
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
@@ -136,3 +151,37 @@ TEMPLATE_DIRS = (
 # 图片存储
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')     #设置静态文件路径为主目录下的media文件夹
 MEDIA_URL = '/media/'
+
+JET_THEMES = [
+    {
+        'theme': 'light', # theme folder name
+        'color': '#47bac1', # color of the theme's button in user menu
+        'title': 'Default' # theme title
+    },
+    {
+        'theme': 'green',
+        'color': '#44b78b',
+        'title': 'Green'
+    },
+    {
+        'theme': 'light-green',
+        'color': '#2faa60',
+        'title': 'Light Green'
+    },
+    {
+        'theme': 'light-violet',
+        'color': '#a464c4',
+        'title': 'Light Violet'
+    },
+    {
+        'theme': 'light-blue',
+        'color': '#5EADDE',
+        'title': 'Light Blue'
+    },
+    {
+        'theme': 'light-gray',
+        'color': '#222',
+        'title': 'Light Gray'
+    }
+]
+

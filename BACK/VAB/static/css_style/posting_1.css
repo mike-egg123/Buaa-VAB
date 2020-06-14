@@ -1,0 +1,140 @@
+    .outer{
+        width:100%;
+        padding: 10px 10px;
+        height: 300px;
+        margin:50px auto;
+        /* background-color: #baf; */
+        /* float:left; */
+        box-shadow:0px 0px 10px rgb(231, 223, 223);
+        border-radius:15px;
+        transition: all .5s;
+    }
+    .outer:hover{
+        box-shadow:0px 0px 10px rgb(182, 168, 168);
+        transform:translateX(-7px) translateY(-7px) ;
+    }
+    .title > a{
+        text-decoration:none;
+    }
+    .image_p{
+        overflow: hidden;
+        width: 190px;
+        height:280px;
+        margin-left:20px;
+        margin-top: 10px;
+        /* background-color: tomato; */
+        float:left;
+        border-radius:15px;
+    }
+    .image_p img{
+        width: auto;
+        height:280px;
+        vertical-align:middle;
+		float:left;
+        border-radius:15px;
+        /* background-color: thistle; */
+        /* transition: .2s; */
+    }
+    .title {
+        margin-top: -5px;
+        letter-spacing:1px;
+        color:gray;
+        font-size: 16px;
+        float:left;
+        /* background-color: thistle; */
+    }
+    .z,.zz,.zzz{
+        letter-spacing:1px;
+        color:gray;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .title h2{
+        letter-spacing:4px;
+    }
+    .outer .intro{
+        float:left;
+        width:440px;
+        /*height: 105px;*/
+        font-size: 16px;
+        color:gray;
+        line-height:20px;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 6; /* 限制在一个块元素显示的文本的行数 */
+		-webkit-box-orient: vertical; /* 垂直排列 */
+		word-break: break-all;  /* 内容自动换行 */
+/*        background-color: thistle; */
+        margin: 0px 20px 8px 30px;
+    }
+    .outer .intro p{
+        width: 100%;
+        height: 100%;
+        font-weight: normal;;
+        letter-spacing:.5px;
+		line-height: 21px;
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 5; /* 限制在一个块元素显示的文本的行数 */
+		-webkit-box-orient: vertical; /* 垂直排列 */
+		word-break: break-all;  /* 内容自动换行 */
+    }
+    .title h2{
+        color:tomato;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px 30px;
+    }
+    .title div,.title ul{
+        margin: 10px 30px;
+    }
+    .title .z span{
+        /* font-weight: 600; */
+        font-size: 16px;
+        background-color: rgb(250, 221, 216);
+        border-radius:5px;
+		padding: 1px;
+    }
+    .title .z {
+        margin-top: -0px;
+    }
+	.tag{
+		float: left;
+		margin-left: 30px;
+		margin-top: 3px;
+	}
+	.tag ul{
+		flex-flow: row nowrap;
+        justify-content: center;
+		display: flex;
+	}
+
+.tag  li{
+        font-size: 17px;
+        background-color: rgb(250, 221, 216);
+        border-radius:5px;
+	    margin-right: 15px;
+        padding: 5px;
+        font-weight: normal;
+        height: 28px;
+}
+.tag a{
+	    color: tomato;
+        text-decoration:none;
+        font-weight: normal;
+    }
+ .tag   li:nth-child(2) {
+    font-size: 17px;
+    background-color: rgb(250, 221, 216);
+    border-radius:5px;
+    margin-right: 15px;
+    padding: 5px;
+    font-weight: normal;
+    height: 28px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+.tag li:last-child {
+    margin-left: 0px;
+}

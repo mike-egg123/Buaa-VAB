@@ -1,0 +1,215 @@
+.topbook-wrap{
+        width:1210px;
+        height:60px;
+        margin: 25px auto 0px;
+        /* background-color: #baf; */
+        display:flex;
+        background-color: #fff;
+        border-radius: 10px;
+        border-bottom: rgb(218, 215, 215,0.7) .8px solid;
+        box-shadow:0 20px 10px rgba(239, 240, 241,.5);
+    }
+    /* 设置图书图标 */
+    .topbook-wrap .bookimg{
+        flex-grow: .55;
+        text-align:end;
+        font-size: 32px;
+        line-height: 60px;
+        color: rgb(253, 159, 141);
+    }
+    .topbook-wrap .bookicnline{
+        width: 1px;
+        height: 33px;
+        background-color: rgb(223, 223, 223);
+        margin:10px 10px auto 25px;
+    }
+    /* 设置字体 */
+    .topbook-wrap .zi{
+        background-color: bfa(173, 172, 171);
+        letter-spacing: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(109, 111, 114);
+        /* border: lime 2px solid; */
+        flex-grow: .15;
+        text-align:center;
+        line-height: 60px;
+        margin-right: 360px;
+    }
+
+.topbook-wrap .find-wrap .find{
+    display:flex;
+    /* background-color: thistle; */
+}
+.topbook-wrap .find-inp{
+    display:block;
+    padding-left: 15px;
+    outline: none;
+    width: 380px;
+    height: 35.5px;
+    margin-top: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border:2px solid rgb(250, 221, 216);
+    font-size: 15px;
+    letter-spacing: 3px;
+    color:rgb(150, 150, 150);
+}
+.topbook-wrap .find-btn{
+    display:block;
+    float:right;
+    width: 40px;
+    height: 41.5px;
+    line-height:41px;
+    text-align: center;
+    /* margin-top: 10.5px; */
+    margin-top: 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    border-top:2px solid rgb(250, 221, 216);
+    border-bottom:2px solid rgb(250, 221, 216);
+    border-right:2px solid rgb(250, 221, 216);
+    border-left:0px;
+}
+/* 设置搜索图标 */
+.topbook-wrap .find-btn .find-icon{
+    color:rgb(245, 192, 182);
+    font-weight: bold;
+    /* line-height:40px; */
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-wrap:wrap;
+}
+.jubaoline{
+    width: 1000px;
+    height: 1px;
+    background-color: rgb(207, 207, 207);
+    margin:50px auto;
+}
+.jubaocon{
+    width: 800px;
+    /* height: 300px; */
+    /* background-color: #abf; */
+    margin: 50px auto 0px;
+    border-radius: 20px;
+    padding: 5px 0px;
+    box-shadow: 0px 0px 10px rgb(233, 225, 224);
+}
+.jubaocon:hover{
+    box-shadow: 0px 0px 10px rgb(255, 185, 172);
+}
+.jubaocon .jubaoplace{
+    /* background-color: rgb(241, 23, 67); */
+    border-radius: 20px;
+    width: 90%;
+    margin: 25px auto;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+}
+.jubaocon .jubaoplace a{
+    display: inline;
+    letter-spacing: .3px;
+    font-weight: normal;
+    margin-left:70px;
+    text-decoration: none;
+    color: rgb(248, 172, 172);
+}
+.jubaocon .jubaocontaincon{
+    display: flex;
+    width: 90%;
+    /* height: 150px; */
+    /* background-color: #afb; */
+    margin: 0px auto;
+    /* justify-content: space-evenly; */
+}
+.jubaocon .jubaocontain{
+    width: 400px;
+    /* background-color: rgb(145, 150, 168); */
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+    line-height: 70px;
+}
+.jubaocon .jubaocontain1{
+    margin-left: 30px;
+    /* background-color: rgb(112, 151, 120); */
+    /* text-indent:33px; */
+    line-height: 23px;
+    letter-spacing: .5px;
+    border: rgb(231, 230, 231) solid 1px;
+    padding: 15px 15px;
+    border-radius: 20px;
+    color: rgb(136, 135, 135);
+}
+.jubaocon .jubaotime{
+    width: 90%;
+    /* background-color: rgb(188, 202, 202); */
+    margin:20px auto;
+    color: rgb(108, 110, 110);
+    letter-spacing: .5px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+}
+.jubaocon .jubaotime span{
+    display: inline;
+    margin-left: 70px;
+    letter-spacing: .4px;
+    font-weight: normal;
+    margin-left:70px;
+    text-decoration: none;
+    color: rgb(136, 135, 135);
+}
+.jubaocon .jubaoreasoncon{
+    display: flex;
+    width: 90%;
+    /* height: 150px; */
+    /* background-color: #afb; */
+    margin: 20px auto;
+}
+.jubaocon .jubaoreasoncon .jubaoreason{
+    /* background-color: #bbb; */
+    width: 100px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+    line-height: 40px;
+}
+.jubaocon .jubaoreasoncon .jubaoreason1{
+    margin-left: 30px;
+    /* background-color: rgb(112, 151, 120); */
+    /* text-indent:33px; */
+    width: 600px;
+    line-height: 19.5px;
+    letter-spacing: .5px;
+    border: rgb(231, 230, 231) solid 1px;
+    padding: 15px 15px;
+    border-radius: 20px;
+    color: rgb(136, 135, 135);
+}
+.jubaocon .jubaotime1,.jubaocon .jubaostatu{
+    width: 90%;
+    /* background-color: #fab; */
+    margin: 0px auto 15px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+}
+.jubaocon .jubaotime1 span,.jubaocon .jubaostatu span{
+    display: inline;
+    margin-left: 70px;
+    letter-spacing: .4px;
+    font-weight: normal;
+    margin-left:70px;
+    text-decoration: none;
+    color: rgb(136, 135, 135);
+}
+.jubaocon .jubaostatu span{
+    color: tomato;
+}

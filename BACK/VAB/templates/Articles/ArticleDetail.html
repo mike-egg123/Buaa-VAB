@@ -1,0 +1,362 @@
+{% load static %}
+{% load mptt_tags %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="{% static 'jquery/jquery-3.3.1.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'layer/layer.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/posting_1.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/book_page.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/newpost.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/talking.css' %}">
+    <meta charset="UTF-8">
+    <title>{{ article.title }}的详情</title>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+        <div style="width: 80%;border: 2px dashed #ffb5ae;margin-top: 20px;margin-left: 10%;border-bottom-right-radius:20px;border-bottom-left-radius: 20px;border-top-left-radius: 20px;border-top-right-radius:20px;background: #e8e8e8">
+            <div style="height: 70px;">
+                <div style="display:inline-block;border: 2px dashed #fbf6ff;margin-top: 20px;margin-left: 10%;border-bottom-right-radius:20px;border-bottom-left-radius: 20px;border-top-left-radius: 20px;border-top-right-radius:20px;">
+                    <a href="{% url 'ArticleCreate' %}" style="display: inline-block;font-size: x-large">写文章</a>
+                </div>
+                <div style="display:inline-block;width: 100px;"></div>
+                <div style="display:inline-block;border: 2px dashed #fbf6ff;margin-top: 20px;border-bottom-right-radius:20px;border-bottom-left-radius: 20px;border-top-left-radius: 20px;border-top-right-radius:20px;">
+                    <a href="{% url 'Usergroup:MyGroups' %}" style="display: inline-block;font-size: x-large">我的小组</a>
+                </div>
+                <div style="display:inline-block;width: 100px;"></div>
+                <div style="display:inline-block;border: 2px dashed #fbf6ff;margin-top: 20px;border-bottom-right-radius:20px;border-bottom-left-radius: 20px;border-top-left-radius: 20px;border-top-right-radius:20px;">
+                    <a href="{% url 'ask:allMyasks' user.id %}" style="display: inline-block;font-size: x-large">我的申请</a>
+                </div>
+                <div style="display:inline-block;width: 100px;"></div>
+                <div style="display:inline-block;border: 2px dashed #fbf6ff;margin-top: 20px;border-bottom-right-radius:20px;border-bottom-left-radius: 20px;border-top-left-radius: 20px;border-top-right-radius:20px;">
+                    <a href="{% url 'report:needHandle' %}" style="display: inline-block;font-size: x-large">处理申请</a>
+                </div>
+                <div style="display:inline-block;width: 100px;"></div>
+                <div style="display:inline-block;border: 2px dashed #fbf6ff;margin-top: 20px;border-bottom-right-radius:20px;border-bottom-left-radius: 20px;border-top-left-radius: 20px;border-top-right-radius:20px;">
+                    <a href="{% url 'topic:alltopics' %}" style="display: inline-block;font-size: x-large">话题广场</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <main>
+        <div class="t_title">
+            {{ article.title }}
+        </div>
+        <div class="t01">
+            栏目：<span>{{ article.column }}</span>
+        </div>
+        <div class="t02" style="border: 2px dashed #ffb5ae;height: 110px;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;background: #fff0eb">
+            <div style="margin-left: 20px;margin-top: 10px;font-family: 'JetBrains Mono', serif">
+                发布人&nbsp;&nbsp;&nbsp;:<span>&nbsp;{{ article.author.username }}</span><br><br>
+                发布时间&nbsp;:<span>&nbsp;{{ article.created }}</span><br><br>
+                浏览数&nbsp;&nbsp;&nbsp;:<span>&nbsp;{{ article.total_views }}</span>
+            </div>
+        </div>
+        <div class="t03">
+            <ul>
+                {% for atag in article.tags.all %}
+                    <li>{{ atag }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="t04">
+            {{ article.body|safe }}
+        </div>
+        <div class="t05">
+            <button class="btn btn-outline-danger small" type="button"
+                    onclick="validate_is_like(
+                            '{% url 'increase_likes' article.id %}',
+                            {{ article.id }},
+                            {{ article.likes }})">
+                <span>
+                    点赞&nbsp;&heartsuit;&nbsp;{{ article.likes }}
+                </span>
+            </button>
+        </div>
+    </main>
+
+    {% if request.user.id == article.author_id or request.user.is_superuser %}
+    <center>
+        <hr><br>
+        <div class="main-wrap" style="height: 60px;margin-left: 26%;margin-top: -40px">
+            <div class="book_intr-wrap">
+                <div class="newbook" style="background: #fff0eb;width: 100%;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                    <a class="iconfont a1" href="{% url 'ArticleUpdate' article.id %}">修改</a>
+                    <a class="iconfont a1" href="{% url 'ArticleDelete' article.id %}">删除</a>
+                    <a class="iconfont a1" href="{% url 'showArticle' %}">返回</a>
+                </div>
+            </div>
+        </div>
+    </center>
+    {% endif %}
+
+    <hr>
+    <!--评论-->
+    {% if user.is_authenticated %}
+        <div style="width: 200px;margin-left: 120px">
+            <form method="post" action="{% url 'comment:post_Articlecomment' article.id %}">
+                {% csrf_token %}
+                <div style="margin-left: 30px;">
+                    <div style="height: 30px;width: 120px;border: 2px solid #ffb5ae;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;background: #fff0eb">
+                        <div style="margin-top: 5px;margin-left: 8px">
+                            <label for="body">我也要发言:</label>
+                        </div>
+                    </div><br><br>
+                    <div class="container" style="width: 880px;margin-left: 100%;border: 4px dashed #ffb5ae;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                        {{ comment_form.media }}
+                        {{ comment_form.body }}
+                    </div>
+                </div>
+                <div style="margin-left: 580px;margin-top: 20px">
+                    <button type="submit" class="btn btn-outline-danger">发送</button>
+                </div>
+            </form>
+        </div>
+        <br>
+    {% else %}
+        <div class="alert alert-danger" role="alert" style="width: 200px;margin-left: 43%">
+            请<a href="{% url 'Userprofile:login' %}" style="display: inline-block">登录</a>后回复
+        </div>
+    {% endif %}
+
+    <hr>
+    <div style="width: 220px;margin-left: 20px;background: #ffdedf;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+        共有{{ comments.count }}条评论(或被管理员隐藏)
+    </div>
+
+    {% if comments.count == 0 %}
+        <div style="height: 300px;">
+        </div>
+    {% endif %}
+
+    <div class="row">
+        {% recursetree comments %}
+            {% with comment=node %}
+                {% if comment.canbeseen is True %}
+                <div style="margin-left: 100px;width: 800px">
+                    <hr>
+                    {% if comment.reply_to %}
+                        <div class="othercommentcon0" style="margin-left:80px;border: 1.5px dashed #ffb0a4;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                            <div class="othercommentcon" style="font-family: 'JetBrains Mono', serif">
+                                <a href="#" style="display: inline-block">{{ comment.user }}</a>&nbsp;&hookrightarrow;
+                                <a href="#" style="display: inline-block">{{ comment.reply_to }}</a>&nbsp;&nbsp;&nbsp;<br><br>
+                                <span class="time" style="color: #fdf7ff;border: 1px dashed #ff7d79;border-top-right-radius: 5px;border-top-left-radius: 5px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;background: #807d82">&nbsp;&nbsp;{{ comment.created }}&nbsp;&nbsp;</span><br>
+                            </div><hr>
+                            <div class="othercomment" >{{ comment.body|safe }}</div>
+                            {% if user.id == comment.user.id or user.is_superuser %}
+                                <div style="margin-top: 50px"><hr>
+                                    <a href="{% url 'comment:delete_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-secondary btn-sm">删除</button></a>
+                                    <a href="{% url 'comment:like_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-danger btn-sm">点赞&nbsp;&heartsuit;&nbsp;{{ comment.likes }}</button></a>
+                                    <a href="{% url 'comment:unlike_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-info btn-sm">反对&nbsp;&nbsp;&nbsp;{{ comment.hates }}</button></a>
+                                    {% if user.is_authenticated %}
+                                        <button type="button"
+                                                class="btn btn-light btn-sm text-muted"
+                                                onclick="load_modal({{ article.id }},{{ comment.id }})">
+                                            回复
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                            {% if not user.is_superuser %}
+                                {% if user.id != comment.user.id %}
+                                    <div style="margin-top: 50px"><hr>
+                                        <a href="{% url 'report:report_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-dark btn-sm">举报</button></a>
+                                        <a href="{% url 'comment:like_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-danger btn-sm">点赞&nbsp;&heartsuit;&nbsp;{{ comment.likes }}</button></a>
+                                        <a href="{% url 'comment:unlike_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-info btn-sm">反对&nbsp;&nbsp;&nbsp;{{ comment.hates }}</button></a>
+                                        {% if user.is_authenticated %}
+                                            <button type="button"
+                                                    class="btn btn-light btn-sm text-muted"
+                                                    onclick="load_modal({{ article.id }},{{ comment.id }})">
+                                                回复
+                                            </button>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+
+                        </div><br>
+                    {% else %}
+                        <div class="commentcon" id="comment_elem_{{ comment.id }}" style="border: 2px solid #ffb5ae;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                            <div class="commentname">
+                                <a href="#">{{ comment.user }}</a>
+                                <span style="color: #807d82;border: 1px dashed #ff7d79;border-top-right-radius: 5px;border-top-left-radius: 5px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;background: #fff0eb">&nbsp;&nbsp;{{ comment.created }}&nbsp;&nbsp;</span>
+                            </div><hr>
+                            <div class="commenttext">{{ comment.body|safe }}</div>
+                        </div>
+                        {% if user.id == comment.user.id or user.is_superuser %}
+                            <div style="margin-left: 150px">
+                                <a href="{% url 'comment:delete_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-secondary btn-sm">删除</button></a>
+                                <a href="{% url 'comment:like_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-danger btn-sm">点赞&nbsp;&heartsuit;&nbsp;{{ comment.likes }}</button></a>
+                                <a href="{% url 'comment:unlike_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-info btn-sm">反对&nbsp;&nbsp;&nbsp;{{ comment.hates }}</button></a>
+                                {% if user.is_authenticated %}
+                                    <button type="button"
+                                            class="btn btn-light btn-sm text-muted"
+                                            onclick="load_modal({{ article.id }},{{ comment.id }})">
+                                        回复
+                                    </button>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        {% if not user.is_superuser %}
+                            {% if user.id != comment.user.id %}
+                                <div style="margin-left: 150px">
+                                    <a href="{% url 'report:report_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-dark btn-sm">举报</button></a>
+                                    <a href="{% url 'comment:like_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-danger btn-sm">点赞&nbsp;&heartsuit;&nbsp;{{ comment.likes }}</button></a>
+                                    <a href="{% url 'comment:unlike_Articlecomment' comment.id %}" style="display: inline-block"><button class="btn btn-outline-info btn-sm">反对&nbsp;&nbsp;&nbsp;{{ comment.hates }}</button></a>
+                                    {% if user.is_authenticated %}
+                                        <button type="button"
+                                                class="btn btn-light btn-sm text-muted"
+                                                onclick="load_modal({{ article.id }},{{ comment.id }})">
+                                            回复
+                                        </button>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="comment_{{ comment.id }}" tabindex="-1" role="dialog" aria-labelledby="CommentModalCenter" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content" style="height: 480px">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">
+                                        回复 {{ comment.user }}：
+                                    </h5>
+                                </div>
+                                <div class="modal-body" id="modal_body_{{ comment.id }}"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if not comment.is_leaf_node %}
+                        <div class="children">
+                            {{ children }}
+                        </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            {% endwith %}
+        {% endrecursetree %}
+    </div>
+</body>
+
+{% block script %}
+    <script src="{% static 'csrf.js' %}"></script>
+    <script>$(".django-ckeditor-widget").removeAttr('style');</script>
+    <script>
+    // 点赞功能主函数
+    function validate_is_like(url, id, likes) {
+        // 取出 LocalStorage 中的数据
+        let storage = window.localStorage;
+        const storage_str_data = storage.getItem("my_blog_data");
+        let storage_json_data = JSON.parse(storage_str_data);
+        // 若数据不存在，则创建空字典
+        if (!storage_json_data) {
+            storage_json_data = {}
+        };
+        // 检查当前文章是否已点赞。是则 status = true
+        const status = check_status(storage_json_data, id);
+        if (status) {
+            layer.msg('已经点过赞了哟~');
+            // 点过赞则立即退出函数
+            return;
+        } else {
+            // 用 Jquery 找到点赞数量，并 +1
+            $('span#likes_number').text(likes + 1).css('color', '#dc3545');
+        }
+        // 用 ajax 向后端发送 post 请求
+        $.post(
+            url,
+            // post 只是为了做 csrf 校验，因此数据为空
+            {},
+            function(result) {
+                if (result === 'success') {
+                    // 尝试修改点赞数据
+                    try {
+                        storage_json_data[id] = true;
+                    } catch (e) {
+                        window.localStorage.clear();
+                    };
+
+                    const d = JSON.stringify(storage_json_data);
+                    // 尝试存储点赞数据到 LocalStorage
+                    try {
+                        storage.setItem("my_blog_data", d);
+                    } catch (e) {
+                        // code 22 错误表示 LocalStorage 空间满了
+                        if (e.code === 22) {
+                            window.localStorage.clear();
+                            storage.setItem("my_blog_data", d);
+                        }
+                    };
+                } else {
+                    layer.msg("与服务器通信失败..过一会儿再试试呗~");
+                }
+
+            }
+        );
+    };
+    // 辅助点赞主函数，验证点赞状态
+    function check_status(data, id) {
+        // 尝试查询点赞状态
+        try {
+            if (id in data && data[id]) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (e) {
+            window.localStorage.clear();
+            return false;
+        };
+    };
+</script>
+
+    <!-- Ckeditor自适应 -->
+    <script>
+        $(".django-ckeditor-widget").removeAttr('style');
+    </script>
+
+
+    <script>
+    // 加载 modal
+    function load_modal(article_id, comment_id) {
+        let modal_body = '#modal_body_' + comment_id;
+        let modal_id = '#comment_' + comment_id;
+
+        // 加载编辑器
+        if ($(modal_body).children().length === 0) {
+            let content = '<iframe src="/comment/post-Articlecomment/' +
+                article_id +
+                '/' +
+                comment_id +
+                '" frameborder="0" style="width: 100%; height: 100%;"></iframe>';
+            $(modal_body).append(content);
+        };
+
+        $(modal_id).modal('show');
+    };
+
+    // 处理二级回复
+    function post_reply_and_show_it(new_comment_id) {
+        let next_url = "{% url 'ArticleDetail' article.id %}";
+        // 去除 url 尾部 '/' 符号
+        next_url = next_url.charAt(next_url.length - 1) == '/' ? next_url.slice(0, -1) : next_url;
+        // 刷新并定位到锚点
+        window.location.replace(next_url + "#comment_elem_" + new_comment_id);
+    };
+</script>
+{% endblock script %}
+</html>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+{% include 'footer.html' %}

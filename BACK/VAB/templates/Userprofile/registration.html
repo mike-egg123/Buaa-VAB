@@ -1,36 +1,164 @@
+{% load static %}
+{% include 'topbar.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/registerpage.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+{#    <script src="{% static '/vab_js/register.js' %}"></script>#}
 </head>
 <body>
+
+
 {% block content %}
-        <form method="post" action=".">
-            {% csrf_token %}
-            <!-- 账号 -->
-            <div>
-                <label for="username">昵称</label>
-                <input type="text" id="username" name="username" required>
+    <main>
+        <div class="form-container" style="height: 600px;">
+            <div style="height:50px;border: 2px dashed #ffc5b3;border-top-left-radius: 10px;border-top-right-radius: 10px;background: #fff5fa"><div style="margin-top: 15px;font-size: larger">注册</div></div>
+            <a href="{% url 'Userprofile:loadHomepage' %}" class="iconfont jump">直接跳过&#xe60d;</a>
+            <form action="" class="form-inp" method="post">
+                {% csrf_token %}
+                <!-- 账号 -->
+                <div style="height: 80px;">
+                    <label for="username">昵称</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" id="username" name="username" class="username">
+                    <span id="msguser" style="color: #ff7d79;margin-left: 80%;margin-bottom: 5px;font-size: small"></span>
+                </div>
+                <!-- 邮箱 -->
+                <div style="height: 80px;">
+                    <label for="email">Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="email" id="email" name="email" class="username">
+                    <span id="msgemail" style="color: #ff7d79;margin-left: 80%;font-size: small"></span>
+                </div>
+                <!-- 密码 -->
+                <div style="height: 80px;">
+                    <label for="password_1">设置密码</label>
+                    <input type="password" id="password_1" name="password_1" class="password">
+                </div>
+                <!-- 确认密码 -->
+                <div style="height: 80px;">
+                    <label for="password_2">确认密码</label>
+                    <input type="password" id="password_2" name="password_2" class="password">
+                    <span id="msgpwd" style="margin-left: 80%;font-size: small"></span>
+                </div>
+                <!-- 提交按钮 -->
+{#                <input id="register" type="button" value="注册" class="login-btn">#}
+                <button type="submit" class="login-btn" id="register">提交</button>
+            </form>
+
+            <p id="content" style="color: #ff7d79"></p>
+
+            <div class="ornot-wrap">
+                <input type="checkbox" name="ornot" value="ornot" class="ornot">
+                自动登录
+                <div class="forget">
+                    <a href="#">注册</a>
+                </div>
             </div>
-            <!-- 邮箱 -->
-            <div>
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email">
-            </div>
-            <!-- 密码 -->
-            <div>
-                <label for="password_1">设置密码</label>
-                <input type="password" id="password_1" name="password_1" required>
-            </div>
-            <!-- 确认密码 -->
-            <div>
-                <label for="password_2">确认密码</label>
-                <input type="password" id="password_2" name="password_2" required>
-            </div>
-            <!-- 提交按钮 -->
-            <button type="submit" class="btn btn-primary">提交</button>
-        </form>
-{% endblock content %}
+        </div>
+    </main>
+{% endblock content %}<br><br><br><br><br><br>
 </body>
 </html>
+{% include 'footer.html' %}
+
+<script>
+    {#$("#register").click(#}
+    {#    function () {#}
+    {#        var username = $("#username").val();#}
+    {#        var password_1 = $("#password_1").val();#}
+    {#        var password_2 = $("#password_2").val();#}
+    {#        var email = $("#email").val();#}
+    {##}
+    {#        var url = "/registerajax/";#}
+    {#        var send_data = {#}
+    {#            "username":username,#}
+    {#            "password_1":password_1,#}
+    {#            "password_2":password_2,#}
+    {#            "email":email,#}
+    {#            "csrfmiddlewaretoken":"{{ csrf_token }}"#}
+    {#        };#}
+    {##}
+    {#        $.ajax({#}
+    {#            url:url,#}
+    {#            type:"post",#}
+    {#            data:send_data,#}
+    {#            success:function (data){#}
+    {#                console.log(data);#}
+    {#                $("#msg").text(data["msg"]);#}
+    {#            },#}
+    {#            error:function(error){#}
+    {#                // others#}
+    {#            }#}
+    {#        })#}
+    {#    }#}
+    {#)#}
+
+    $("#username").blur(
+        function () {
+            var username = $("#username").val();
+            var url = "/checkusers/?username=" + username;
+            $.ajax({
+                url:url,
+                type: "get",
+                data: "",
+
+                success:function (data) {
+                    console.log(data);
+                    $("#msguser").text(data["msg"]);
+                },
+                error:function () {
+                    // others
+                }
+            })
+        }
+    )
+
+    $("#email").blur(
+        function () {
+            var email = $("#email").val()
+            var url = "/checkemail/?email=" + email;
+            $.ajax({
+                url:url,
+                type:"get",
+                data:"",
+
+                success:function (data) {
+                    console.log(data);
+                    $("#msgemail").text(data["msg"]);
+                },
+                error:function () {
+                    // others
+                }
+            })
+        }
+    )
+
+    $("#password_2").blur(
+        function () {
+            var password_1 = $("#password_1").val()
+            var password_2 = $("#password_2").val()
+            var url = "/checkpwd/?password_1=" + password_1 + "&password_2=" + password_2;
+            $.ajax({
+                url:url,
+                type:"get",
+                data:"",
+
+                success:function (data) {
+                    console.log(data);
+                    $("#msgpwd").text(data["msg"]);
+                },
+                error:function () {
+                    // others
+                }
+            })
+        }
+    )
+
+</script>

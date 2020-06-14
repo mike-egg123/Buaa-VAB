@@ -1,0 +1,251 @@
+{% load static %}
+<div class="book_label-wrap">
+    <div class="outer">
+        <div class="action">行动</div>
+        <ul class="ul-container">
+            <li>
+                <a href="{% url 'ArticleCreate' %}">
+                    <img src="{% static '/vab_img/文章.png' %}" class="article" style="width: 40px;height: 40px;">
+                    <div>写文章</div>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'Videoupload' %}">
+                    <img src="{% static '/vab_img/书.png' %}" class="book" style="width: 40px;height: 40px;">
+                    <div>推书籍</div>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'Videoupload' %}" class="movie-wrap">
+                    <img src="{% static '/vab_img/电视机.png' %}" class="movie" style="width: 40px;height: 40px;">
+                    <div>推影视</div>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'Usergroup:MyGroups' %}">
+                    <img src="{% static '/vab_img/小组.png' %}" class="group" style="width: 40px;height: 40px;">
+                    <div>查看小组</div>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'showArticle' %}">
+                    <img src="{% static '/vab_img/话题.png' %}" class="topic" style="width: 40px;height: 40px;">
+                    <div>话题广场</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="outer1">
+        <div class="iconfont label">&#xe662; 快速标签查找</div>
+        <div class="line"></div>
+        <ul class="ul-container">
+            <li class="literature-wrap">
+                <div class="literature">文学</div>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=小说">小说</a>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=传记">传记</a>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=纪实">纪实</a>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=影视">影视</a>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=诗歌">诗歌</a>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=童话">童话</a>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=期刊杂志">期刊杂志</a>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=戏剧">戏剧</a>
+            </li>
+            <li>
+                <a href="{% url 'showVideo' %}?search=美术">美术</a>
+            </li>
+        </ul>
+        <div class="line"></div>
+        <ul class="ul-container">
+        <li class="literature-wrap">
+            <div class="literature">历史</div>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=中国史">中国史</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=世界史">世界史</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=考古学">考古学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=畅销史书">畅销史书</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=民族学">民族学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=史学理论">史学理论</a>
+        </li>
+    </ul>
+    <div class="line"></div>
+    <ul class="ul-container">
+        <li class="literature-wrap">
+            <div class="literature">计算机</div>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=操作系统">操作系统</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=网络安全">网络安全</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=电子商务">电子商务</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=硬件开发">硬件开发</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=数据库">数据库</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=程序设计">程序设计</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=人工智能">人工智能</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=算法">算法</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=编程语言">编程语言</a>
+        </li>
+    </ul>
+    <div class="line"></div>
+    <ul class="ul-container">
+        <li class="literature-wrap">
+            <div class="literature">哲学</div>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=东方哲学">东方哲学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=西方哲学">西方哲学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=哲学史">哲学史</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=马克思">马克思</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=逻辑学">逻辑学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=伦理学">伦理学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=美学">美学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=宗教">宗教</a>
+        </li>
+    </ul>
+    <div class="line"></div>
+    <ul class="ul-container">
+        <li class="literature-wrap">
+            <div class="literature">科技</div>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=机械">机械</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=建筑">建筑</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=电子通信">电子通信</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=化学">化学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=物理">物理</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=水利">水利</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=能源与动力">能源与动力</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=生物医学">生物医学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=矿业与冶炼">矿业与冶炼</a>
+        </li>
+    </ul>
+    <div class="line"></div>
+    <ul class="ul-container">
+        <li class="literature-wrap">
+            <div class="literature">社会</div>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=经济">经济</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=管理">管理</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=心理">心理</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=商务实务">商务实务</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=财政税收">财政税收</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=银行与货币">银行与货币</a>
+        </li>
+    </ul>
+    <div class="line"></div>
+    <ul class="ul-container">
+        <li class="literature-wrap">
+            <div class="literature">考研</div>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=考研数学">考研数学</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=考研英语">考研英语</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=考研政治">考研政治</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=考研计算机">考研计算机</a>
+        </li>
+    </ul>
+    <div class="line"></div>
+    <ul class="ul-container">
+        <li class="literature-wrap">
+            <div class="literature">青年</div>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=玄幻">玄幻</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=言情">言情</a>
+        </li>
+        <li>
+            <a href="{% url 'showVideo' %}?search=侦探">侦探</a>
+        </li>
+    </ul>
+    </div>
+</div>

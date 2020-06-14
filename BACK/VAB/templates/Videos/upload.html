@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传影视信息</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/video_upload.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+	<link rel="stylesheet" href="{% static 'css_style/columns.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<script type="text/javascript">
+		function previewFile()
+        {
+            var preview = document.querySelector('.Video_img');
+            var file  = document.querySelector('input[type=file]').files[0];
+            var reader = new FileReader();
+            reader.onloadend = function () {preview.src = reader.result;}
+            if (file) {reader.readAsDataURL(file);}
+            else {preview.src = "Video_img";}
+		}
+	</script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css_style/tags.css' %}">
+	<script src="{% static 'js/tagsinput.js' %}" type="text/javascript" charset="utf-8"></script>
+</head>
+<style>
+    .file {
+        position: relative;
+        display: inline-block;
+        background: #ffdedf;
+        border: 1px solid #ff998c;
+        border-radius: 4px;
+        padding: 4px 12px;
+        overflow: hidden;
+        color: #ff7d79;
+        text-decoration: none;
+        text-indent: 0;
+        line-height: 20px;
+    }
+    .file input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+    }
+    .file:hover {
+        background: #ff7d79;
+        border-color: #ff998c;
+        color: #ffd1c3;
+        text-decoration: none;
+    }
+</style>
+{% include 'topbar.html' %}
+<body>
+	<div class="book_upload" >
+		<div class="bform">
+            <form action="" class="form-inp" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+				名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" class="bookname" placeholder="  名  称" id="Video_name" name="Video_name"><br/>
+                地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：<input type="text" class="author" placeholder="  地  区" id="Video_Country" name="Video_Country"><br/><br><br>
+
+                <a class="file" style="width: 100px;height: 40px;margin-left: -15px">
+                    上传图片
+                    <input type="file" onchange="previewFile()" class="file_pic" id="Video_img" name="Video_img" accept="image/gif, image/jpeg, image/png, image/jpg" style="margin-left: 0px;margin-top: -10px"><br/><br/>
+                </a>
+{#				上传图片：#}
+{#				<input type="file" onchange="previewFile()" class="file_pic" id="Video_img" name="Video_img" accept="image/gif, image/jpeg, image/png, image/jpg" style="margin-left: 0px"><br/><br/>#}
+				<div class="img-preview" style="margin-top: -40px">
+					<img class="Video_img" id="Video_img" src="Video_img" height="auto" width="310px"  alt=""/>
+				</div>
+				<div class="box">
+					标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签：
+					<div class="tagsinput-primary form-group">
+{#						<input name="tagsinput" id="tagsinputval" class="tagsinput" data-role="tagsinput" value="右侧 x 删除标签" placeholder="输入后回车">#}
+                        <input id="Video_tags" name="Video_tags" class="tagsinput" data-role="tagsinput" value="右侧 x 删除标签" placeholder="最多两个标签">
+					</div>
+				</div>
+				<div class="select_book">
+                    栏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目：
+                    <select id="Video_column" name="Video_column" style="height: 40px;border: 2px solid #ffdedf">
+                        <option value="none">请选择栏目...</option>
+                        {% for column in columns %}
+                          <option value="{{ column.id }}">{{ column }}</option>
+                        {% endfor %}
+                    </select>
+				</div>
+				影视简介：<br/>
+				<textarea class="introduction" rows="10" cols="30" id="Video_intro" name="Video_intro">键入简介</textarea><br/>
+                <button class="bsub" type="submit" style="margin-left: 170px">提交</button>
+            </form>
+        </div>
+	</div>
+</body>
+</html>
+{% include 'footer.html' %}

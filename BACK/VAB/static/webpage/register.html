@@ -1,0 +1,55 @@
+{% load static %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/registerpage.css' %}">
+    <script src="{% static '/vab_js/register.js' %}"></script>
+</head>
+<body>
+    <main>
+        <div class="geometric-container">
+            <img src="{% static '/vab_img/1.png' %}" alt="这是一组漫画图" class="alterimg"/>
+            <button type="button" class="btn01 glyphicon glyphicon-chevron-left" id="first"></button>
+            <button type="button" class="btn02 glyphicon glyphicon-chevron-right" id="second"></button>
+        </div>
+        <div class="longline"></div>
+        <div class="form-container">
+            <a href="#" class="iconfont jump">直接跳过&#xe60d;</a>
+            <form action="" class="form-inp">
+
+                <input type="text" class="username" placeholder="  Username" id="iname">
+                <input type="email" class="username" placeholder="  Email" id="iemail">
+                <input type="password" class="password" placeholder="  Password" id="ipassword1">
+                <input type="password" class="password" placeholder="  Password Again" id="ipassword2">
+                <button class="login-btn" id="ilogin-btn">注册</button>
+            </form>
+            <div class="ornot-wrap">
+                <input type="checkbox" name="ornot" value="ornot" class="ornot">
+                自动登录
+                <div class="forget">忘记密码？
+                    <a href="{% url 'Userprofile:register' %}">注册</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="hidden" id="myalert01">
+                    <div class="alert alert-danger">不能有空!</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="hidden" id="myalert02">
+                    <div class="alert alert-success">提交完成!</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+{% include 'footer.html' %}

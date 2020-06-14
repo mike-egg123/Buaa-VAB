@@ -50,7 +50,7 @@
     .outer .intro{
         float:left;
         width: 340px;
-        height: 83px;
+        /*height: 83px;*/
         font-size: 14px;
         color:gray;
         line-height:20px;

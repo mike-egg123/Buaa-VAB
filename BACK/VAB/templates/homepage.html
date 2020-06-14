@@ -1,0 +1,119 @@
+{% load static %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAB主页</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="icon" href="{% static '/vab_img/2020060909293668_easyicon_net_512.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static '/css_style/主页page.css' %}">=
+    <style type="text/css">
+        .wechat:hover .qrcode {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+        }
+
+        .qrcode {
+            width: 0px;
+        }
+
+        .wechat:hover .wechat-img {
+            padding-left: 40px;
+        }
+    </style>
+    <style>
+        body{
+            background-image: url("{% static '/vab_img/10.png' %}");
+            background-repeat:no-repeat;
+            background-position:20px 130px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="helloworld">
+            欢迎来到 <font style="font-family: 'JetBrains Mono', serif;color: #ff998c">Video And Book</font> 的世界
+        </div>
+        <hr>
+        <div class="mainpage_book">热 门 书 籍</div>
+        <a href="{% url 'showBook' %}" class="mainpage_bookacon">
+            <div class="mainpage_booka">查看更多></div>
+        </a>
+        <hr>
+        <div class="mainpage_bookmoviecon">
+            {% if books.count == 0 %}
+                <div>还没有书籍哦~去推荐几个吧</div>
+            {% else %}
+                {% for abook in books %}
+                    <a class="mainpage_bookcon" href="{% url 'Bookdetail' abook.id %}">
+                        <div class="mainpage_bookimg">
+                            <img src="{{ abook.Book_img.url }}" alt="">
+                        </div>
+                    </a>
+                {% endfor %}
+            {% endif %}
+        </div><hr>
+
+        <div class="mainpage_book">热 门 影 视</div>
+        <a href="{% url 'showVideo' %}" class="mainpage_bookacon">
+            <div class="mainpage_booka">查看更多></div>
+        </a><hr>
+        {% if videos.count == 0 %}
+            <div>还没有影视作品哦~去推荐几个吧</div>
+        {% else %}
+            {{ videos.count }}
+            <div class="mainpage_bookmoviecon">
+                {% for avideo in videos%}
+                    <a class="mainpage_bookcon" href="{% url 'Videodetail' avideo.id %}">
+                        <div class="mainpage_bookimg">
+                            <img src="{{ avideo.Video_img.url }}" alt="">
+                        </div>
+                        <!-- <div class="mainpage_book iconfont">书 籍 &#xe60d;</div> -->
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <hr>
+        <div class="mainpage_book">热 门 文 章</div>
+        <a href="{% url 'showArticle' %}" class="mainpage_bookacon">
+            <div class="mainpage_booka">查看更多></div><hr>
+        </a>
+        <div class="talkboxwrap0">
+            {% for article in articles %}
+                <div class="talkboxwrap">
+                <div class="talkthemewrap" style="height: 50px">
+                    <a href="{% url 'ArticleDetail' article.id %}" class="talktheme">
+                        {{ article.title }}
+                    </a>
+                </div><hr>
+                <div class="talktime1">
+                    发布时间
+                </div>
+                <div class="talktime2">
+                    {{article.created}}
+                </div><hr>
+                <div class="topic-intro" style="height: 150px">
+                    {{ article.body|slice:100 }}...
+                </div>
+                <div style="margin-bottom: 0px">
+                    <a href="javascrpit:;" class="talkattend">{{article.column.title}}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="helloworld1 iconfont">
+            <!-- <img src="../vab_img/13.png" alt=""> -->
+            <span>&#xe63f;</span> 快来参与我们吧
+        </div>
+    </main>
+</body>
+</html>
+{% include 'footer.html' %}

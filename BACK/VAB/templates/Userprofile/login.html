@@ -10,9 +10,93 @@
     <link rel="stylesheet" href="{% static '/css_style/base.css' %}">
     <!-- 引入本页面的样式 -->
     <link rel="stylesheet" href="{% static '/css_style/index.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
 </head>
 <body>
-    {% include 'topbar.html' %}
+<link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+<link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+<!-- 引入公用样式 -->
+<link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+<!-- 引入本页面的样式 -->
+<link rel="stylesheet" href="{% static '/css_style/index.css' %}">
+    <header>
+        <ul class="topbar">
+            <li class="logo-wrap">
+                <img src="{% static '/vab_img/logo.jpg.png' %}" alt="logo" class="logo">
+            </li>
+            <li class="line-wrap">
+                <div class="line"></div>
+            </li>
+            <li class="home">
+                <a href="{% url 'Userprofile:loadHomepage' %}" class="iconfont">&#xe61f;
+                    <p>home</p>
+                </a>
+            </li>
+            <li class="book">
+                <a href="{% url 'showBook' %}" class="iconfont">&#xe66c;
+                    <p>book</p>
+                </a>
+            </li>
+            <li class="video">
+                <a href="{% url 'showVideo' %}" class="iconfont">&#xe605;
+                    <p>video</p>
+                </a>
+            </li>
+            <li class="group">
+                <a href="{% url 'group:showGroup' %}" class="iconfont">
+                    &#xe654;
+                    <p>group</p>
+                </a>
+            </li>
+            <li class="topic">
+                <a href="{% url 'showArticle' %}" class="iconfont">
+                    &#xe8b1;
+                    <p>topic</p>
+                </a>
+            </li>
+            <li class="user-wrap">
+                {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% if unread_count %}
+                                <svg viewBox="0 0 8 8" width="8px" height="8px">
+                                    <circle cx="4" cy="4" r="4" fill="#ff6b6b"></circle>
+                                </svg>
+                            {% endif %}
+                            {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url "notice:list" %}">通知
+                                {% if unread_count %}
+                                    <span class="badge badge-danger">{{ unread_count }}</span>
+                                {% endif %}
+                            </a>
+                            <a class="dropdown-item" href="{% url 'ArticleCreate' %}">写文章</a>
+                            <a class="dropdown-item" href='{% url "Userprofile:profile" user.id %}'>个人信息</a>
+                            <a class="dropdown-item" href='{% url "Userprofile:logout" %}'>退出登录</a>
+                        </div>
+                    </li>
+
+
+                {% else %}
+                <a href="{% url 'Userprofile:login' %}" class="user1">
+                    登录
+                </a>
+                <i class="iconfont l">&#xe63a;</i>
+                <a href="{% url 'Userprofile:register' %}" class="user1">
+                    注册
+                </a>
+                {% endif %}
+            </li>
+        </ul>
+    </header>
+
+<script>
+    {% if message %}
+        alert('{{ message }}')
+    {% endif %}
+</script>
+
     <main>
         <div class="geometric-container">
             <div class="box1">
@@ -36,24 +120,26 @@
         </div>
         <div class="longline"></div>
         <div class="form-container">
-            <a href="{% url 'showBook' %}" class="iconfont jump">直接跳过&#xe60d;</a>
-            <form action="" class="form-inp" method="post" enctype="multipart/form-data">
-                <!--错误提示-->
-                {% if message %}
-                    <script>alert('{{ message }}');</script>
-                {% endif %}
-
+            <a href="{% url 'Userprofile:loadHomepage' %}" class="iconfont jump">直接跳过&#xe60d;</a>
+            <form action="" class="form-inp" method="post">
                 {% csrf_token %}
-                <input type="text" class="username" id="username" name="username" placeholder="  Username" autocomplete="off">
-                <input type="password" class="password" id="password" name="password" placeholder="  Password" autocomplete="off">
-                <button class="login-btn" type="submit">登录</button>
+                <div style="height: 100px;">
+                    <label for="username"><font face="kaiti">用户名</font></label>
+                    <input type="text" class="username" placeholder="  Username" id="username" name="username">
+                    <span id="msgname" style="color: #ff7d79;margin-left:100px;font-size: small"></span>
+                </div>
+                <div style="height: 80px;">
+                    <label for="password"><font face="kaiti">密码&nbsp;&nbsp;</font></label>
+                    <input type="password" class="password" placeholder="  Password" id="password" name="password">
+                    <span id="msgpassword" style="color: #ff7d79;margin-left:100px;font-size: small"></span>
+                </div>
+                <button class="login-btn">登录</button>
             </form>
-
             <div class="ornot-wrap">
                 <input type="checkbox" name="ornot" value="ornot" class="ornot">
                 自动登录
                 <div class="forget">忘记密码？
-                    <a href="{% url 'Userprofile:register' %}">注册</a>
+                    <a href="#">注册</a>
                 </div>
             </div>
         </div>
@@ -61,3 +147,48 @@
     {% include 'footer.html' %}
 </body>
 </html>
+
+<script>
+        $("#username").blur(
+        function () {
+            var username = $("#username").val();
+            var url = "/checkusers_login/?username=" + username;
+            $.ajax({
+                url:url,
+                type: "get",
+                data: "",
+
+                success:function (data) {
+                    console.log(data);
+                    $("#msgname").text(data["msg"]);
+                },
+                error:function () {
+                    // others
+                }
+            })
+        }
+    )
+
+        $("#password").blur(
+        function () {
+            var username = $("#username").val()
+            var password = $("#password").val()
+
+            var url = "/checkpwd_login/?username=" + username + "&password=" + password;
+
+            $.ajax({
+                url:url,
+                type:"get",
+                data:"",
+
+                success:function (data) {
+                    console.log(data);
+                    $("#msgpassword").text(data["msg"]);
+                },
+                error:function () {
+                    // others
+                }
+            })
+        }
+    )
+</script>

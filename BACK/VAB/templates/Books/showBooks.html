@@ -1,16 +1,261 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Show_books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书列表</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/book_page.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/search_bar.css' %}">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        .bookintro-con{
+            /* background-color: #abf; */
+            margin-top: 100px;
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+
+        }
+        .bookintro-con .intro01,.bookintro-con .intro02{
+            color:rgb(255, 255, 255);
+            text-decoration: none;
+            background-color: rgb(253, 125, 103);
+            letter-spacing: .5px;
+            border-radius: 5px;
+        }
+    </style>
+    <style>
+        .bookpage{
+            width: 700px;
+            height:40px;
+            line-height: 40px;
+            margin:50px auto;
+            /* background-color: rgb(216, 209, 200); */
+            display:flex;
+            justify-content:space-between
+        }
+        .bookpage > li{
+            /* flex-grow: 1; */
+            justify-content:space-between
+        }
+        .bookpage a{
+            display:block;
+            width: 40px;
+            height: 40px;
+            border: rgb(194, 193, 193) 2px solid;
+            color: rgb(119, 118, 117);
+            text-decoration: none;
+            text-align: center;
+            border-radius: 10px;
+        }
+        /* 设置图标 */
+        .bookpage .left,
+        .bookpage .omit,
+        .bookpage .right{
+            font-size: 17px;
+            font-weight: bolder;
+        }
+        /* 设置省略号 */
+        .bookpage .omit{
+            border:unset;
+            margin-top:15px;
+        }
+        /* 设置竖线 */
+        .bookpage .line{
+            width: 1px;
+            height: 35px;
+            background-color: rgba(194, 193, 193,.7);
+            margin-top: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        /* 设置goto */
+        .bookpage .goto{
+            color: rgb(119, 118, 117);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        /* 设置表单 */
+        .bookpage div{
+            width: 50px;
+            border:  rgb(194, 193, 193) 2px solid;
+            line-height: 30px;
+            border-radius: 10px;
+            /* background-color: thistle; */
+        }
+        .bookpage .page{
+            width: 46px;
+            border:unset;
+            border-radius: 10px;
+            line-height: 30px;
+            text-align: center;
+            outline: none;
+            /* background-color: turquoise; */
+        }
+        /* 设置点击效果 */
+        .bookpage a:not(.omit):hover{
+            color:tomato;
+            border: tomato 2px solid;
+            transition: all .25s;
+        }
+    </style>
+    <style type="text/css">
+        .wechat:hover .qrcode {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+        }
+
+        .qrcode {
+            width: 0px;
+        }
+
+        .wechat:hover .wechat-img {
+            padding-left: 40px;
+        }
+    </style>
 </head>
 <body>
-    {% include 'topbar.html' %}
-    <h1>图书列表</h1>
-    <div>
-        {% for a_book in Book_list %}
-            <a href="{{ a_book.id }}">{{ a_book.Book_name }}</a>
-        {% endfor %}
-    </div>
+{% include 'topbar.html' %}
+    <ul class="topbook-wrap">
+        <li class="bookimg">
+            <img src="{% static '/vab_img/书.png' %}" style="width: auto; height:45px;">
+        </li>
+        <li class="zi">库内书籍</li>
+        <div class="find-wrap">
+            <form action="" class="find">
+                <input type="text" class="find-inp" placeholder="搜索" name="search" required>
+                <button class="find-btn">
+                    <i class="iconfont find-icon">&#xe61c;</i>
+                </button>
+            </form>
+        </div>
+    </ul>
+
+    <main>
+        <div class="main-wrap">
+            <div class="book_intr-wrap">
+                <div class="allbook">全库{{ all_count }}</div>
+                <div class="newbook">
+                    <a class="iconfont a1" href="{% url 'showBook' %}?search={{ search }}">最新</a>
+                    <a class="iconfont a1" href="{% url 'showBook' %}?order=Book_total_views&search={{ search }}">最热</a>
+                </div>
+                <br>
+                <hr>
+
+                {% if search %}
+                    {% if books %}
+                        <div class="alert alert-danger" role="alert">
+                            <h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
+                        </div>
+                        <hr>
+                    {% else %}
+                        <div class="alert alert-danger" role="alert">
+                            <h4>暂无<span style="color: red">"{{ search }}"</span>有关的图书</h4>
+                        </div>
+                        <hr>
+                    {% endif %}
+                {% endif %}
+
+                <!-- 设置外层容器 -->
+                {% for a_book in books %}
+                    <div class="outer1">
+                        <!-- 设置图片容器 -->
+                        <div class="image">
+                            <a href="{% url 'Bookdetail' id=a_book.id %}">
+                                <img src="{{ a_book.Book_img.url }}">
+                            </a>
+                        </div>
+                        <!-- 设置标题、作者容器 -->
+                        <div class="title">
+                            <a href="javasprit:;">
+                                <h2>{{ a_book.Book_name }}</h2>
+                            </a>
+                            <div>作者：{{ a_book.Book_auth }}</div>
+                            <div>出版社：暂无</div>
+                            <div>
+                                类型：
+                                {% if a_book.Book_column %}
+                                    {{ a_book.Book_column.title }}
+                                {% else %}
+                                    暂无
+                                {% endif %}
+                            </div>
+                            <div>该推荐浏览量：{{ a_book.Book_total_views }}</div>
+                            <!-- 设置评价 -->
+                            <ul style="margin-top: 0px;height: 60px;">
+                                <li>推荐：
+                                    <i class="iconfont ystar">&#xe610;</i>
+                                    <i class="iconfont ystar">&#xe610;</i>
+                                    <i class="iconfont ystar">&#xe610;</i>
+                                    <i class="iconfont gstar">&#xe610;</i>
+                                    <i class="iconfont gstar">&#xe610;</i>
+                                </li>
+                            </ul>
+                            <span>
+                                {% for a_tag in a_book.Book_tags.all %}
+                                    <div style="display: inline-block;border: 1px dashed #ffb5ae;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;background: #ffe7d6">
+                                        <div>
+                                            <a href="#" class="intro01" style="font-size: small">{{ a_tag }}</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% include 'sidebar.html' %}
+
+            <!--页码-->
+            <div class="pagenum-wrap">
+                <br><br><br><br><br><br><br><br>
+                <li class="bookpage">
+                {% if books.has_previous %}
+                        <a href="?page={{ books.previous_page_number }}&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}" class="iconfont left">&laquo;</a>
+                    {% if  books.number != 2 %}
+                            <a href="?page=1&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}">1</a>
+                    {% endif %}
+
+                    {% if  books.number > 3 %}
+                        &nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;
+                    {% endif %}
+
+                    <a href="?page={{ books.previous_page_number }}&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}">
+                        {{ books.previous_page_number }}
+                    </a>
+                {% endif %}
+                    <a href="#" style="background: #ffb5ae">{{ books.number }}</a>
+                {% if books.has_next %}
+                    {% if books.number|add:1 < books.paginator.num_pages %}
+                        <a href="?page={{ books.next_page_number }}&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}">
+                            {{ books.next_page_number }}
+                        </a>
+                    {% endif %}
+                    {% if books.number|add:2 < books.paginator.num_pages%}
+                        <span>&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;</span>
+                    {% endif %}
+
+                    <a href="?page={{ books.paginator.num_pages }}&oeder={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}">
+                        {{ books.paginator.num_pages }}
+                    </a>
+                    <a href="?page={{ books.next_page_number }}&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}" class="iconfont right">&raquo;</a>
+                {% endif %}
+                </li>
+            </div>
+        </div>
+    </main>
+{% include 'footer.html' %}
 </body>
 </html>

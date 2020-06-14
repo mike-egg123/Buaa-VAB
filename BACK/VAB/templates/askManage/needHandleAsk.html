@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>需要处理的申请</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="icon" href="{% static '/vab_img/2020060909293668_easyicon_net_512.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/askhandle.css' %}">
+</head>
+<body>
+    <main>
+        {% for ask in asks %}
+            <div class="groupcon" style="border: 2px dashed red;font-family: 'JetBrains Mono', serif">
+                <div class="groupuser">
+                    申请者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'Userprofile:profile' ask.asker.id %}" style="display: inline-block">{{ ask.asker.username }}</a>
+                </div>
+                <div class="groupname">
+                    小组&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{% url 'Usergroup:Groupdetail' ask.group.id %}" style="display: inline-block">{{ ask.group.groupname }}</a>
+                </div>
+                <div class="grouptime">
+                    申请时间<span class="time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;{{ ask.created }}<br></span>
+                </div>
+                <div class="groupstatu">
+                    {% if ask.state == 0 %}
+                        <a href="{% url 'group:RefuseAsk' ask.id %}" style="display: inline-block"><button class="btn btn-outline-secondary">拒绝</button></a>
+                        <a href="{% url 'group:AgreeAsk' ask.id %}" style="display: inline-block"><button class="btn btn-outline-danger">通过</button></a>
+                    {% elif ask.state == 1 %}
+                        <button class="btn btn-dark">已拒绝</button>
+                    {% else %}
+                        <button class="btn btn-danger">已通过</button>
+                    {% endif %}
+    {#                <button type="button" class="btn btn-success">已通过</button>#}
+                </div>
+            </div><hr>
+        {% endfor %}
+    </main>
+</body>
+</html>
+{% include 'footer.html' %}

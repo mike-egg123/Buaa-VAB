@@ -1,0 +1,53 @@
+{% load static %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的群管理申请</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="icon" href="{% static '/vab_img/2020060909293668_easyicon_net_512.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+{#    <link rel="stylesheet" href="{% static '/css_style/myasks.css' %}">#}
+    <link rel="stylesheet" href="{% static '/css_style/askhandle.css' %}">
+</head>
+
+<body>
+    <div>
+    {% if not allmyasking %}
+        <div style="height: 240px;">
+            <div style="margin-left:40%;width: 200px;height: 70px;margin-top:100px;border: 2px dashed red;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;background: #ffc7bb">
+                <div style="margin-left: 55px;margin-top: 20px;">暂无申请</div>
+            </div>
+        </div>
+    {% else %}
+        <main>
+            {% for myask in allmyasking %}
+                <div class="groupcon" style="font-family: 'JetBrains Mono', serif">
+                    <div class="groupname">
+                        小组&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{% url 'group:Groupdetail' myask.group.id %}" style="display: inline-block">{{ myask.group.groupname }}</a>
+                    </div>
+                    <div class="grouptime">
+                        申请时间<span class="time">
+                        &nbsp;&nbsp;&nbsp;&nbsp;{{ myask.created }}</span>
+                    </div>
+                    <div class="grouptime">
+                        申请状态&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;<span class="pass">{% if myask.state == 0 %}<button class="btn btn-outline-info">等待处理...</button>{% elif myask.state == 1 %}<button class="btn btn-outline-dark">已被拒绝</button>{% else %}<button class="btn btn-outline-danger">已通过</button>{% endif %}</span>
+                    </div>
+                </div><hr>
+            {% endfor %}
+        </main>
+{#        {% for myask in allmyasking %}#}
+{#            小组：<a href="{% url 'group:Groupdetail' myask.group.id %}">{{ myask.group.groupname }}</a>#}
+{#            申请时间：{{ myask.created }}<br>#}
+{#            申请状态：{% if myask.state == 0 %}等待处理...{% elif myask.state == 1 %}已被拒绝{% else %}已通过{% endif %}<hr>#}
+{#        {% endfor %}#}
+    {% endif %}
+    </div>
+</body>
+</html>
+{% include 'footer.html' %}

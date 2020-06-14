@@ -1,26 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
+{% include 'topbar.html' %}
+<!doctype html>
+<html ng-app="app" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
+	<meta charset="utf-8">
+	<title>{{ user.username }}的个人主页</title>
+	<link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/personal_information.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static '/css_style/birthday/wui.min.css' %}">
+
+	<link rel="stylesheet" href="{% static '/css_style/limit/normalize.min.css' %}">
+    <link rel="stylesheet prefetch" href="{% static '/css_style/limit/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/limit/style.css' %}">
+
+
+	<script type="text/javascript" src="{% static '/js/personal_information/date/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static '/js/personal_information/date/angular.min.js' %}"></script>
+	<script type="text/javascript" src="{% static '/js/personal_information/date/wui-date.js' %}" charset="utf-8"></script>
+	<script type="text/javascript">var app = angular.module('app',["wui.date"]);</script>
+  	<script type="text/javascript">
+		function previewFile() {
+		 var preview = document.querySelector('.img-pro');
+		 var file  = document.querySelector('input[type=file]').files[0];
+		 var reader = new FileReader();
+		 reader.onloadend = function () {
+		  preview.src = reader.result;
+		 }
+		 if (file) {
+		  reader.readAsDataURL(file);
+		 } else {
+		  preview.src = "img-p";
+		 }
+		}
+	</script>
 </head>
+
 <body>
-{% block content %}
-    <div>
-        {% include 'topbar.html' %}
-    </div>
-    <div>
-        <h3>用户名：{{ userprofile.org }}</h3>
-        {% if userprofile.headshot %}
-        头像：<img src="{{ userprofile.headshot.url }}" style="max-width: 20%; border-radius: 15%";><br>
-        {% else %}
-            <h4>暂无头像</h4>
-        {% endif %}
-        个人简介：<br>
-        <textarea type="text" rows="12">{{ userprofile.personal_infor }}</textarea><br>
-        电话：{{ userprofile.telephone }}<br>
-        邮箱：{{ user.email }}<br>
-    </div>
-{% endblock %}
+	<div class="personal_page" id="personal_page" style="margin-top: 100px">
+		<form>
+			<div class="person_head">
+				<div class="profile_picture" >
+                    {% if userprofile.headshot %}
+                        <img src="{{ userprofile.headshot.url }}" class="img-pro" alt="">
+                    {% else %}
+                        <div style="width: 145px;height: 140px;border: 3px dashed #ffb0a4;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;background: #d3cfd6">
+                            <div style="margin-top: 60px;margin-left: 38px">
+                                暂无头像
+                            </div>
+                        </div>
+                    {% endif %}
+				</div>
+				<div class="words">
+					<input type="text" class="head_username" placeholder="{{ user.username }}" readonly><br/>
+					<input type="text" class="sentence" placeholder="{{ userprofile.personal_infor }}" readonly>
+
+                    <a href="{% url 'Userprofile:profile_update' user.id %}" style="margin-left: 85%">
+                        <button class="btn btn-outline-danger" type="button">
+                            修改资料
+                        </button>
+                    </a>
+				</div>
+			</div>
+			<div id="tree">
+				<script src="{% static '/js/personal_information/tree/person_tree_script.js' %}"></script>
+			</div>
+			<div class="person_information" style="height: 500px;">
+                <div style="width: 600px;margin-left:40px;border: 2px dashed #ffb0a4;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;background: #fff0eb">
+                    &nbsp;&nbsp;用&nbsp;户&nbsp;&nbsp;名：<input type="text" class="username" placeholder="{{ user.username }}" readonly><br/>
+                    &nbsp;&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：<input type="text" class="username" placeholder="{{ user.first_name }}" readonly><br/>
+                    &nbsp;&nbsp;名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：<input type="text" class="username" placeholder="{{ user.last_name }}" readonly><br/>
+{#                    生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日：<wui-date format="yyyy-mm-dd" placeholder="请选择或输入日期" id="date1" btns="{'ok':'确定','now':'此刻'}" ng-model="date1"></wui-date><br/>#}
+                    &nbsp;&nbsp;电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：<input type="tel" placeholder="{{ userprofile.telephone }}" class="tel" readonly><br/>
+                    &nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="email" placeholder="{{ user.email }}" class="email" readonly><br/><br/>
+                </div>
+
+{#				简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介：<div id="root" style="margin-left: 100px"></div>#}
+				<script type="text/javascript"  src="{% static '/js/personal_information/limit/react.min.js' %}"></script>
+				<script type="text/javascript"  src="{% static '/js/personal_information/limit/react-dom.min.js' %}"></script>
+				<script type="text/javascript"  src="{% static '/js/personal_information/limit/prop-types.js' %}"></script>
+				<script type="text/javascript"   src="{% static '/js/personal_information/limit/index.js' %}"></script>
+{#				<div class="submit">#}
+{#					<button>确认修改</button>#}
+{#					<button>取消</button>#}
+{#				</div>#}
+			</div>
+		</form>
+	</div>
 </body>
 </html>
+{% include 'footer.html' %}
+

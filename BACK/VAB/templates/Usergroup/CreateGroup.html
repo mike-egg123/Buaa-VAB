@@ -1,0 +1,102 @@
+{#{% load static %}#}
+{#{% include 'topbar.html' %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>创建小组</title>#}
+{#</head>#}
+{#<body>#}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div>#}
+{#            <label for="group_img">上传群头像</label>#}
+{#            <input type="file" name="group_img" id="group_img">#}
+{#        </div>#}
+{#        小组名称：<input type="text" id="groupname" name="groupname"><br>#}
+{#        简介：<textarea type="text" id="group_info" name="group_info"></textarea><br>#}
+{#        <button type="submit">完成</button>#}
+{#    </form>#}
+{#</body>#}
+{#</html>#}
+{#{% include 'footer.html' %}#}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传书籍</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/book_upload.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+	<link rel="stylesheet" href="{% static 'css_style/columns.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<script type="text/javascript">
+		function previewFile()
+        {
+            var preview = document.querySelector('.group_img');
+            var file  = document.querySelector('input[type=file]').files[0];
+            var reader = new FileReader();
+            reader.onloadend = function () {preview.src = reader.result;}
+            if (file) {reader.readAsDataURL(file);}
+            else {preview.src = "group_img";}
+		}
+	</script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css_style/tags.css' %}">
+	<script src="{% static 'js/tagsinput.js' %}" type="text/javascript" charset="utf-8"></script>
+</head>
+<style>
+    .file {
+        position: relative;
+        display: inline-block;
+        background: #ffdedf;
+        border: 1px solid #ff998c;
+        border-radius: 4px;
+        padding: 4px 12px;
+        overflow: hidden;
+        color: #ff7d79;
+        text-decoration: none;
+        text-indent: 0;
+        line-height: 20px;
+    }
+    .file input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+    }
+    .file:hover {
+        background: #ff7d79;
+        border-color: #ff998c;
+        color: #ffd1c3;
+        text-decoration: none;
+    }
+</style>
+{% include 'topbar.html' %}
+<body>
+	<div class="book_upload" >
+		<div class="bform">
+            <form action="" class="form-inp" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+				组&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" class="bookname" placeholder="  组 名" id="groupname" name="groupname"><br/>
+                <a class="file" style="width: 130px;height: 40px;margin-left: -15px">
+                    上传小组图片
+                    <input type="file" onchange="previewFile()" class="file_pic" id="group_img" name="group_img" accept="image/gif, image/jpeg, image/png, image/jpg" style="margin-left: 0px;margin-top: -10px"><br/><br/>
+                </a>
+                <br><br><br><br>
+				<div class="img-preview" style="margin-left: 120px;margin-top: -90px">
+					<img class="group_img" id="group_img" src="group_img" height="auto" width="310px"  alt=""/>
+				</div><br><br><br>
+				小组简介：<br/>
+				<textarea class="introduction" rows="10" cols="30" id="group_info" name="group_info">键入简介</textarea><br/>
+                <button class="bsub" type="submit" style="margin-left: 160px">提交</button>
+            </form>
+        </div>
+	</div>
+</body>
+</html>
+{% include 'footer.html' %}

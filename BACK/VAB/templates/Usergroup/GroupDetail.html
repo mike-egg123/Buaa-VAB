@@ -1,0 +1,179 @@
+{% load static %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/groupListPage.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/posting_1.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/groupmain.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/groupmembers.css' %}">
+    <title>{{ group.groupname }}的页面</title>
+</head>
+    <main>
+        <div class="main01">
+            <div class="a01">
+                <div class="grouprightcon" id="a01">
+                    <div class="groupright01">
+                        <div class="grouprightimgcon">
+                            <img src="{{ group.group_img.url }}" alt="" class="grouprightimg">
+                        </div>
+                        <div class="grouprighttextcon">
+                            <a href="#" class="grouprightnamecon">
+                                <div class="grouprightname">{{ group.groupname }}</div>
+                            </a>
+                            <div class="grouprightintro" style="margin-left: 40px;margin-top: 0px">
+                                {{ group.groupsize }}个成员
+                            </div>
+                            <div style="width: 300px;margin-top: 20px;margin-left: 40px">
+                                {% if user_state == 0 %}
+                                    <a href="{% url 'Usergroup:JoinGroup' group.id %}" style="display: inline-block">
+                                        <button type="button" class="btn btn-outline-danger">加入小组</button>
+                                    </a><br>
+                                {% elif user_state == 1 %}
+                                    <a href="{% url 'ArticleCreate' %}" style="display: inline-block">
+                                        <button type="button" class="btn btn-outline-success">推帖子</button>
+                                    </a>
+                                    <a href="{% url 'Usergroup:ExitGroup' group.id %}" style="display: inline-block">
+                                        <button type="button" class="btn btn-outline-secondary">退出小组</button>
+                                    </a>
+                                    <a href="{% url 'ask:makeAsk' group.id %}" style="display: inline-block">
+                                        <button type="button" class="btn btn-outline-info">申请管理员</button>
+                                    </a>
+                                {% elif user_state == 2 %}
+                                    <a href="{% url 'ArticleCreate' %}" style="display: inline-block">
+                                        <button type="button" class="btn btn-outline-success">推帖子</button>
+                                    </a>
+                                    <a href="{% url 'Usergroup:ExitGroup' group.id %}" style="display: inline-block">
+                                        <button type="button" class="btn btn-outline-warning">退出小组</button>
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'ArticleCreate' %}" style="display: inline-block">
+                                        <button type="button" class="btn btn-outline-success">推帖子</button>
+                                    </a>
+                                    <a href="{% url 'Usergroup:ExitGroup' group.id %}" style="display: inline-block">
+                                        <button type="button" class="btn btn-outline-dark">解散小组</button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+            <div style="border: 2px dashed #ff7d79;width: 100px;height: 30px;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;background: #fff0eb">
+                <div style="height: 100px;margin-left: 5px;margin-top: 5px">置顶帖子：</div>
+            </div>
+        {% if group.top_article %}
+            <div class="posting_1">
+                    <div class="outer" style="background: #ffdedf">
+                        <div class="title">
+                            <a href="{% url 'ArticleDetail' group.top_article.id %}"><h2>{{ group.top_article.title }}</h2></a><hr>
+                            <div class="z">
+                                <span>{{ group.top_article.column }}</span>
+                            </div>
+                            <div class="zz">发布人：<span>{{ group.top_article.author.username }}</span></div>
+                            <div class="zzz">浏览数：<span>{{ group.top_article.total_views }}</span></div>
+                            <div class="zz">发布时间：<span>{{ group.top_article.created }}</span></div>
+                        </div>
+                        <!-- 设置内容简介 -->
+                        <div class="intro">
+                            <p>
+                                {{ group.top_article.body|slice:70 }}...
+                            </p>
+                        </div>
+                        <div class="tag" style="margin-left: 70%;margin-top: -30%;border: 2px dashed red;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                            <ul>
+                                {% if group.top_article.tags.all.count == 0 %}
+                                    <li><a href="#">暂无标签</a></li>
+                                {% else %}
+                                    {% for tag in group.top_article.tags.all %}
+                                        <li><a href="#">{{ tag }}</a></li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+            <br>
+                <div class="alert alert-danger" role="alert">
+                    暂无置顶
+                </div>
+            {% endif %}
+            <hr>
+            {% for article in articles %}
+                {% if user_state > 1 %}
+                    <div style="border: 1px dashed red;width: 200px;height: 50px;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                        <div style="margin-top: 15px;margin-left: 8px">
+                            <a href="{% url 'GroupDeletePost' group.id article.id %}" style="display: inline-block">删除本帖</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <a href="{% url 'group:topArtilce' group.id article.id %}" style="display: inline-block">置顶本贴</a>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="posting_1">
+                    <div class="outer">
+                        <div class="title">
+                            <a href="{% url 'ArticleDetail' article.id %}"><h2>{{ article.title }}</h2></a>
+                            <div class="z">
+                                <span>{{ article.column }}</span>
+                            </div>
+                            <div class="zz">发布人：<span>{{ article.author.username }}</span></div>
+                            <div class="zzz">浏览数：<span>{{ article.total_views }}</span></div>
+                            <div class="zz">发布时间：<span>{{ article.created }}</span></div>
+                        </div>
+                        <!-- 设置内容简介 -->
+                        <div class="intro">
+                            <p>
+                                {{ article.body|slice:70 }}...
+                            </p>
+                        </div>
+                        <div class="tag" style="margin-left: 70%;margin-top: -30%">
+                            <ul>
+                                {% if article.tags.all.count == 0 %}
+                                    <li><a href="#">暂无标签</a></li>
+                                {% else %}
+                                    {% for tag in article.tags.all %}
+                                        <li><a href="#">{{ tag }}</a></li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="main02">
+            <div class="peo">
+                <div class="headman">
+                    <a href="{% url 'Userprofile:profile' group.groupMaster.id %}">
+                        组长:<span></span>{{ group.groupMaster.username }}
+                    </a>
+                </div>
+                <nav>
+                    <h2>小组成员(<span>{{ group.groupsize }}</span>)</h2>
+                     <input id="toggle" type="checkbox" checked>
+                      <ul style="height: auto;">
+                          {% for one in profiles %}
+                              <li>
+                                  <a href="{% url 'Userprofile:profile' one.user.id %}">
+                                      {{ one.user.username }}
+                                  </a>
+                              </li>
+                          {% endfor %}
+                      </ul>
+               </nav>
+                <div class="headman" style="margin-top: 60px">
+                    <a href="#">
+                        我的状态:<span></span>{% if user_state == 0 %}游客/非组员{% elif user_state == 1%}普通组员{% elif user_state == 2 %}管理员{% else %}组长{% endif %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</html><br><br><br><br><br><br><br><br><br>
+{% include 'footer.html' %}

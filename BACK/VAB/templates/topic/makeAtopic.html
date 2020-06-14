@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建话题</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/topicupload.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+	<link rel="stylesheet" href="{% static 'css_style/columns.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<script type="text/javascript">
+		function previewFile()
+        {
+            var preview = document.querySelector('.topicimg');
+            var file  = document.querySelector('input[type=file]').files[0];
+            var reader = new FileReader();
+            reader.onloadend = function () {preview.src = reader.result;}
+            if (file) {reader.readAsDataURL(file);}
+            else {preview.src = "topicimg";}
+		}
+	</script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css_style/tags.css' %}">
+	<script src="{% static 'js/tagsinput.js' %}" type="text/javascript" charset="utf-8"></script>
+</head>
+<style>
+    .file {
+        position: relative;
+        display: inline-block;
+        background: #ffdedf;
+        border: 1px solid #ff998c;
+        border-radius: 4px;
+        padding: 4px 12px;
+        overflow: hidden;
+        color: #ff7d79;
+        text-decoration: none;
+        text-indent: 0;
+        line-height: 20px;
+    }
+    .file input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+    }
+    .file:hover {
+        background: #ff7d79;
+        border-color: #ff998c;
+        color: #ffd1c3;
+        text-decoration: none;
+    }
+</style>
+{% include 'topbar.html' %}
+<body>
+    <div class="book_upload" >
+        <div class="bform">
+            <form method="post" enctype="multipart/form-data" class="form-inp">
+                {% csrf_token %}
+                话题名称：<input class="bookname" type="text" id="topic" name="topic"><br>
+                <a class="file" style="width: 100px;height: 40px;margin-left: -15px">
+                    话题图片
+                    <input type="file" onchange="previewFile()" class="file_pic" id="topicimg" name="topicimg" accept="image/gif, image/jpeg, image/png, image/jpg" style="margin-left: 0px;margin-top: -10px"><br/><br/>
+                </a>
+                <div class="img-preview" style="margin-left: 120px;margin-top: -40px">
+					<img class="topicimg" id="topicimg" src="topicimg" height="auto" width="310px"  alt=""/>
+				</div><br><br>
+                话题简介：<br>
+                <textarea class="introduction" rows="10" cols="30" id="body" name="body">键入内容</textarea><br>
+                <button type="submit" class="bsub">提交</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% include 'footer.html' %}

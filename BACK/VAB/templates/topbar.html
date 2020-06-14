@@ -1,66 +1,101 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
-    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
-    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
-</head>
-<body>
+{% load notifications_tags %}
+{% notifications_unread as unread_count %}
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+<link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+<!-- 引入公用样式 -->
+<link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+<!-- 引入本页面的样式 -->
+<link rel="stylesheet" href="{% static '/css_style/index.css' %}">
+{#<link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">#}
+<script src="{% static 'jquery/jquery-3.3.1.js' %}"></script>
+<script src="{% static 'popper/popper-1.14.4.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<header>
     <ul class="topbar">
-        <li class="logo">
-            <img src="{% static '/vab_img/logo.jpg.png' %}" alt="logo" class="logo">
+        <li class="logo-wrap">
+            <a href="{% url 'Userprofile:loadHomepage' %}">
+                <img src="{% static '/vab_img/logo.jpg.png' %}" alt="logo" class="logo" style="width:auto ;height: 40px;margin-left: 20px;margin-top: 10px">
+            </a>
         </li>
-        <li>
+        <li class="line-wrap">
             <div class="line"></div>
         </li>
         <li class="home">
-            <a href="#">
-                <i class="iconfont">&#xe61f;</i>
-                <div>home</div>
+            <a href="{% url 'Userprofile:loadHomepage' %}" class="iconfont">
+                &#xe61f;&nbsp;
+                <p><font face="JetBrains Mono">home</font></p>
             </a>
         </li>
         <li class="book">
-            <a href="{% url 'showBook' %}">
-                <i class="iconfont">&#xe66c;</i>
-                <div>book</div>
+            <a href="{% url 'showBook' %}" class="iconfont">
+                &#xe66c;&nbsp;&nbsp;
+                <p><font face="JetBrains Mono">book</font></p>
             </a>
         </li>
-        <li class="topbar_child">
-            <a href="#">
-                <i class="iconfont video">&#xe605;</i>
-                <div>video</div>
+        <li class="video">
+            <a href="{% url 'showVideo' %}" class="iconfont">
+                &#xe605;&nbsp;
+                <p><font face="JetBrains Mono">video</font></p>
             </a>
         </li>
         <li class="group">
-            <a href="#">
-                <i class="iconfont">&#xe654;</i>
-                <div>group</div>
+            <a href="{% url 'Usergroup:showGroup' %}" class="iconfont">
+                &#xe654;&nbsp;
+                <p><font face="JetBrains Mono">group</font></p>
             </a>
         </li>
         <li class="topic">
-            <a href="#">
-                <i class="iconfont topic">&#xe8b1;</i>
-                <div>topic</div>
+            <a href="{% url 'showArticle' %}" class="iconfont">
+                &#xe8b1;&nbsp;
+                <p><font face="JetBrains Mono">topic</font></p>
             </a>
         </li>
-        <li class="user">
-            {% if user.is_authenticated %}
-            <a href="{% url 'Userprofile:profile' user.id %}">
-                <i class="iconfont">&#xe646;</i>
-                <div>{{ user.username }}</div>
-                &nbsp;&rightleftharpoons;&nbsp;
-                <a href="{% url 'Userprofile:logout' %}">logout</a>
-            </a>
-            {% else %}
-            <a href="{% url 'Userprofile:login' %}">
-                <i class="iconfont">&#xe646;</i>
-                <div>请登录</div>
-            </a>
-            {% endif %}
-        </li>
+
+        {% if user.is_authenticated %}
+            <li class="nav-item dropdown" style="margin-top: -15px">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 50px;">
+                    {% if unread_count %}
+                        <div style="margin-left: -10px;height: 0px;width: 10px;">
+                            <svg viewBox="0 0 8 8" width="8px" height="8px">
+                                <circle cx="4" cy="4" r="4" fill="#ff6b6b"></circle>
+                            </svg>
+                        </div>
+                    {% endif %}
+                    <div style="width: 80px;height: 50px;font-family: 'JetBrains Mono', serif;font: bold">{{ user.username }}</div>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                    <a class="dropdown-item" href="{% url "notice:list" %}">通知
+                        {% if unread_count %}
+                            <span class="badge badge-danger">{{ unread_count }}</span>
+                        {% endif %}
+                    </a>
+                    <a class="dropdown-item" href="{% url 'ArticleCreate' %}">写文章</a>
+                    <a class="dropdown-item" href="{% url 'Usergroup:MyGroups' %}">我的小组</a>
+                    <a class="dropdown-item" href='{% url "Userprofile:profile" user.id %}'>个人信息</a>
+                    {% if user.is_superuser %}
+                        <a class="dropdown-item" href='{% url "report:needHandle" %}'>查看需要处理的举报</a>
+                    {% else  %}
+                        <a class="dropdown-item" href='{% url "report:allMyreport" %}'>查看我的举报</a>
+                    {% endif %}
+                    <a class="dropdown-item" href='{% url "ask:allMyasks" user.id%}'>我的申请记录</a>
+                    <a class="dropdown-item" href='{% url "ask:NeedHandleAsks" user.id%}'>处理申请</a>
+                    <a class="dropdown-item" href='{% url "topic:alltopics" %}'>话题广场</a>
+                    <a class="dropdown-item" href='{% url "topic:CreateTopic" %}'>新建话题</a>
+                    <a class="dropdown-item" href='{% url "Userprofile:logout" %}' style="margin-bottom:0px;background: #fff0eb;border: 2px dashed #ffdfeb;border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">退出登录</a>
+                </div>
+            </li>
+        {% else %}
+            <li class="user-wrap">
+                <a href="{% url 'Userprofile:login' %}" class="user1" style="width: 50px;">
+                    登录
+                </a>
+                <i class="iconfont l">&#xe63a;</i>
+                <a href="{% url 'Userprofile:register' %}" class="user1" style="width: 50px;">
+                    注册
+                </a>
+            </li>
+        {% endif %}
     </ul>
-</body>
-</html>
+</header>

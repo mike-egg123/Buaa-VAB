@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的小组</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css_style/groupListPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css_style/book_page.css' %}">
+</head>
+<style>
+    a{
+        display: flex;
+        text-decoration:none;
+        color:tomato;
+    }
+    a p{
+        margin-top: 3px;
+        flex-grow: .3;
+        font-size: 17px;
+    }
+    a:hover{
+        color:rgb(243, 191, 182);
+    }
+    a > div:hover{
+        color:rgb(243, 191, 182);
+    }
+</style>
+{% include 'topbar.html' %}
+<body>
+    <div class="navigate01 iconfont" style="margin-top: 30px;margin-left: 45%"><span>&#xe626;</span> 我的小组</div><hr>
+    {% if not mygroups %}
+        <div style="height: 500px;">
+            <center>
+                <div style="border: 2px solid #ff998c;height: 60px;width: 670px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px">
+                    <br>
+                    你还没有加入小组呐，不如自己创建一个属于自己的圈子或者加入一个吧
+                </div>
+            </center>
+
+            <div style="margin-left: 560px;margin-top: 100px">
+                <a href="{% url 'group:GroupCreate' %}" style="display: inline-block;">
+                    <button class="btn btn-outline-danger" type="button">创建小组</button>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'group:showGroup' %}" style="display: inline-block">
+                    <button class="btn btn-outline-info" type="button">去小组广场看看吧</button>
+                </a>
+            </div>
+
+        </div>
+        {% else %}
+            <div style="margin-left: 560px;margin-top: 0px">
+                <a href="{% url 'group:GroupCreate' %}" style="display: inline-block;">
+                    <button class="btn btn-outline-danger" type="button">创建小组</button>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'group:showGroup' %}" style="display: inline-block">
+                    <button class="btn btn-outline-info" type="button">去小组广场看看吧</button>
+                </a>
+            </div>
+            {% for onegroup in mygroups %}
+                <div class="commentcon">
+                    <div class="textimgcon">
+                        <div class="commentname">
+                            <a href="{% url 'group:Groupdetail' onegroup.id %}">
+                                {{ onegroup.groupname }}
+                            </a>小组人数：{{ onegroup.groupsize }}
+                        </div>
+                        <div class="commentmain">
+                            <div class="commentimgcon">
+                                <img src="{{ onegroup.group_img.url }}" alt="" class="commentimg">
+                            </div>
+                            <div class="commenttext">
+                                {{ onegroup.group_info|slice:150 }}...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="commentline"></div>
+            {% endfor %}
+        {% endif %}
+</body>
+</html>
+{% include 'footer.html' %}

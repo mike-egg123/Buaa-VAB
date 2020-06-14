@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3a5bfe4-d8ab-44d1-b526-49af771ed972" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploadTest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/edfa80c9-cb5b-4573-93f2-c04a2c617059.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/edfa80c9-cb5b-4573-93f2-c04a2c617059.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VAB/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/VAB/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="d3a5bfe4-d8ab-44d1-b526-49af771ed972" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,52 +39,134 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="VAB" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/static/css_style/groupmembers.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/bookdetail.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/judgeit.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/personal_information.css" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/static/webpage/login.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/topbar.html" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/templates/Userprofile/profile.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/Userprofile/profile_update.html" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/introduce_style.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/notice.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Comment/reply.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/report/articlereport.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/report/videoreport.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/search_bar.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/report/bookreport.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/columns.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/book_page.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/article/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/article/views.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/VAB/settings.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Userprofile/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/movie.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/article/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/report/form.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/VAB/urls.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Userprofile/admin.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Userprofile/models.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Userprofile/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Usergroup/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/article/forms.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/report/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Usergroup/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Articles/showArticles.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Articles/ArticleDetail.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Books/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Articles/upload.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Articles/update.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Books/urls.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/Books/Bookdetail.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Userprofile/forms.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/Books/upload.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/header.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Books/admin.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/footer.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/Userprofile/login.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Books/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Books/forms.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/sidebar.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/footer.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/topbar.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Userprofile/profile.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Userprofile/profile_update.html" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/homepage.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Userprofile/registration.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Userprofile/login.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/askManage/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/askManage/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Userprofile/admin.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/askManage/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/askManage/forms.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Userprofile/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/askManage/allMyAsk.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/askManage/needHandleAsk.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/notice/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/book_upload.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/homepage.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Videos/admin.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Videos/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Videos/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Videos/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Videos/forms.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Videos/showVideos.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Videos/Videodetail.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Videos/upload.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/topic/admin.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/topicSearch.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/topicMain.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/topic/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/topic/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/topic/forms.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/topic/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/part/bar_top01.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/topic/makeAtopic.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Usergroup/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/topic/allTopics.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Usergroup/forms.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/topic/topicdetail.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Usergroup/showGroups.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Usergroup/GroupDetail.html" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/templates/Usergroup/CreateGroup.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Usergroup/MyGroups.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Books/showBooks.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/vab_js/register.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/webpage/register.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/registerpage.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Books/upload.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/comments.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/Books/Bookdetail.html" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/articledetail.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Userprofile/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Userprofile/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Userprofile/forms.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/comment/admin.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/report/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/comment/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/report/models.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/comment/views.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/comment/urls.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/groupListPage.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/grouppull_topbar.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/comment/forms.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/groupmain.css" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/static/css_style/posting_1.css" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1ZgiyG8XxG2b71c6p5XI4sptG6P" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DBE.Init.BalloonShown" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -101,14 +176,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\VAB\static\css_style" />
+      <recent name="D:\VAB\templates" />
+      <recent name="D:\VAB\static\webpage" />
+      <recent name="D:\VAB\static" />
+      <recent name="D:\VAB\static\vab_img" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\VAB\static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\VAB\static\vab_img" />
-      <recent name="D:\VAB" />
-      <recent name="D:\VAB\templates\Userprofile" />
-      <recent name="D:\VAB\templates" />
+      <recent name="D:\VAB\static\css_style" />
     </key>
   </component>
   <component name="RunManager">
@@ -118,6 +195,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="VAB.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -151,8 +229,30 @@
       <workItem from="1585279068248" duration="22970000" />
       <workItem from="1585317644996" duration="43000" />
       <workItem from="1585317702608" duration="27808000" />
-      <workItem from="1585525310832" duration="26410000" />
-      <workItem from="1585716359849" duration="517000" />
+      <workItem from="1585525310832" duration="27121000" />
+      <workItem from="1585714125564" duration="742000" />
+      <workItem from="1585717611660" duration="148000" />
+      <workItem from="1585724808763" duration="2001000" />
+      <workItem from="1585870989904" duration="12801000" />
+      <workItem from="1585921511620" duration="103777000" />
+      <workItem from="1586692409621" duration="620000" />
+      <workItem from="1587545549054" duration="23359000" />
+      <workItem from="1587778565949" duration="9667000" />
+      <workItem from="1587901926181" duration="2710000" />
+      <workItem from="1588733707718" duration="613000" />
+      <workItem from="1588737491135" duration="606000" />
+      <workItem from="1589599460660" duration="23466000" />
+      <workItem from="1589783403928" duration="4762000" />
+      <workItem from="1589877294595" duration="653000" />
+      <workItem from="1589891710387" duration="420000" />
+      <workItem from="1590039361505" duration="15920000" />
+      <workItem from="1590453761960" duration="37390000" />
+      <workItem from="1590624552460" duration="2156000" />
+      <workItem from="1590831017992" duration="36856000" />
+      <workItem from="1591187214462" duration="39111000" />
+      <workItem from="1591510346986" duration="65350000" />
+      <workItem from="1591691045500" duration="31429000" />
+      <workItem from="1591783126743" duration="124761000" />
     </task>
     <servers />
   </component>
@@ -168,29 +268,76 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="657" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585278859335" />
-    <state x="508" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585716790137">
+    <state x="496" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585921608833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="508" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1585716790137" />
-    <state x="382" y="1" key="CommitChangelistDialog2" timestamp="1585716962643">
+    <state x="496" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1585921608833" />
+    <state x="115" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585885647035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="382" y="1" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585716962643" />
+    <state x="115" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585885647035" />
+    <state x="637" y="176" key="FileChooserDialogImpl" timestamp="1588733719308">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="637" y="176" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588733719308" />
+    <state width="1817" height="119" key="GridCell.Tab.0.bottom" timestamp="1592042344254">
+      <screen x="-1858" y="0" width="1858" height="1080" />
+    </state>
+    <state width="726" height="202" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590160190839" />
+    <state width="1817" height="119" key="GridCell.Tab.0.bottom/89.0.1447.864/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1592042344254" />
+    <state width="1817" height="119" key="GridCell.Tab.0.center" timestamp="1592042344254">
+      <screen x="-1858" y="0" width="1858" height="1080" />
+    </state>
+    <state width="726" height="202" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590160190838" />
+    <state width="1817" height="119" key="GridCell.Tab.0.center/89.0.1447.864/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1592042344254" />
+    <state width="1817" height="119" key="GridCell.Tab.0.left" timestamp="1592042344254">
+      <screen x="-1858" y="0" width="1858" height="1080" />
+    </state>
+    <state width="726" height="202" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590160190838" />
+    <state width="1817" height="119" key="GridCell.Tab.0.left/89.0.1447.864/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1592042344254" />
+    <state width="1817" height="119" key="GridCell.Tab.0.right" timestamp="1592042344254">
+      <screen x="-1858" y="0" width="1858" height="1080" />
+    </state>
+    <state width="726" height="202" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590160190839" />
+    <state width="1817" height="119" key="GridCell.Tab.0.right/89.0.1447.864/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1592042344254" />
     <state width="210" height="498" key="HiddenNamespacesPopup" timestamp="1585624050880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="210" height="498" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1585624050880" />
-    <state x="356" y="62" key="SettingsEditor" timestamp="1585487032340">
+    <state x="-1428" y="81" key="SettingsEditor" timestamp="1592013741766">
+      <screen x="-1858" y="0" width="1858" height="1080" />
+    </state>
+    <state x="356" y="62" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589783868907" />
+    <state x="-1428" y="81" key="SettingsEditor/89.0.1447.864/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1592013741766" />
+    <state x="513" y="81" key="SettingsEditor/89.0.1831.1080@89.0.1831.1080" timestamp="1590453897788" />
+    <state x="644" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1591783160065">
+      <screen x="89" y="0" width="1447" height="864" />
+    </state>
+    <state x="852" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590039361534" />
+    <state x="644" y="258" key="com.intellij.ide.util.TipDialog/89.0.1447.864/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1591783160065" />
+    <state x="644" y="258" key="com.intellij.ide.util.TipDialog/89.0.1447.864/-1858.0.1858.1080@89.0.1447.864" timestamp="1591510803647" />
+    <state x="791" y="322" key="com.intellij.ide.util.TipDialog/89.0.1831.1080@89.0.1831.1080" timestamp="1590453774720" />
+    <state x="758" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587788313732">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="356" y="62" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585487032340" />
-    <state x="852" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1585716360755">
+    <state x="758" y="72" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1587788313732" />
+    <state x="684" y="184" width="640" height="711" key="find.popup" timestamp="1590455333237">
+      <screen x="89" y="0" width="1831" height="1080" />
+    </state>
+    <state x="684" y="184" width="640" height="711" key="find.popup/89.0.1831.1080@89.0.1831.1080" timestamp="1590455333237" />
+    <state x="523" y="274" width="712" height="306" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1587611696120">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="852" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585716360755" />
-    <state x="814" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585618622031">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="523" y="274" width="712" height="306" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1536.824@0.0.1536.824" timestamp="1587611696120" />
+    <state x="-873" y="190" width="813" height="889" key="search.everywhere.popup" timestamp="1592059053218">
+      <screen x="-1858" y="0" width="1858" height="1080" />
     </state>
-    <state x="814" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585618622031" />
+    <state x="814" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590041108643" />
+    <state x="-873" y="190" width="813" height="889" key="search.everywhere.popup/89.0.1447.864/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1592059053218" />
+    <state x="-1729" y="435" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1591233559928">
+      <screen x="-1858" y="0" width="1858" height="1080" />
+    </state>
+    <state x="107" y="332" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1536.824@0.0.1536.824" timestamp="1585885656483" />
+    <state x="-1729" y="435" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/89.0.1447.864/-1858.0.1858.1080@-1858.0.1858.1080" timestamp="1591233559928" />
   </component>
 </project>

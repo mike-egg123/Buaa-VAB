@@ -1,0 +1,129 @@
+main{
+    display: flex;
+    width: 1100px;
+    height: 1800px;
+    margin: 40px auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.talkleftwrap{
+    width: 75%;
+}
+.talkboxwrapbig{
+    justify-content: space-between;
+}
+.talkboxwrap{
+    width: 630px;
+    height: 320px;
+    margin:40px auto;
+    border-radius: 10px;
+    border:1px solid rgb(219, 216, 216);
+}
+.talkboxwrap:hover{
+    transition:all .3s ;
+    border: 1px solid rgb(250, 210, 203);
+}
+.talkboxwrap .topic-intro{
+    /* background-color: #abf; */
+    width: 85%;
+    margin-top:20px;
+    margin-left: 48px;
+    line-height: 22px;
+    letter-spacing: .7px;
+    text-indent:2em;
+    color: rgb(127, 129, 129);
+}
+.talkboxwrap .talkthemewrap{
+    width: 70%;
+    height: 30px;
+    margin:30px auto 5px;
+    padding-bottom: 10px;
+    text-align:center
+}
+.talkboxwrap .talktheme{
+    font-size: 22px;
+    text-decoration:none;
+
+    color:rgb(80, 77, 77);
+    letter-spacing:1.5px;
+    line-height:25px;
+}
+.talkboxwrap .talktime1{
+    margin:0px auto 3px;
+    text-align:center;
+    color:rgb(139, 138, 138);
+    font-size: 13.5px;
+    letter-spacing:1.5px;
+}
+.talkboxwrap .talktime2{
+    /* background-color: #baf; */
+    text-align:center;
+    color:rgb(139, 138, 138);
+    font-size: 12px;
+    letter-spacing:.5px;
+    margin-bottom: 10px;
+}
+.talkboxwrap .talkattend{
+    display: block;
+    width: 120px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 18px;
+    margin:20px auto 10px;
+    border-radius: 5px;
+    text-align:center;
+    padding-top: 7.5px;
+    letter-spacing:1px;
+    text-decoration:none;
+    color: rgb(255, 187, 0);
+    border: 2px solid rgb(255, 187, 0);
+}
+.talkboxwrap .talkattend:hover{
+    background-color: rgb(255, 196, 0);
+    border: 2px solid rgb(255, 255, 255);
+    color:rgb(255, 255, 255);
+}
+.talkrightwrap{
+    /* background-color: skyblue; */
+    width: 20%;
+}
+
+.talkrightwrap{
+    display: flex;
+    justify-content:center;
+}
+.talkrightwrap .mytalkouter{
+    /* background-color: rgb(248, 180, 180); */
+    width: 100%;
+    height: 200px;
+    color: tomato;
+    text-align: center;
+    letter-spacing: 1px;
+
+}
+.talkrightwrap .myline{
+    width: 70%;
+    height: 1px;
+    justify-content: center;
+    background-color: rgba(185, 176, 159, 0.212);
+    margin: 10px auto;
+    /* text-align: center; */
+}
+
+.talkrightwrap .mytalkwrap{
+    /* background-color: #bfa; */
+    border-left: 1px solid rgba(218, 216, 218, 0.562);
+    border-radius: 10px;
+}
+.talkrightwrap .mytalkwrap li{
+    /* background-color: thistle; */
+    margin-top: 5px;
+    height: 35px;
+    line-height: 35px;
+    color: rgb(139, 138, 138);
+    border-radius: 10px;
+}
+.talkrightwrap .mytalkwrap li:hover{
+    color: tomato;
+    background-color: rgba(255, 99, 71, 0.123);
+}

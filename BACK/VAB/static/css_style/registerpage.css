@@ -1,0 +1,216 @@
+    html{
+        perspective: 800px;
+    }
+    /* 设置外部容器样式 */
+    ul.topbar{
+        width:1250px;
+        height:60px;
+        /* 确保行高居中 */
+        background-color: rgb(245, 239, 239);
+        /* 设置水平居中 */
+        margin:30px auto;
+        box-shadow:10px 10px 15px rgba(228, 226, 226, 0.7) ;
+        border-radius:15px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    li{
+        height:60px;
+        line-height: 60px;
+        text-align: center;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    li:not(:nth-child(2)){
+        justify-content:center;
+        align-items:center;
+    }
+    /*logo*/
+    .logo-wrap{
+        flex-grow: 1.5;
+    }
+    /* 设置user */
+    .user-wrap{
+        display:flex;
+        flex-grow: 2;
+    }
+    .user-wrap a{
+        font-size: 19px;
+        font-weight: bold;
+    }
+    /* 设置user竖线 */
+    .user-wrap .l{
+        margin-top: 5px;
+        color:rgba(187, 186, 186, 0.5);
+        font-size: 30px;
+    }
+    /* 设置logo*/
+    .logo{
+        margin-top: 5px;
+        height:50px;
+    }
+    /* 设置line */
+    .line-wrap{
+        text-align: center;
+        flex-grow: .7;
+    }
+    .line{
+        width:1px;
+        height:30px;
+        margin: 15px 0 15px;
+        background-color:rgb(214, 195, 191);
+    }
+    /* 设置user */
+    a.user-wrap{
+        justify-content: center;
+    }
+    /* 设置小图标 */
+    .iconfont{
+        font-weight: bolder;
+        font-size:24px;
+    }
+    /* 设置文字 */
+    a{
+        display: flex;
+        text-decoration:none;
+        color:tomato;
+    }
+    a p{
+        margin-top: 3px;
+        flex-grow: .3;
+        font-size: 17px;
+    }
+    a:hover{
+        color:rgb(243, 191, 182);
+        text-decoration:none;
+    }
+    a > div:hover{
+        color:rgb(243, 191, 182);
+        text-decoration:none;
+    }
+
+    main{
+        display: flex;
+        /* background-color: thistle; */
+        margin:15px auto;
+        justify-content:space-evenly;
+    }
+
+    /* 设置表单 */
+    main .form-container{
+        width: 500px;
+        height: 450px;
+        margin:50px auto;
+        text-align: center;
+        /* background-color:rgb(126, 108, 199); */
+        border-radius: 10px;
+        box-shadow:0 0 15px rgba(167, 163, 163, 0.5);
+    }
+    main .form-container:hover{
+        box-shadow:0 0 15px rgba(243, 189, 180, 0.705);
+    }
+    /* 设置直接跳过 */
+    main .jump{
+        font-size: 15px;
+        margin-left:400px;
+        margin-top: 20px;
+        letter-spacing:1.5px;
+    }
+    main .form-container a.jump:hover{
+        color:rgb(243, 191, 182);
+    }
+    .form-container .form-inp{
+        /* background-color: #abf; */
+        display: flex;
+        flex-wrap:wrap;
+        margin-top:60px;
+        margin-left:10px;
+        justify-content:center;
+        align-items:center;
+    }
+    .form-container .form-inp .username{
+        width: 350px;
+        height: 30px;
+        margin-top: 0px;
+        outline: none;
+        padding-left:10px ;
+        color: rgb(163, 159, 159);
+        margin-bottom: 20px;
+        border-radius: 7px;
+        border: rgb(253, 229, 229) 2px solid;
+    }
+    .form-container .form-inp .password{
+        width: 350px;
+        height: 30px;
+        outline: none;
+        padding-left:10px ;
+        color: rgb(163, 159, 159);
+        margin-top: 0px;
+        margin-bottom: 20px;
+        border-radius: 7px;
+        border: rgb(253, 229, 229) 2px solid;
+    }
+
+    .form-container .form-inp button{
+        width: 300px;
+        height: 40px;
+        margin-top: 17px;
+        background-color: rgb(243, 227, 224);
+        font-size: 17px;
+        letter-spacing:10px;
+        font-weight: bold;
+        color: tomato;
+        border-radius: 7px;
+        border: rgb(245, 236, 236) 2px solid;
+    }
+    .form-container .ornot-wrap{
+        width: 400px;
+        height: 50px;
+        line-height: 50px;
+        font-size:15px;
+        font-weight: normal;
+        margin-left: 100px;
+        margin-top: 20px;
+
+    }
+    .ornot-wrap{
+        color:rgb(134, 132, 132);
+    }
+    .ornot-wrap .ornot{
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-top: 15px;
+        margin-right: 6px;
+        margin-bottom: 0px;
+        line-height: 20px;
+        float: left;
+    }
+    .ornot-wrap .forget{
+        margin-right:100px ;
+        float:right;
+        margin-left: 100px;
+        font-size:15px;
+        font-weight: normal;
+    }
+    .ornot-wrap .forget a{
+        display:block;
+        float:right;
+    }
+    .ornot-wrap .forget a:hover{
+        color:rgb(243, 191, 182);
+    }
+    .wechat:hover .qrcode {
+        width: 120px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+    }
+
+    .qrcode {
+        width: 0px;
+    }
+
+    .wechat:hover .wechat-img {
+        padding-left: 40px;
+    }

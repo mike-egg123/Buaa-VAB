@@ -1,0 +1,67 @@
+main{
+    display:block;
+    transition: all .5s;
+    padding-left: 100px;
+    padding-top: 20px;
+}
+main .iconfont{
+    font-size: 26px;
+    font-weight: lighter;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+.notice{
+    height: 100px;
+    width: 500px;
+    border:rgb(214, 195, 191) 1px solid ;
+    border-radius: 7px;
+    margin: 0px 0px 20px 40px;
+    padding: 20px;
+    padding-top:40px ;
+    padding-bottom: 0px;
+    text-decoration: none;
+}
+.notice:hover{
+    box-shadow:0px 0px 10px rgb(182, 168, 168);
+    transform:translateX(-5px) translateY(-5px) ;
+    transition: all .5s;
+}
+main a:hover,:visited,:active,:link{
+    text-decoration: none;
+}
+main a{
+    text-decoration: none;
+}
+.clean{
+    float: right;
+}
+.clean_all{
+    height: 50px;
+    width: 120px;
+    border-radius: 7px;
+    border:rgb(214, 195, 191) 1px solid ;
+}
+.clean_all:hover{
+    color: white;
+    background-color: rgb(252, 197, 47);
+}
+.time{
+    color: gray;
+    font-family: "JetBrains Mono";
+    font-weight: 80;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15px;
+}
+.content{
+    color: gray;
+    font-size: 18px;
+    font-weight: 100;
+}
+.name{
+    color: green;
+}
+.location{
+    color:#3399FF;
+}

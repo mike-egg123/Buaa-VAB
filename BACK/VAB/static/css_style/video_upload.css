@@ -1,0 +1,118 @@
+/*祖先div*/
+.book_upload{
+	background-image: url(../vab_img/undraw_playlist_5e13.png);
+	background-size: 580px auto;
+	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
+	background-position: 850px 120px;
+	background-origin: border-box;
+	color:gray;
+	height: auto;
+	padding-bottom: 100px;
+	border-right: rgba(202, 186, 183,.4) 1px solid;
+	overflow: visible;
+}
+/*设置书名框*/
+.form-inp .bookname{
+    width: 345px;
+	height: 35px;
+	margin-top: 0px;
+	margin-bottom:11px;
+	border-radius: 7px;
+	border: rgb(253, 229, 229) 2px solid;
+	padding-left: 5px;
+	color:gray;
+	font-size: 15px;
+}
+.form-inp .bookname:focus{
+	border: tomato 2px solid;
+}
+/*设置作者框*/
+.form-inp .author{
+    width: 345px;
+	height: 35px;
+	margin-top: 0px;
+	margin-bottom: 4px;
+	border-radius: 7px;
+	border: rgb(253, 229, 229) 2px solid;
+	color:gray;
+	font-size: 15px;
+	padding-left: 5px;
+}
+/*设置两个按钮*/
+.form-inp button{
+    width: 170px;
+	height: 40px;
+	margin-top: 17px;
+	background-color: rgb(243, 227, 224);
+	font-size: 17px;
+	letter-spacing:10px;
+	font-weight: bold;
+	color: tomato;
+	border-radius: 7px;
+	border: rgb(245, 236, 236) 2px solid;
+	margin-left:57px;
+}
+/*设置上传图片的选择文件框*/
+
+.file_pic {
+ font-size: 17px;
+ margin-top: -58px;
+ height: 36px;
+ width: 312px;
+ line-height: 34px;
+ overflow: hidden;
+ border: rgb(253, 229, 229) 2px solid;
+ color: rgba(255,99,71,0.5);
+ border-radius: 7px;
+ padding-left: 15px;
+ margin-bottom: 4px;
+ margin-left: -100px;
+ background-color: rgba(255,255,255,1.00);
+}
+/*设置书籍简介文本框*/
+.introduction{
+	font-size: 17px;
+	width: 342px;
+	height: 350px;
+	margin-left: 82px;
+	margin-bottom: -10px;
+	margin-top:-25px;
+	border-radius: 7px;
+	border: rgb(253, 229, 229) 2px solid;
+	padding: 7px 5px;
+	color:gray;
+}
+/*设置图片预览div*/
+.img-preview{
+	background-image: url(../vab_img/bimg-p.png);
+	background-size: 170px auto;
+	background-color: rgba(255,255,255,1.00);
+	background-repeat: no-repeat;
+	background-position: 10px 1px;
+    width: 311px;
+	height: auto;
+	line-height: 26px;
+	margin-left: 114px;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	padding: 3px;
+	border: rgb(253, 229, 229) 2px solid;
+	border-radius: 7px;
+}
+.bform{
+	width: 50%;
+	margin: 0 auto;
+}
+/*选择图片的按钮*/
+.choose{
+	position: relative;
+	top: 9px;
+	left: 7px;
+	width: 93px;
+}
+.select_book{
+	margin-top: -10px;
+	margin-bottom: 20px;
+	margin-left: -1px;
+}

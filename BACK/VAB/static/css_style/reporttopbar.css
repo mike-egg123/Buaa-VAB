@@ -1,0 +1,74 @@
+.topbook-wrap{
+        width:1210px;
+        height:60px;
+        margin: 25px auto 0px;
+        /* background-color: #baf; */
+        display:flex;
+        background-color: #fff;
+        border-radius: 10px;
+        border-bottom: rgb(218, 215, 215,0.7) .8px solid;
+        box-shadow:0 20px 10px rgba(239, 240, 241,.5);
+    }
+    /* 设置图书图标 */
+    .topbook-wrap .bookimg{
+        flex-grow: .55;
+        text-align:end;
+        font-size: 32px;
+        line-height: 60px;
+        color: rgb(253, 159, 141);
+    }
+    .topbook-wrap .bookicnline{
+        width: 1px;
+        height: 33px;
+        background-color: rgb(223, 223, 223);
+        margin:10px 10px auto 25px;
+    }
+    /* 设置字体 */
+    .topbook-wrap .zi{
+        background-color: bfa(173, 172, 171);
+        letter-spacing: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(109, 111, 114);
+        /* border: lime 2px solid; */
+        flex-grow: .15;
+        text-align:center;
+        line-height: 60px;
+        margin-right: 360px;
+    }
+    /* 设置搜索 */
+    .topbook-wrap .find-wrap{
+        width:350px;
+        /* background-color: turquoise; */
+        display: flex;
+    }
+    .topbook-wrap .find-wrap .jubaonotea{
+        display:block;
+        /* background-color: thistle; */
+        text-decoration: none;
+        color: rgb(122, 120, 120);
+        letter-spacing: .7px;
+        font-size: 17px;
+        line-height: 60px;
+    }
+     .topbook-wrap .find-wrap .backa{
+        display:block;
+        /* background-color: thistle; */
+        text-decoration: none;
+        color: rgb(122, 120, 120);
+        letter-spacing: .7px;
+        font-size: 1px;
+        line-height: 60px;
+        margin-top:2px
+     }
+    .topbook-wrap .find-wrap .jubaoline{
+        width: .5px;
+        height: 20px;
+        background-color: rgb(212, 209, 209);
+        margin-left:12px;
+        margin-right:12px;
+        margin-top:21px;
+    }
+    .topbook-wrap .find-wrap a:hover{
+        color: rgb(245, 158, 142);
+    }

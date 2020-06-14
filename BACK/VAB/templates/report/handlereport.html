@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>需处理的举报</title>
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/reportMaster.css' %}">
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+</head>
+{% include 'topbar.html' %}
+<body>
+    {% for areport in allBookReport %}
+        <div class="jubaocon">
+            <div class="jubaoplace">
+                举报发起人
+                <a href="{% url 'Userprofile:profile'  areport.reporter.id %}">
+                    {{ areport.reporter.username }}
+                </a>
+            </div>
+
+            <div class="jubaocontaincon">
+                <div class="jubaocontain">举报内容</div>
+                <div class="jubaocontain1" style="margin-left: -100px">
+                    {{ areport.bookcomment.body|safe|slice:30 }}
+                </div>
+            </div>
+
+            <div class="jubaotime">
+                发表时间<span>{{ areport.bookcomment.created }}</span>
+            </div>
+
+            <div class="jubaoreasoncon">
+                <div class="jubaoreason">举报原因</div>
+                <div class="jubaoreason1">{{ areport.reason }}</div>
+            </div>
+
+            <div class="jubaotime1">
+                举报时间<span>{{ areport.created }}</span>
+            </div>
+            {% if areport.state == 0 %}
+                <a href="{% url 'report:refuseBR' areport.id %}" class="btn1">
+                    <button type="button" class="btn btn-outline-danger">驳回</button>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'report:handleBR' areport.id %}" class="btn2">
+                    <button type="button" class="btn btn-outline-success">处理</button>
+                </a>
+            {% elif areport.state == 1 %}
+                <a href="" class="btn1" style="margin-left: 400px">
+                    <button type="button" class="btn btn-outline-danger" style="width: 100px">已被驳回</button>
+                </a>
+            {% elif areport.state == 2 %}
+                <a href="" class="btn1" style="margin-left: 400px">
+                    <button type="button" class="btn btn-outline-success" style="width: 100px">已被处理</button>
+                </a>
+            {% endif %}
+        </div>
+        <div class="jubaoline"></div>
+    {% endfor %}
+
+    {% for areport in allVideoReport %}
+        <div class="jubaocon">
+            <div class="jubaoplace">
+                举报发起人
+                <a href="{% url 'Userprofile:profile'  areport.reporter.id %}">
+                    {{ areport.reporter.username }}
+                </a>
+            </div>
+
+            <div class="jubaocontaincon">
+                <div class="jubaocontain">举报内容</div>
+                <div class="jubaocontain1" style="margin-left: -100px">
+                    {{ areport.videocomment.body|safe|slice:30 }}
+                </div>
+            </div>
+
+            <div class="jubaotime">
+                发表时间<span>{{ areport.videocomment.created }}</span>
+            </div>
+
+            <div class="jubaoreasoncon">
+                <div class="jubaoreason">举报原因</div>
+                <div class="jubaoreason1">{{ areport.reason }}</div>
+            </div>
+
+            <div class="jubaotime1">
+                举报时间<span>{{ areport.created }}</span>
+            </div>
+            {% if areport.state == 0 %}
+                <a href="{% url 'report:refuseVR' areport.id %}" class="btn1">
+                    <button type="button" class="btn btn-outline-danger">驳回</button>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'report:handleVR' areport.id %}" class="btn2">
+                    <button type="button" class="btn btn-outline-success">处理</button>
+                </a>
+            {% elif areport.state == 1 %}
+                <a href="" class="btn1" style="margin-left: 400px">
+                    <button type="button" class="btn btn-outline-danger" style="width: 100px">已被驳回</button>
+                </a>
+            {% elif areport.state == 2 %}
+                <a href="" class="btn1" style="margin-left: 400px">
+                    <button type="button" class="btn btn-outline-success" style="width: 100px">已被处理</button>
+                </a>
+            {% endif %}
+        </div>
+        <div class="jubaoline"></div>
+    {% endfor %}
+
+    {% for areport in allArticleReport %}
+        <div class="jubaocon">
+            <div class="jubaoplace">
+                举报发起人
+                <a href="{% url 'Userprofile:profile'  areport.reporter.id %}">
+                    {{ areport.reporter.username }}
+                </a>
+            </div>
+
+            <div class="jubaocontaincon">
+                <div class="jubaocontain">举报内容</div>
+                <div class="jubaocontain1" style="margin-left: -100px">
+                    {{ areport.articlecomment.body|safe|slice:30 }}
+                </div>
+            </div>
+
+            <div class="jubaotime">
+                发表时间<span>{{ areport.articlecomment.created }}</span>
+            </div>
+
+            <div class="jubaoreasoncon">
+                <div class="jubaoreason">举报原因</div>
+                <div class="jubaoreason1">{{ areport.reason }}</div>
+            </div>
+
+            <div class="jubaotime1">
+                举报时间<span>{{ areport.created }}</span>
+            </div>
+            {% if areport.state == 0 %}
+                <a href="{% url 'report:refuseAR' areport.id %}" class="btn1">
+                    <button type="button" class="btn btn-outline-danger">驳回</button>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'report:handleAR' areport.id %}" class="btn2">
+                    <button type="button" class="btn btn-outline-success">处理</button>
+                </a>
+            {% elif areport.state == 1 %}
+                <a href="" class="btn1" style="margin-left: 400px">
+                    <button type="button" class="btn btn-outline-danger" style="width: 100px">已被驳回</button>
+                </a>
+            {% elif areport.state == 2 %}
+                <a href="" class="btn1" style="margin-left: 400px">
+                    <button type="button" class="btn btn-outline-success" style="width: 100px">已被处理</button>
+                </a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</body>
+</html>
+<div style="width: 100%;height: 300px;"></div>
+{% include 'footer.html' %}

@@ -1,0 +1,90 @@
+{#{% load static %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>修改</title>#}
+{#</head>#}
+{#<body>#}
+{#    {% include 'topbar.html' %}#}
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        标题：<input type="text" id="title" name="title" value="{{ article.title }}"><br>#}
+{#        栏目：#}
+{#        <select id="column" name="column">#}
+{#            {% for column in columns %}#}
+{#                <option value="{{ column.id }}" {% if column.id == article.column.id %}selected{% endif %}>#}
+{#                    {{ column }}#}
+{#                </option>#}
+{#            {% endfor %}#}
+{#        </select><br>#}
+{#        内容：#}
+{#        <textarea type="text" id="body" name="body">#}
+{#            {{ article.body }}#}
+{#        </textarea><br>#}
+{#        <button type="submit">修改完成</button>#}
+{#    </form>#}
+{#</body>#}
+{#</html>#}
+
+{% load static %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改{{ article.title }}</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/base.css' %}">
+	<link rel="stylesheet" href="{% static '/css_style/columns.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<script src="{% static '/js/jquery.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static '/css_style/tags.css' %}">
+    <link rel="stylesheet" href="{% static 'css_style/createArticle.css' %}">
+	<script src="{% static '/js/tagsinput.js' %}" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <main>
+        <div class="book_upload" >
+            <div class="bform">
+                <form action="" class="form-inp" method="post">
+                    {% csrf_token %}
+                    标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：<input type="text" class="bookname" placeholder="{{ article.title }}" id="title" name="title"><br/>
+                    <div class="select_book" style="margin-top: 0px">
+                        <div>主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</div>
+                        <div class="c-dropdown js-dropdown" style="margin-left: 80px;margin-top: -20px">
+{#                            <select id="column" name="column" style="width: auto;height: 30px;">#}
+{#                                <option value="none">请选择栏目...</option>#}
+{#                                {% for column in columns %}#}
+{#                                    <option value="{{ column.id }}" {% if column.id == article.column.id %}selected{% endif %}>#}
+{#                                        {{ column }}#}
+{#                                    </option>#}
+{#                                {% endfor %}#}
+{#                            </select>#}
+                            <select id="column" name="column" style="height: 40px;width: 100px;">
+                                {% for column in columns %}
+                                    <option value="{{ column.id }}" {% if column.id == article.column.id %}selected{% endif %}>
+                                        {{ column }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+    <!--				内容-->
+                    内&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;容：<br/>
+                    <textarea class="introduction" rows="10" cols="30" id="body" name="body">{{ article.body }}
+                    </textarea><br/>
+                    <button class="bsub" type="submit">提交</button>
+                    <button class="cancel">取消</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+{% include 'footer.html' %}

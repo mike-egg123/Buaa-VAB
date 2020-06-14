@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的举报</title>
+    <!-- <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="icon" href="{% static '/vab_img/2020060909293668_easyicon_net_512.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/myreportpage.css' %}">
+</head>
+{% include 'topbar.html' %}
+<body>
+    <div class="topbook-wrap" style="width: 1000px;">
+        <div class="bookimg iconfont">&#xe711; </div>
+        <div class="bookicnline"></div>
+        <div class="zi">我的举报记录</div>
+    </div>
+    <main>
+        {% for areport in allBookReport %}
+            <div class="jubaocon">
+                <div class="jubaoplace">发言人 &nbsp;&nbsp;<a href="{% url 'Userprofile:profile'  areport.bookcomment.user.id %}">{{ areport.bookcomment.user }}</a></div>
+                <div class="jubaocontaincon">
+                    <div class="jubaocontain">举报内容</div>
+                    <div class="jubaocontain1" style="margin-left: -270px">{{ areport.bookcomment.body|safe|slice:30}}</div>
+                </div>
+                <div class="jubaotime">
+                    发表时间<span>2020年6月8日 11:23</span>
+                </div>
+                <div class="jubaoreasoncon">
+                    <div class="jubaoreason">举报原因</div>
+                    <div class="jubaoreason1">{{ areport.reason }}</div>
+                </div>
+                <div class="jubaotime1">
+                    举报时间<span>{{ areport.created }}</span>
+                </div>
+                <div class="jubaostatu">
+                    举报状态<span>{% if areport.state == 0 %}等待处理...{% elif areport.state == 1 %}被驳回{% endif %}</span>
+                </div>
+            </div>
+{#            <div class="jubaoline"></div>#}
+        {% endfor %}
+        {% for areport in allVideoReport %}
+            <div class="jubaocon">
+                <div class="jubaoplace">发言人 &nbsp;&nbsp;<a href="{% url 'Userprofile:profile'  areport.videocomment.user.id %}">{{ areport.videocomment.user }}</a></div>
+                <div class="jubaocontaincon">
+                    <div class="jubaocontain">举报内容</div>
+                    <div class="jubaocontain1" style="margin-left: -270px">{{ areport.videocomment.body|safe|slice:30 }}</div>
+                </div>
+                <div class="jubaotime">
+                    发表时间<span>2020年6月8日 11:23</span>
+                </div>
+                <div class="jubaoreasoncon">
+                    <div class="jubaoreason">举报原因</div>
+                    <div class="jubaoreason1">{{ areport.reason }}</div>
+                </div>
+                <div class="jubaotime1">
+                    举报时间<span>{{ areport.created }}</span>
+                </div>
+                <div class="jubaostatu">
+                    举报状态<span>{% if areport.state == 0 %}等待处理...{% elif areport.state == 1 %}被驳回{% endif %}</span>
+                </div>
+            </div>
+            <div class="jubaoline"></div>
+        {% endfor %}
+        {% for areport in allArticleReport %}
+            <div class="jubaocon">
+                <div class="jubaoplace">发言人 &nbsp;&nbsp;<a href="{% url 'Userprofile:profile'  areport.articlecomment.user.id %}">{{ areport.articlecomment.user }}</a></div>
+                <div class="jubaocontaincon">
+                    <div class="jubaocontain">举报内容</div>
+                    <div class="jubaocontain1" style="margin-left: -270px">{{ areport.articlecomment.body|safe|slice:30 }}</div>
+                </div>
+                <div class="jubaotime">
+                    发表时间<span>2020年6月8日 11:23</span>
+                </div>
+                <div class="jubaoreasoncon">
+                    <div class="jubaoreason">举报原因</div>
+                    <div class="jubaoreason1">{{ areport.reason }}</div>
+                </div>
+                <div class="jubaotime1">
+                    举报时间<span>{{ areport.created }}</span>
+                </div>
+                <div class="jubaostatu">
+                    举报状态<span>{% if areport.state == 0 %}等待处理...{% elif areport.state == 1 %}被驳回{% endif %}</span>
+                </div>
+            </div>
+            <div class="jubaoline"></div>
+        {% endfor %}
+    </main>
+</body>
+</html>
+{% include 'footer.html' %}

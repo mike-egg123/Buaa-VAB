@@ -1,0 +1,219 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小组列表</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css_style/groupListPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css_style/book_page.css' %}">
+</head>
+<style>
+    .grouppage{
+        width: 700px;
+        height:40px;
+        line-height: 40px;
+        margin:50px auto;
+        /* background-color: rgb(216, 209, 200); */
+        display:flex;
+        justify-content:space-between
+    }
+    .grouppage > li{
+        /* flex-grow: 1; */
+        justify-content:space-between
+    }
+    .grouppage a{
+        display:block;
+        width: 40px;
+        height: 40px;
+        border: rgb(194, 193, 193) 2px solid;
+        color: rgb(119, 118, 117);
+        text-decoration: none;
+        text-align: center;
+        border-radius: 10px;
+    }
+    /* 设置图标 */
+    .grouppage .left,
+    .grouppage .omit,
+    .grouppage.right{
+        font-size: 17px;
+        font-weight: bolder;
+    }
+    /* 设置省略号 */
+    .grouppage .omit{
+        border:unset;
+        margin-top:15px;
+    }
+    /* 设置竖线 */
+    .grouppage .line{
+        width: 1px;
+        height: 35px;
+        background-color: rgba(194, 193, 193,.7);
+        margin-top: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    /* 设置goto */
+    .grouppage .goto{
+        color: rgb(119, 118, 117);
+        font-weight: bold;
+        font-size: 18px;
+    }
+    /* 设置表单 */
+    .grouppage div{
+        width: 50px;
+        border:  rgb(194, 193, 193) 2px solid;
+        line-height: 30px;
+        border-radius: 10px;
+        /* background-color: thistle; */
+    }
+    .grouppage .page{
+        width: 46px;
+        border:unset;
+        border-radius: 10px;
+        line-height: 30px;
+        text-align: center;
+        outline: none;
+        /* background-color: turquoise; */
+    }
+    /* 设置点击效果 */
+    .grouppage a:not(.omit):hover{
+        color:tomato;
+        border: tomato 2px solid;
+        transition: all .25s;
+    }
+</style>
+{% include 'topbar.html' %}
+<body>
+    <main>
+        <div class="main01">
+            <div class="navigate01 iconfont"><span>&#xe626;</span> 所有小组</div>
+            <ul class="topbook-wrap">
+                <div class="find-wrap">
+                    <form action="" class="find">
+                        <input type="text" class="find-inp" placeholder="搜索" name="search" required>
+                        <button class="find-btn">
+                            <i class="iconfont find-icon">&#xe61c;</i>
+                        </button>
+                    </form>
+                </div>
+            </ul>
+{#            <div class="commentline"></div>#}
+            <br><br>
+            {% if search %}
+                {% if groups %}
+                    <div class="alert alert-danger" role="alert">
+                        <h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger" role="alert">
+                      <h4>暂无<span style="color: red">"{{ search }}"</span>有关的小组</h4>
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            {% if group_list.count > 0 %}
+                {% for onegroup in groups %}
+                    <div class="commentcon">
+                        <div class="textimgcon">
+                            <div class="commentname">
+                                <a href="{% url 'group:Groupdetail' onegroup.id %}">
+                                    {{ onegroup.groupname }}
+                                </a>小组人数：{{ onegroup.groupsize }}
+                            </div>
+                            <div class="commentmain">
+                                <div class="commentimgcon">
+                                    <img src="{{ onegroup.group_img.url }}" alt="" class="commentimg" style="border: 2px solid #ffc7bb">
+                                </div>
+                                <div class="commenttext">
+                                    {{ onegroup.group_info|slice:150 }}...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commentline"></div>
+                {% endfor %}
+            {% elif not search %}
+                <div>还没有小组哦~</div>
+            {% endif %}
+        </div>
+        <div class="main02">
+            <div class="recommend iconfont"><span>&#xe63b;</span> 推荐加入的小组</div>
+            {% if recommend_list is None %}
+                <br><br><br>
+                <div class="alert alert-secondary" role="alert">
+                暂无推荐小组，去<a href="#" style="display:inline-block;">所有小组</a>看看吧
+                </div>
+            {% else %}
+                {% for recommend in recommend_list %}
+                    <div class="grouprightcon">
+                        <div class="grouprightline"></div>
+                        <div class="groupright01">
+                            <div class="grouprightimgcon">
+                                <img src="{{ recommend.group_img.url }}" alt="" class="grouprightimg" style="border: 2px dashed #ff7d79">
+                            </div>
+                            <div class="grouprighttextcon">
+                                <a href="{% url 'group:Groupdetail' recommend.id %}" class="grouprightnamecon">
+                                    <div class="grouprightname">{{recommend.groupname}}</div>
+                                </a>
+                                <div class="grouprightintro">
+                                    {{ recommend.groupsize }}个成员
+                                    <button type="button" class="btn btn-outline-danger">
+                                        <a href="{% url 'group:JoinGroup' recommend.id %}">+加入小组</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <a href="{% url 'Userprofile:loadHomepage' %}" class="morerecommendgroupcon">
+                    <div class="morerecommendgroup01">查看更多>></div>
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="pagenum-wrap" style="margin-left: -90%;margin-top: 80%;height: 40px;">
+        <br><br><br><br><br><br><br><br><br><br><br>
+            <li class="grouppage">
+                {% if groups.has_previous %}
+                        <a href="?page={{ groups.previous_page_number }}&search={{ search }}" class="iconfont left">&laquo;</a>
+                    {% if  groups.number != 2 %}
+                            <a href="?page=1&search={{ search }}">1</a>
+                    {% endif %}
+
+                    {% if  groups.number > 3 %}
+                        &nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;
+                    {% endif %}
+
+                    <a href="?page={{ groups.previous_page_number }}&search={{ search }}">
+                        {{ groups.previous_page_number }}
+                    </a>
+                {% endif %}
+                    <a href="#" style="background: #ffb5ae">{{ groups.number }}</a>
+                {% if groups.has_next %}
+                    {% if groups.number|add:1 < groups.paginator.num_pages %}
+                        <a href="?page={{ groups.next_page_number }}&search={{ search }}">
+                            {{ groups.next_page_number }}
+                        </a>
+                    {% endif %}
+                    {% if groups.number|add:2 < groups.paginator.num_pages%}
+                        <span>&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;</span>
+                    {% endif %}
+
+                    <a href="?page={{ groups.paginator.num_pages }}&search={{ search }}">
+                        {{ groups.paginator.num_pages }}
+                    </a>
+                    <a href="?page={{ groups.next_page_number }}&search={{ search }}" class="iconfont right">&raquo;</a>
+                {% endif %}
+            </li>
+        </div>
+    </main>
+</body>
+</html>
+<div style="height: 200px"></div>
+{% include 'footer.html' %}

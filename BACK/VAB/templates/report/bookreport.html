@@ -1,0 +1,92 @@
+{% load static %}
+{% include 'topbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>举报</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css_remove/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/iconfont/iconfont.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/topbar_style.css' %}">
+    <link rel="stylesheet" href="{% static '/css_style/reportpage.css' %}">
+    <style type="text/css">
+        .wechat:hover .qrcode {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 99, 71, 0.5);
+        }
+
+        .qrcode {
+            width: 0px;
+        }
+
+        .wechat:hover .wechat-img {
+            padding-left: 40px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var inp=document.getElementById("reason");
+            var btn=document.getElementById("lastbtn");
+            btn.onclick = function () {
+                if (inp.value.length<15) {
+                    alert("字数最少15个字！");
+                }
+                else
+                    alert("提交成功！");
+            };
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <div class="topbook-wrap">
+            <div class="bookimg iconfont">&#xe711; </div>
+            <div class="bookicnline"></div>
+            <div class="zi">VAB举报</div>
+
+            <div class="find-wrap">
+                <a href="{% url 'report:allMyreport' %}" class="jubaonotea">
+                    <div class="jubaonote">我的举报记录</div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="jubaocontaincon" style="margin-top: 10px;height: 300px;">
+            <div class="jubaocontain1" style="height: 20px;">
+                举报地址：<a href="{% url 'Videodetail' comment.book.id %}" style="margin-top: -60px;margin-left: 100px">{{ comment.book.Book_name }}的评论</a>
+            </div>
+            <div class="jubaocontain2">
+                您要举报的评论为：
+                <div style="margin-left: 10px;border: 1px solid red;height: auto;width: auto;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px">
+                    <div style="margin-left: 20px">{{ comment.body|safe|slice:100 }}...</div>
+                </div>
+                评论者：<a href="{% url 'Userprofile:profile' comment.user.id %}" style="margin-top: -60px;margin-left: 70px;height: 10px;width: 10px;color: #ff998c;font-family:JetBrains Mono">{{ comment.user.username }}</a><br>
+                评论时间：<font face="Jetbrains Mono" color="#ff6347">{{ comment.created }}</font>
+            </div>
+        </div>
+        <hr>
+        <div class="jubaodiscrcon" >
+            <form method="post">
+                {% csrf_token %}
+                <div class="jubaodiscr">问题描述</div>
+                <div class="jubaodiscrinp">
+                    <input type="text" class="form-control" placeholder="请输入举报理由" id="reason" name="reason">
+                </div>
+                <div class="jubaodiscrinp1">
+                    输入你的邮箱 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{ user.email }}" style="font-family: JetBrains Mono">
+                </div>
+                <div class="jubaodiscrinp1">
+                    输入你的电话 <input type="text" class="form-control" placeholder="联系电话">
+                </div>
+                <button type="submit" class="btn btn-outline-danger" id="lastbtn">提交</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+{% include 'footer.html' %}
